@@ -49,3 +49,42 @@ func Test_WorkflowFundamentals(t *testing.T) {
 		t.FailNow()
 	}
 }
+
+func Test_Workflow_and_Factsheet(t *testing.T) {
+	wf := &WorkFlow{}
+	factsheet := &DictionaryFactsheet{
+		dic: map[string]interface{}{
+			"name":   "test",
+			"hight":  12,
+			"weight": 170,
+		},
+	}
+	fss := &FactConditionalStep{
+		id:    newID(),
+		title: "test",
+		goNoGo: func(f FactSheet) ([]Step, error) {
+			if val, ok := f.CurrentValue("hight").(int); ok && val > 170 {
+				return []Step{&StopStep{}}, nil
+			}
+			return []Step{&FailStep{}}, nil
+		},
+		facts: factsheet,
+	}
+	wf.startStep = &StartStep{next: []Step{fss}}
+	if wf.validate() != nil {
+		t.Error("a valid workflow should be valid")
+		t.FailNow()
+	}
+	wf.Reset()
+	// next, err := wf.StepForward()
+	// if next == nil || err != nil {
+	// 	fmt.Printf("next is: %v and error is %v", next, err)
+	// 	t.Fail()
+	// }
+	err := wf.Run()
+	//fmt.Printf("next is: %v and error is %v", next, err)
+	if err != ErrWorkflowFailed {
+		t.Error("a failed workflow should fail")
+		t.FailNow()
+	}
+}

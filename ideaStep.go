@@ -1,6 +1,9 @@
 package ideas
 
-import "sync"
+import (
+	"fmt"
+	"sync"
+)
 
 type IdeaStep struct {
 	sync.Mutex
@@ -9,6 +12,10 @@ type IdeaStep struct {
 	status StepStatus
 	idea   Idea
 	next   []Step
+}
+
+func (s *IdeaStep) String() string {
+	return fmt.Sprintf("IdeaStep: %s [%d]", s.title, s.id)
 }
 
 func (s *IdeaStep) ID() int64 {
@@ -35,6 +42,11 @@ func (s *IdeaStep) StepForward() ([]Step, error) {
 	if s.status == Running {
 		if s.idea.id != 0 {
 			s.status = Stopped
+			for _, step := range s.next {
+				if step.Status() != Running {
+					step.Reset()
+				}
+			}
 			return s.next, nil
 		} else {
 			return nil, nil

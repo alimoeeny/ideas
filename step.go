@@ -2,6 +2,7 @@ package ideas
 
 import (
 	"errors"
+	"fmt"
 	"sync"
 )
 
@@ -13,16 +14,17 @@ const (
 )
 
 var ErrAlreadyStopped = errors.New("already stopped")
+var ErrWorkflowFailed = errors.New("workflow arrived at a fail step")
 
-type goNoGo interface {
-	areWeGoodToGo() bool
-}
+// type GoNoGo interface {
+// 	areWeGoodToGo() bool
+// }
 
-type ALWAYS_GO struct{}
+// type ALWAYS_GO struct{}
 
-func (a ALWAYS_GO) areWeGoodToGo() bool {
-	return true
-}
+// func (a ALWAYS_GO) areWeGoodToGo() bool {
+// 	return true
+// }
 
 // Step represents a single step in a workflow
 type Step interface {
@@ -32,6 +34,7 @@ type Step interface {
 	Reset() error
 	StepForward() ([]Step, error)
 	ForwardConnections() []Step
+	String() string
 }
 
 type StartStep struct {
@@ -40,6 +43,10 @@ type StartStep struct {
 	title  string
 	status StepStatus
 	next   []Step
+}
+
+func (s *StartStep) String() string {
+	return fmt.Sprintf("StartStep: %s [%d]", s.title, s.id)
 }
 
 func (s *StartStep) ID() int64 {
@@ -53,6 +60,9 @@ func (s *StartStep) Title() string {
 func (s *StartStep) Reset() error {
 	s.Lock()
 	s.status = Running
+	for _, s := range s.next {
+		s.Reset()
+	}
 	s.Unlock()
 	return nil
 }
@@ -64,6 +74,11 @@ func (s *StartStep) Status() StepStatus {
 func (s *StartStep) StepForward() ([]Step, error) {
 	if s.status == Running {
 		s.status = Stopped
+		for _, step := range s.next {
+			if step.Status() != Running {
+				step.Reset()
+			}
+		}
 		return s.next, nil
 	}
 

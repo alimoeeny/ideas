@@ -1,6 +1,9 @@
 package ideas
 
-import "sync"
+import (
+	"fmt"
+	"sync"
+)
 
 type StopStep struct {
 	sync.Mutex
@@ -8,6 +11,10 @@ type StopStep struct {
 	title  string
 	status StepStatus
 	next   []Step
+}
+
+func (s *StopStep) String() string {
+	return fmt.Sprintf("StopStep: %s [%d]", s.title, s.id)
 }
 
 func (s *StopStep) ID() int64 {
@@ -32,10 +39,9 @@ func (s *StopStep) Status() StepStatus {
 func (s *StopStep) StepForward() ([]Step, error) {
 	if s.status == Running {
 		s.status = Stopped
-		return s.next, nil
 	}
 
-	return []Step{}, ErrAlreadyStopped
+	return []Step{}, nil
 }
 
 func (s *StopStep) ForwardConnections() []Step {

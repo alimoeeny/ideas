@@ -1,6 +1,9 @@
 package ideas
 
-import "sync"
+import (
+	"fmt"
+	"sync"
+)
 
 type PipeStep struct {
 	sync.Mutex
@@ -8,6 +11,10 @@ type PipeStep struct {
 	title  string
 	status StepStatus
 	next   []Step
+}
+
+func (s *PipeStep) String() string {
+	return fmt.Sprintf("PipeStep: %s [%d]", s.title, s.id)
 }
 
 func (s *PipeStep) ID() int64 {
@@ -32,6 +39,11 @@ func (s *PipeStep) Status() StepStatus {
 func (s *PipeStep) StepForward() ([]Step, error) {
 	if s.status == Running {
 		s.status = Stopped
+		for _, step := range s.next {
+			if step.Status() != Running {
+				step.Reset()
+			}
+		}
 		return s.next, nil
 	}
 

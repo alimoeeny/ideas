@@ -2,6 +2,7 @@ package ideas
 
 import (
 	"errors"
+	"fmt"
 	"sync"
 )
 
@@ -12,6 +13,10 @@ type WorkFlow struct {
 	status    StepStatus
 	startStep *StartStep
 	next      []Step
+}
+
+func (wf *WorkFlow) String() string {
+	return fmt.Sprintf("Workflow: %s [%d]", wf.title, wf.id)
 }
 
 func (wf *WorkFlow) ID() int64 {
@@ -25,6 +30,8 @@ func (wf *WorkFlow) Title() string {
 func (s *WorkFlow) Reset() error {
 	s.Lock()
 	s.status = Running
+	s.startStep.Reset()
+	s.next = []Step{s.startStep}
 	s.Unlock()
 	return nil
 }
@@ -34,9 +41,22 @@ func (s *WorkFlow) Status() StepStatus {
 }
 
 func (s *WorkFlow) StepForward() ([]Step, error) {
+	nextSteps := []Step{}
 	if s.status == Running {
-		s.status = Stopped
-		return s.next, nil
+		for _, step := range s.next {
+			next, err := step.StepForward()
+			if err != nil {
+				return nextSteps, err
+			}
+			for _, s := range next {
+				s.Reset()
+			}
+			nextSteps = append(nextSteps, next...)
+		}
+		if len(nextSteps) == 0 {
+			s.status = Stopped
+		}
+		return nextSteps, nil
 	}
 
 	return []Step{}, ErrAlreadyStopped
@@ -59,14 +79,19 @@ func (wf *WorkFlow) validate() error {
 	return nil
 }
 
-func (wf *WorkFlow) TakeStep() error {
-	// TODO
-	return nil
-}
+// func (wf *WorkFlow) TakeStep() error {
+// 	// TODO
+// 	return nil
+// }
 
 func (wf *WorkFlow) Run() error {
 	for wf.status != Stopped {
-		wf.StepForward()
+		next, err := wf.StepForward()
+		if err != nil || len(next) == 0 {
+			wf.status = Stopped
+			return err
+		}
+		wf.next = next
 	}
 	return nil
 }

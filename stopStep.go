@@ -27,8 +27,8 @@ func (s *StopStep) Title() string {
 
 func (s *StopStep) Reset() error {
 	s.Lock()
+	defer s.Unlock()
 	s.status = Running
-	s.Unlock()
 	return nil
 }
 

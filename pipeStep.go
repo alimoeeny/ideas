@@ -27,8 +27,8 @@ func (s *PipeStep) Title() string {
 
 func (s *PipeStep) Reset() error {
 	s.Lock()
+	defer s.Unlock()
 	s.status = Running
-	s.Unlock()
 	return nil
 }
 

@@ -29,10 +29,10 @@ func (wf *WorkFlow) Title() string {
 
 func (s *WorkFlow) Reset() error {
 	s.Lock()
+	defer s.Unlock()
 	s.status = Running
 	s.startStep.Reset()
 	s.next = []Step{s.startStep}
-	s.Unlock()
 	return nil
 }
 

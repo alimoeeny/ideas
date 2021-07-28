@@ -32,9 +32,9 @@ func (s *IdeaStep) Status() StepStatus {
 
 func (s *IdeaStep) Reset() error {
 	s.Lock()
+	defer s.Unlock()
 	s.idea = Idea{}
 	s.status = Running
-	s.Unlock()
 	return nil
 }
 

@@ -59,11 +59,11 @@ func (s *StartStep) Title() string {
 
 func (s *StartStep) Reset() error {
 	s.Lock()
+	defer s.Unlock()
 	s.status = Running
 	for _, s := range s.next {
 		s.Reset()
 	}
-	s.Unlock()
 	return nil
 }
 

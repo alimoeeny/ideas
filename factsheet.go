@@ -46,12 +46,12 @@ func (s *FactConditionalStep) Title() string {
 
 func (s *FactConditionalStep) Reset() error {
 	s.Lock()
+	defer s.Unlock()
 	s.status = Running
 	err := s.facts.Reset()
 	for _, s := range s.next {
 		s.Reset()
 	}
-	s.Unlock()
 	return err
 }
 

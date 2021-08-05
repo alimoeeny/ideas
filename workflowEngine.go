@@ -1,10 +1,23 @@
 package ideas
 
 import (
+	"encoding/json"
 	"errors"
 	"fmt"
 	"sync"
 )
+
+func NewWorkFlow(title string, startStep *StartStep) *WorkFlow {
+	wf := &WorkFlow{
+		id:        newID(),
+		title:     title,
+		status:    Stopped,
+		startStep: startStep,
+		next:      []Step{startStep},
+	}
+
+	return wf
+}
 
 type WorkFlow struct {
 	sync.Mutex
@@ -13,6 +26,23 @@ type WorkFlow struct {
 	status    StepStatus
 	startStep *StartStep
 	next      []Step
+}
+
+func (wf *WorkFlow) MarshalJSON() ([]byte, error) {
+	temp := struct {
+		ID        int64      `json:"id"`
+		Title     string     `json:"title"`
+		Status    string     `json:"status"`
+		StartStep *StartStep `json:"startStep"`
+		Next      []Step     `json:"next"`
+	}{
+		ID:        wf.id,
+		Title:     wf.title,
+		Status:    wf.status.String(),
+		StartStep: wf.startStep,
+		Next:      wf.next,
+	}
+	return json.MarshalIndent(temp, "", "  ")
 }
 
 func (wf *WorkFlow) String() string {
@@ -56,10 +86,11 @@ func (s *WorkFlow) StepForward() ([]Step, error) {
 		if len(nextSteps) == 0 {
 			s.status = Stopped
 		}
-		return nextSteps, nil
+		s.next = nextSteps
+		return s.next, nil
 	}
 
-	return []Step{}, ErrAlreadyStopped
+	return []Step{}, ErrAlreadyStopped(s.title)
 }
 
 func (s *WorkFlow) ForwardConnections() []Step {

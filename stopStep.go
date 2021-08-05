@@ -1,6 +1,7 @@
 package ideas
 
 import (
+	"encoding/json"
 	"fmt"
 	"sync"
 )
@@ -11,6 +12,21 @@ type StopStep struct {
 	title  string
 	status StepStatus
 	next   []Step
+}
+
+func (ss *StopStep) MarshalJSON() ([]byte, error) {
+	temp := struct {
+		ID     int64  `json:"id"`
+		Title  string `json:"title"`
+		Status string `json:"status"`
+		Next   []Step `json:"next"`
+	}{
+		ID:     ss.id,
+		Title:  ss.title,
+		Status: ss.status.String(),
+		Next:   ss.next,
+	}
+	return json.MarshalIndent(temp, "", "  ")
 }
 
 func (s *StopStep) String() string {

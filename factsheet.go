@@ -76,7 +76,7 @@ func (s *FactConditionalStep) StepForward() ([]Step, error) {
 		}
 	}
 
-	return []Step{}, ErrAlreadyStopped
+	return []Step{}, ErrAlreadyStopped(s.title)
 }
 
 func (s *FactConditionalStep) ForwardConnections() []Step {

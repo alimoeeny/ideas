@@ -1,10 +1,19 @@
 package ideas
 
 import (
+	"encoding/json"
 	"fmt"
 	"sync"
 	"time"
 )
+
+func NewWaitForItStep(title string, timeout time.Duration, goNoGo func() (bool, error)) Step {
+	return &WaitForItStep{
+		title:   title,
+		timeout: timeout,
+		goNoGo:  goNoGo,
+	}
+}
 
 type WaitForItStep struct {
 	sync.Mutex
@@ -16,6 +25,29 @@ type WaitForItStep struct {
 	next        []Step
 	timeout     time.Duration
 	timeoutNext []Step
+}
+
+func (ss *WaitForItStep) MarshalJSON() ([]byte, error) {
+	temp := struct {
+		ID     int64  `json:"id,omitempty"`
+		Title  string `json:"title,omitempty"`
+		Status string `json:"status,omitempty"`
+		//GoNoGo      func() (bool, error) `json:"go_no_go,omitempty"`
+		Started     time.Time     `json:"started,omitempty"`
+		Next        []Step        `json:"next,omitempty"`
+		Timeout     time.Duration `json:"timeout,omitempty"`
+		TimeoutNext []Step        `json:"timeout_next,omitempty"`
+	}{
+		ID:     ss.id,
+		Title:  ss.title,
+		Status: ss.status.String(),
+		//GoNoGo:      ss.goNoGo,
+		Started:     ss.started,
+		Next:        ss.next,
+		Timeout:     ss.timeout,
+		TimeoutNext: ss.timeoutNext,
+	}
+	return json.MarshalIndent(temp, "", "  ")
 }
 
 func (s *WaitForItStep) String() string {
@@ -74,7 +106,7 @@ func (s *WaitForItStep) StepForward() ([]Step, error) {
 		}
 	}
 
-	return []Step{}, ErrAlreadyStopped
+	return []Step{}, ErrAlreadyStopped(s.title)
 }
 
 // func (s *WaitForItStep) StepForward() ([]Step, error) {

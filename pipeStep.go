@@ -47,7 +47,7 @@ func (s *PipeStep) StepForward() ([]Step, error) {
 		return s.next, nil
 	}
 
-	return []Step{}, ErrAlreadyStopped
+	return []Step{}, ErrAlreadyStopped(s.title)
 }
 
 func (s *PipeStep) ForwardConnections() []Step {

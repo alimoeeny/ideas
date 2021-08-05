@@ -3,7 +3,6 @@ package ideas
 import (
 	"errors"
 	"fmt"
-	"sync"
 )
 
 type StepStatus int
@@ -13,7 +12,11 @@ const (
 	Running
 )
 
-var ErrAlreadyStopped = errors.New("already stopped")
+func (st StepStatus) String() string {
+	return fmt.Sprintf("%d", st)
+}
+
+var ErrAlreadyStopped = func(stepTitle string) error { return fmt.Errorf("%s is already stopped", stepTitle) }
 var ErrWorkflowFailed = errors.New("workflow arrived at a fail step")
 
 // type GoNoGo interface {
@@ -35,58 +38,6 @@ type Step interface {
 	StepForward() ([]Step, error)
 	ForwardConnections() []Step
 	String() string
-}
-
-type StartStep struct {
-	sync.Mutex
-	id     int64
-	title  string
-	status StepStatus
-	next   []Step
-}
-
-func (s *StartStep) String() string {
-	return fmt.Sprintf("StartStep: %s [%d]", s.title, s.id)
-}
-
-func (s *StartStep) ID() int64 {
-	return s.id
-}
-
-func (s *StartStep) Title() string {
-	return s.title
-}
-
-func (s *StartStep) Reset() error {
-	s.Lock()
-	defer s.Unlock()
-	s.status = Running
-	for _, s := range s.next {
-		s.Reset()
-	}
-	return nil
-}
-
-func (s *StartStep) Status() StepStatus {
-	return s.status
-}
-
-func (s *StartStep) StepForward() ([]Step, error) {
-	if s.status == Running {
-		s.status = Stopped
-		for _, step := range s.next {
-			if step.Status() != Running {
-				step.Reset()
-			}
-		}
-		return s.next, nil
-	}
-
-	return []Step{}, ErrAlreadyStopped
-}
-
-func (s *StartStep) ForwardConnections() []Step {
-	return s.next
 }
 
 // ProgressEvaluator accepts a set of ideas and decides if the step can progress to next step

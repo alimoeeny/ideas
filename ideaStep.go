@@ -53,7 +53,7 @@ func (s *IdeaStep) StepForward() ([]Step, error) {
 		}
 	}
 
-	return []Step{}, ErrAlreadyStopped
+	return []Step{}, ErrAlreadyStopped(s.title)
 }
 
 func (s *IdeaStep) ForwardConnections() []Step {

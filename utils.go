@@ -1,6 +1,6 @@
 package ideas
 
-import "time"
+import "math/rand"
 
 // Identifier unlinke lowlevel id, can be exposed externally
 type Identifier struct {
@@ -9,7 +9,7 @@ type Identifier struct {
 }
 
 func newID() int64 {
-	return time.Now().UnixNano()
+	return rand.Int63()
 }
 
 func newIdentifier() Identifier {

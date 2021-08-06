@@ -15,14 +15,14 @@ func Test_WaitForItStep_StuckForEver(t *testing.T) {
 		err := wfis.Reset()
 		if err != nil {
 			t.Errorf("Error: %s", err)
-			t.Fail()
+			t.FailNow()
 		}
 		next, err := wfis.StepForward()
 		if err != nil {
 			t.Errorf("Error: %s", err)
 		}
 		if len(next) > 0 {
-			t.Fail()
+			t.FailNow()
 		}
 	}
 }
@@ -40,14 +40,14 @@ func Test_WaitForItStep_GoFromGetGo(t *testing.T) {
 		err := wfis.Reset()
 		if err != nil {
 			t.Errorf("Error: %s", err)
-			t.Fail()
+			t.FailNow()
 		}
 		next, err := wfis.StepForward()
 		if err != nil {
 			t.Errorf("Error: %s", err)
 		}
 		if len(next) < 2 {
-			t.Fail()
+			t.FailNow()
 		}
 	}
 }
@@ -68,7 +68,7 @@ func Test_WaitForItStep_ActuallyWait(t *testing.T) {
 		err := wfis.Reset()
 		if err != nil {
 			t.Errorf("Error: %s", err)
-			t.Fail()
+			t.FailNow()
 		}
 		next, err := wfis.StepForward()
 		for len(next) < 1 && err == nil {
@@ -79,11 +79,11 @@ func Test_WaitForItStep_ActuallyWait(t *testing.T) {
 		}
 		if len(next) < 2 {
 			t.Errorf("Expected 2 steps, got %d", len(next))
-			t.Fail()
+			t.FailNow()
 		}
 		if time.Since(startedAt) < time.Second {
 			t.Errorf("Expected to wait for at least 1 second, but waited for %s", time.Since(startedAt))
-			t.Fail()
+			t.FailNow()
 		}
 	}
 }
@@ -106,7 +106,7 @@ func Test_WaitForItStep_Timeout(t *testing.T) {
 		err := wfis.Reset()
 		if err != nil {
 			t.Errorf("Error: %s", err)
-			t.Fail()
+			t.FailNow()
 		}
 		next, err := wfis.StepForward()
 		for len(next) < 1 && err == nil {
@@ -117,11 +117,11 @@ func Test_WaitForItStep_Timeout(t *testing.T) {
 		}
 		if len(next) != 1 {
 			t.Errorf("Expected 1 steps, got %d", len(next))
-			t.Fail()
+			t.FailNow()
 		}
 		if time.Since(startedAt) > 2*time.Second {
 			t.Errorf("Expected to timeout after 1 second, but waited for %s", time.Since(startedAt))
-			t.Fail()
+			t.FailNow()
 		}
 	}
 }
@@ -147,7 +147,7 @@ func Test_WaitForItStep_WaitAsync(t *testing.T) {
 		err := wfis.Reset()
 		if err != nil {
 			t.Errorf("Error: %s", err)
-			t.Fail()
+			t.FailNow()
 		}
 		next, err := wfis.StepForward()
 		for len(next) < 1 && err == nil {
@@ -158,11 +158,11 @@ func Test_WaitForItStep_WaitAsync(t *testing.T) {
 		}
 		if len(next) < 2 {
 			t.Errorf("Expected 2 steps, got %d", len(next))
-			t.Fail()
+			t.FailNow()
 		}
 		if time.Since(startedAt) < time.Second {
 			t.Errorf("Expected to wait for at least 1 second, but waited for %s", time.Since(startedAt))
-			t.Fail()
+			t.FailNow()
 		}
 	}
 }

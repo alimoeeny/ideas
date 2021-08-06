@@ -2,9 +2,67 @@ package ideas
 
 import (
 	"fmt"
+	"math/rand"
 	"testing"
 	"time"
 )
+
+func Test_integration_spherocyte(t *testing.T) {
+	// no spherocytes, no low platelets
+	factsheet := &DictionaryFactsheet{
+		dic: map[string]interface{}{
+			"spherocyteModerate": false,
+		},
+	}
+	moderateSpherocyte := &FactConditionalStep{
+		id:     123,
+		title:  "Spherocyte",
+		status: Stopped,
+		goNoGo: func(f FactSheet) ([]Step, error) {
+			if val, ok := f.CurrentValue("spherocyteModerate").(bool); ok && val {
+				if val, ok := f.CurrentValue("low platelets").(bool); ok && val {
+					return []Step{&StopStep{title: "success"}}, nil
+				}
+			}
+			return []Step{&StopStep{title: "no sphero"}}, nil
+		},
+		facts: factsheet,
+	}
+	ss := NewStartStep("Start Sphericyteflow", moderateSpherocyte)
+	wrkflw := NewWorkFlow("Spherocyte", ss)
+	if wrkflw.validate() != nil {
+		t.Error("Workflow is not valid")
+	}
+	wrkflw.Reset()
+	wrkflw.StepForward()
+	x, err := wrkflw.StepForward()
+	wrkflw.StepForward()
+	if wrkflw.status != Stopped {
+		t.Error("expected to have stopped")
+	}
+	if err != nil {
+		t.Error("expected no error")
+	}
+	if len(x) != 1 || x[0].Title() != "no sphero" {
+		t.Errorf("expected no sphero but got %v", x)
+	}
+	// yes spherocytes, yes fragments
+	factsheet.SetValue("spherocyteModerate", true)
+	factsheet.SetValue("low platelets", true)
+	wrkflw.Reset()
+	wrkflw.StepForward()
+	x, err = wrkflw.StepForward()
+	wrkflw.StepForward()
+	if wrkflw.status != Stopped {
+		t.Error("expected to have stopped")
+	}
+	if err != nil {
+		t.Error("expected no error")
+	}
+	if len(x) != 1 || x[0].Title() != "success" {
+		t.Errorf("expected success but got %v", x)
+	}
+}
 
 func Test_integration_wait_for_channels(t *testing.T) {
 	SpherocyteDetectorChan := make(chan Measurment)

@@ -13,7 +13,7 @@ func Test_concept(t *testing.T) {
 		englishDescription:             "Average number of RBCs per µl",
 	}
 	if c.id != nid {
-		t.Fail()
+		t.FailNow()
 	}
 }
 
@@ -49,6 +49,6 @@ func Test_idea(t *testing.T) {
 		},
 	}
 	if i.id != nid {
-		t.Fail()
+		t.FailNow()
 	}
 }

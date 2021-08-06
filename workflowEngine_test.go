@@ -79,7 +79,7 @@ func Test_Workflow_and_Factsheet(t *testing.T) {
 	// next, err := wf.StepForward()
 	// if next == nil || err != nil {
 	// 	fmt.Printf("next is: %v and error is %v", next, err)
-	// 	t.Fail()
+	// 	t.FailNow()
 	// }
 	err := wf.Run()
 	//fmt.Printf("next is: %v and error is %v", next, err)

@@ -10,6 +10,12 @@ type FactSheet interface {
 	Reset() error
 }
 
+func NewDictionaryFactsheet() *DictionaryFactsheet {
+	return &DictionaryFactsheet{
+		dic: make(map[string]interface{}),
+	}
+}
+
 type DictionaryFactsheet struct {
 	dic map[string]interface{}
 }
@@ -20,6 +26,10 @@ func (dfs *DictionaryFactsheet) CurrentValue(key string) interface{} {
 
 func (dfs *DictionaryFactsheet) Reset() error {
 	return nil
+}
+
+func (dfs *DictionaryFactsheet) SetValue(key string, value interface{}) {
+	dfs.dic[key] = value
 }
 
 type FactConditionalStep struct {

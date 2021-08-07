@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-type FactSheet interface {
+type Factsheet interface {
 	ID() string
 	CurrentValue(key string) interface{}
 	Reset() error
@@ -44,8 +44,8 @@ type FactConditionalStep struct {
 	id     int64
 	title  string
 	status StepStatus
-	goNoGo func(FactSheet) ([]Step, error)
-	facts  FactSheet
+	goNoGo func(Factsheet) ([]Step, error)
+	facts  Factsheet
 	next   []Step
 }
 

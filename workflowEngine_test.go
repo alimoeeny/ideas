@@ -62,7 +62,7 @@ func Test_Workflow_and_Factsheet(t *testing.T) {
 	fss := &FactConditionalStep{
 		id:    newID(),
 		title: "test",
-		goNoGo: func(f FactSheet) ([]Step, error) {
+		goNoGo: func(f Factsheet) ([]Step, error) {
 			if val, ok := f.CurrentValue("hight").(int); ok && val > 170 {
 				return []Step{&StopStep{}}, nil
 			}

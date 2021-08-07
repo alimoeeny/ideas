@@ -18,7 +18,7 @@ func Test_integration_spherocyte(t *testing.T) {
 		id:     123,
 		title:  "Spherocyte",
 		status: Stopped,
-		goNoGo: func(f FactSheet) ([]Step, error) {
+		goNoGo: func(f Factsheet) ([]Step, error) {
 			if val, ok := f.CurrentValue("spherocyteModerate").(bool); ok && val {
 				if val, ok := f.CurrentValue("low platelets").(bool); ok && val {
 					return []Step{&StopStep{title: "success"}}, nil

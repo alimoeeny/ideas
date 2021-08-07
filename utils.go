@@ -1,6 +1,9 @@
 package ideas
 
-import "math/rand"
+import (
+	"fmt"
+	"math/rand"
+)
 
 // Identifier unlinke lowlevel id, can be exposed externally
 type Identifier struct {
@@ -10,6 +13,10 @@ type Identifier struct {
 
 func newID() int64 {
 	return rand.Int63()
+}
+
+func newStrID() string {
+	return fmt.Sprintf("%d", newID())
 }
 
 func newIdentifier() Identifier {

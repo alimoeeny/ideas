@@ -6,14 +6,14 @@ import (
 )
 
 func Test_basics(t *testing.T) {
-	nid := newID()
+	nid := newStrID()
 	u := Unit{nid, "mg per Kg", "mg/kg"}
-	if u.id != nid {
+	if u.ID != nid {
 		t.FailNow()
 	}
 
 	m := Measurment{nid, time.Now().UnixNano(), "42", &u}
-	if m.id != nid {
+	if m.ID != nid {
 		t.FailNow()
 	}
 }

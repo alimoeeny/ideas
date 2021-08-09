@@ -35,16 +35,16 @@ func Test_idea(t *testing.T) {
 		englishHumanReadableExpression: "Patient with id 123 had RBC count of 5.3 µl at time t",
 		facts: map[*Concept]Measurment{
 			&p: {
-				id:        newID(),
-				timestamp: 0,
-				value:     "PATIENT-123",
-				unit:      UNIT_IDENTIFIER,
+				ID:        newStrID(),
+				Timestamp: 0,
+				Value:     "PATIENT-123",
+				Unit:      UNIT_IDENTIFIER,
 			},
 			&crbcc: {
-				id:        newID(),
-				timestamp: time.Now().UnixNano(),
-				value:     5900000,
-				unit:      UNIT_COUNT_PER_UL,
+				ID:        newStrID(),
+				Timestamp: time.Now().UnixNano(),
+				Value:     5900000,
+				Unit:      UNIT_COUNT_PER_UL,
 			},
 		},
 	}

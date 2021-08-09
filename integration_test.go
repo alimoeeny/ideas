@@ -95,7 +95,7 @@ func Test_integration_wait_for_channels(t *testing.T) {
 	for i, c := range allSensorChannels {
 		go func(idx int, c chan Measurment) {
 			<-time.After(time.Second * time.Duration(1+rand.Int63n(5)))
-			c <- Measurment{id: newID(), timestamp: time.Now().UnixNano(), value: rand.Float64(), unit: UNIT_MILLIMOLES}
+			c <- Measurment{ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: rand.Float64(), Unit: UNIT_MILLIMOLES}
 			close(c)
 			fmt.Printf("done with channel %d\n", idx)
 		}(i, c)
@@ -146,10 +146,10 @@ func Test_integration_001(t *testing.T) {
 				englishHumanReadableExpression: "Battery is at 100miles estimates range",
 				facts: map[*Concept]Measurment{
 					&batteryRangeEstimate: {
-						id:        newID(),
-						timestamp: time.Now().UnixNano(),
-						value:     100,
-						unit:      UNIT_MILES,
+						ID:        newStrID(),
+						Timestamp: time.Now().UnixNano(),
+						Value:     100,
+						Unit:      UNIT_MILES,
 					},
 				},
 			},
@@ -158,10 +158,10 @@ func Test_integration_001(t *testing.T) {
 				englishHumanReadableExpression: "Distance to destination is 200miles",
 				facts: map[*Concept]Measurment{
 					&distanceToDestination: {
-						id:        newID(),
-						timestamp: time.Now().UnixNano(),
-						value:     200,
-						unit:      UNIT_MILES,
+						ID:        newStrID(),
+						Timestamp: time.Now().UnixNano(),
+						Value:     200,
+						Unit:      UNIT_MILES,
 					},
 				},
 			},

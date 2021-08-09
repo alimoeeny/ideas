@@ -17,7 +17,7 @@ var rbcShapeTargetCell = Concept{id: 42000772, englishHumanReadableExpression: "
 
 var alisCBC = CBC{
 	PatientIdentifier: newIdentifier(),
-	RBCCount:          Measurment{newID(), time.Now().UnixNano(), "5421000", UNIT_COUNT},
+	RBCCount:          Measurment{newStrID(), time.Now().UnixNano(), "5421000", UNIT_COUNT},
 	ConceptSet: ConceptSet{
 		id:       newID(),
 		concepts: []*Concept{},

@@ -28,7 +28,7 @@ func Test_integration_spherocyte(t *testing.T) {
 		},
 		facts: factsheet,
 	}
-	ss := NewStartStep("Start Sphericyteflow", moderateSpherocyte)
+	ss := NewStartStep("Start Sphericyteflow", []Step{moderateSpherocyte})
 	wrkflw := NewWorkFlow("Spherocyte", ss)
 	if wrkflw.validate() != nil {
 		t.Error("Workflow is not valid")
@@ -119,7 +119,7 @@ func Test_integration_wait_for_channels(t *testing.T) {
 	}
 
 	waitForAllSensorsToBeReady := NewWaitForItStep("Wait for all the sensors", time.Hour, func() (bool, error) { return waitForAllTheSensors(allSensorChannels) })
-	ss := NewStartStep("Start Sphericyteflow", waitForAllSensorsToBeReady)
+	ss := NewStartStep("Start Sphericyteflow", []Step{waitForAllSensorsToBeReady})
 	wrkflw := NewWorkFlow("Spherocyte", ss)
 	if wrkflw.validate() != nil {
 		t.Error("Workflow is not valid")

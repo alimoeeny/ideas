@@ -9,6 +9,7 @@ import (
 
 func NewWaitForItStep(title string, timeout time.Duration, goNoGo func() (bool, error)) Step {
 	return &WaitForItStep{
+		id:      newID(),
 		title:   title,
 		timeout: timeout,
 		goNoGo:  goNoGo,

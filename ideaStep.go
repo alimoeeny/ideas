@@ -5,6 +5,15 @@ import (
 	"sync"
 )
 
+func NewIdeaStep(title string, idea Idea, nextSteps []Step) Step {
+	return &IdeaStep{
+		id:    newID(),
+		title: title,
+		idea:  idea,
+		next:  nextSteps,
+	}
+}
+
 type IdeaStep struct {
 	sync.Mutex
 	id     int64

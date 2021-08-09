@@ -6,12 +6,12 @@ import (
 	"sync"
 )
 
-func NewStartStep(title string, nextStep Step) *StartStep {
+func NewStartStep(title string, nextStep []Step) *StartStep {
 	return &StartStep{
-		id:     -1,
+		id:     newID(),
 		title:  title,
 		status: Stopped,
-		next:   []Step{nextStep},
+		next:   nextStep,
 	}
 }
 

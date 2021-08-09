@@ -6,12 +6,22 @@ import (
 	"sync"
 )
 
+func NewStopStep(title string, messages []string) *StopStep {
+	return &StopStep{
+		id:       newID(),
+		title:    title,
+		messages: messages,
+		status:   Stopped,
+	}
+}
+
 type StopStep struct {
 	sync.Mutex
-	id     int64
-	title  string
-	status StepStatus
-	next   []Step
+	id       int64
+	title    string
+	status   StepStatus
+	messages []string
+	next     []Step
 }
 
 func (ss *StopStep) MarshalJSON() ([]byte, error) {
@@ -62,4 +72,8 @@ func (s *StopStep) StepForward() ([]Step, error) {
 
 func (s *StopStep) ForwardConnections() []Step {
 	return s.next
+}
+
+func (s *StopStep) Messages() []string {
+	return s.messages
 }

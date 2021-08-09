@@ -10,10 +10,16 @@ import (
 
 // DictionaryFactsheet
 func (dfs *DictionaryFactsheet) Load(ps []datastore.Property) error {
+	if dfs == nil {
+		dfs = NewDictionaryFactsheet()
+	}
 	fmt.Printf("dfs-> %#v\n", dfs)
 	for _, p := range ps {
 		switch p.Name {
 		case "ID":
+			fmt.Printf("-> %#v\n", p)
+			fmt.Printf("-> %#v\n", p.Value)
+			fmt.Printf("-> %t\n", p.Value)
 			dfs.id = p.Value.(string)
 		case "DIC":
 			if dfs.dic == nil {
@@ -41,6 +47,9 @@ func (dfs *DictionaryFactsheet) Load(ps []datastore.Property) error {
 
 func (dfs *DictionaryFactsheet) Save() ([]datastore.Property, error) {
 	props := []datastore.Property{}
+	if dfs == nil {
+		return props, fmt.Errorf("DictionaryFactsheet is nil")
+	}
 	props = append(props, datastore.Property{Name: "ID", Value: dfs.id})
 
 	dicJBytes, err := json.Marshal(dfs.dic)
@@ -54,6 +63,9 @@ func (dfs *DictionaryFactsheet) Save() ([]datastore.Property, error) {
 
 // Measurment
 func (m *Measurment) Load(ps []datastore.Property) error {
+	if m == nil {
+		m = &Measurment{}
+	}
 	for _, p := range ps {
 		switch p.Name {
 		case "ID":
@@ -82,6 +94,9 @@ func (m *Measurment) Load(ps []datastore.Property) error {
 
 func (m *Measurment) Save() ([]datastore.Property, error) {
 	props := []datastore.Property{}
+	if m == nil {
+		return props, fmt.Errorf("Measurment is nil")
+	}
 	props = append(props, datastore.Property{Name: "ID", Value: m.ID})
 	props = append(props, datastore.Property{Name: "timestamp", Value: m.Timestamp})
 

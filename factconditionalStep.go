@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-func NewFactConditionalStep(title string, factsheet Factsheet, goNoGo func(Factsheet) ([]Step, error), nextStep Step) *FactConditionalStep {
+func NewFactConditionalStep(title string, factsheet Factsheet, goNoGo func(Factsheet) ([]Step, error)) *FactConditionalStep {
 	return &FactConditionalStep{
 		id:     newID(),
 		title:  title,

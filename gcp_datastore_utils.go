@@ -14,8 +14,8 @@ func (dfs *DictionaryFactsheet) Load(ps []datastore.Property) error {
 		case "ID":
 			dfs.id = p.Value.(string)
 		case "DIC":
-			dicJStr := p.Value.(string)
-			err := json.Unmarshal([]byte(dicJStr), &dfs.dic)
+			dicJBytes := p.Value.([]byte)
+			err := json.Unmarshal(dicJBytes, &dfs.dic)
 			if err != nil {
 				return err
 			}
@@ -31,12 +31,12 @@ func (dfs *DictionaryFactsheet) Save() ([]datastore.Property, error) {
 	props := []datastore.Property{}
 	props = append(props, datastore.Property{Name: "ID", Value: dfs.id})
 
-	dicJStr, err := json.Marshal(dfs.dic)
+	dicJBytes, err := json.Marshal(dfs.dic)
 	if err != nil {
 		return props, err
 	}
 
-	props = append(props, datastore.Property{Name: "DIC", Value: dicJStr})
+	props = append(props, datastore.Property{Name: "DIC", Value: dicJBytes})
 	return props, nil
 }
 
@@ -49,14 +49,14 @@ func (m *Measurment) Load(ps []datastore.Property) error {
 		case "timestamp":
 			m.Timestamp = p.Value.(int64)
 		case "DIC":
-			dicJStr := p.Value.(string)
+			dicJBytes := p.Value.([]byte)
 			var measurmentAsDic Measurment
-			err := json.Unmarshal([]byte(dicJStr), &measurmentAsDic)
+			err := json.Unmarshal([]byte(dicJBytes), &measurmentAsDic)
 			if err != nil {
 				return err
 			}
 			if m.ID != measurmentAsDic.ID {
-				return fmt.Errorf("Something has gone horribly wrong here, measurment ID mismatch. Expected %s. Got %s", m.ID, measurmentAsDic.ID)
+				return fmt.Errorf("something has gone horribly wrong here, measurment ID mismatch. Expected %s. Got %s", m.ID, measurmentAsDic.ID)
 			}
 			m.Value = measurmentAsDic.Value
 			m.Unit = measurmentAsDic.Unit
@@ -73,11 +73,11 @@ func (m *Measurment) Save() ([]datastore.Property, error) {
 	props = append(props, datastore.Property{Name: "ID", Value: m.ID})
 	props = append(props, datastore.Property{Name: "timestamp", Value: m.Timestamp})
 
-	dicJStr, err := json.Marshal(m)
+	dicJBytes, err := json.Marshal(m)
 	if err != nil {
 		return props, err
 	}
 
-	props = append(props, datastore.Property{Name: "DIC", Value: dicJStr})
+	props = append(props, datastore.Property{Name: "DIC", Value: dicJBytes})
 	return props, nil
 }

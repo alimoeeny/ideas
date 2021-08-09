@@ -11,7 +11,7 @@ import (
 // DictionaryFactsheet
 func (dfs *DictionaryFactsheet) Load(ps []datastore.Property) error {
 	if dfs == nil {
-		dfs = NewDictionaryFactsheet()
+		dfs = NewDictionaryFactsheet(newStrID())
 	}
 	fmt.Printf("dfs-> %#v\n", dfs)
 	for _, p := range ps {

@@ -6,9 +6,9 @@ type Factsheet interface {
 	Reset() error
 }
 
-func NewDictionaryFactsheet() *DictionaryFactsheet {
+func NewDictionaryFactsheet(id string) *DictionaryFactsheet {
 	return &DictionaryFactsheet{
-		id:  newStrID(),
+		id:  id,
 		dic: make(map[string]interface{}),
 	}
 }

@@ -23,6 +23,9 @@ func (dfs *DictionaryFactsheet) ID() string {
 }
 
 func (dfs *DictionaryFactsheet) CurrentValue(key string) interface{} {
+	if dfs == nil || dfs.dic == nil {
+		return nil
+	}
 	return dfs.dic[key]
 }
 

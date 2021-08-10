@@ -12,21 +12,21 @@ func (dfs *DictionaryFactsheet) Load(ps []datastore.Property) error {
 	if dfs == nil {
 		dfs = NewDictionaryFactsheet(newStrID())
 	}
-	fmt.Printf("dfs-> %#v\n", dfs)
+	//fmt.Printf("dfs-> %#v\n", dfs)
 	for _, p := range ps {
 		switch p.Name {
 		case "ID":
-			fmt.Printf("-> %#v\n", p)
-			fmt.Printf("-> %#v\n", p.Value)
-			fmt.Printf("-> %t\n", p.Value)
+			//fmt.Printf("-> %#v\n", p)
+			//fmt.Printf("-> %#v\n", p.Value)
+			//fmt.Printf("-> %t\n", p.Value)
 			dfs.id = p.Value.(string)
 		case "DIC":
 			if dfs.dic == nil {
 				dfs.dic = make(map[string]interface{})
 			}
-			fmt.Printf("-> %#v\n", p)
-			fmt.Printf("-> %#v\n", p.Value)
-			fmt.Printf("-> %t\n", p.Value)
+			// fmt.Printf("-> %#v\n", p)
+			// fmt.Printf("-> %#v\n", p.Value)
+			// fmt.Printf("-> %t\n", p.Value)
 			dicJBytes := p.Value.([]byte)
 			err := json.Unmarshal(dicJBytes, &dfs.dic)
 			if err != nil {

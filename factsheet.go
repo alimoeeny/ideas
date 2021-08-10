@@ -10,18 +10,22 @@ type Factsheet interface {
 	CurrentValue(key string) interface{}
 	Reset() error
 	String() string // for debugging
+	CurrentVersion() int64
+	VersionBump() int64
 }
 
 func NewDictionaryFactsheet(id string) *DictionaryFactsheet {
 	return &DictionaryFactsheet{
-		id:  id,
-		dic: make(map[string]interface{}),
+		id:      id,
+		version: int64(0),
+		dic:     make(map[string]interface{}),
 	}
 }
 
 type DictionaryFactsheet struct {
-	id  string
-	dic map[string]interface{}
+	id      string
+	version int64
+	dic     map[string]interface{}
 }
 
 func (dfs *DictionaryFactsheet) ID() string {
@@ -62,4 +66,19 @@ func (dfs *DictionaryFactsheet) String() string {
 		return err.Error()
 	}
 	return string(jBytes)
+}
+
+func (dfs *DictionaryFactsheet) CurrentVersion() int64 {
+	if dfs == nil || dfs.dic == nil {
+		return -1
+	}
+	return dfs.version
+}
+
+func (dfs *DictionaryFactsheet) VersionBump() int64 {
+	if dfs == nil || dfs.dic == nil {
+		return -1
+	}
+	dfs.version++
+	return dfs.version
 }

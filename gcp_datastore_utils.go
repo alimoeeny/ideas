@@ -20,6 +20,8 @@ func (dfs *DictionaryFactsheet) Load(ps []datastore.Property) error {
 			//fmt.Printf("-> %#v\n", p.Value)
 			//fmt.Printf("-> %t\n", p.Value)
 			dfs.id = p.Value.(string)
+		case "version":
+			dfs.version = p.Value.(int64)
 		case "DIC":
 			if dfs.dic == nil {
 				dfs.dic = make(map[string]interface{})
@@ -46,6 +48,7 @@ func (dfs *DictionaryFactsheet) Save() ([]datastore.Property, error) {
 		return props, fmt.Errorf("DictionaryFactsheet is nil")
 	}
 	props = append(props, datastore.Property{Name: "ID", Value: dfs.id})
+	props = append(props, datastore.Property{Name: "version", Value: dfs.version})
 
 	dicJBytes, err := json.Marshal(dfs.dic)
 	if err != nil {

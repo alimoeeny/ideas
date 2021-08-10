@@ -52,7 +52,7 @@ func (dfs *DictionaryFactsheet) Save() ([]datastore.Property, error) {
 		return props, err
 	}
 
-	props = append(props, datastore.Property{Name: "DIC", Value: dicJBytes})
+	props = append(props, datastore.Property{Name: "DIC", Value: dicJBytes, NoIndex: true})
 	return props, nil
 }
 
@@ -100,6 +100,6 @@ func (m *Measurment) Save() ([]datastore.Property, error) {
 		return props, err
 	}
 
-	props = append(props, datastore.Property{Name: "DIC", Value: dicJBytes})
+	props = append(props, datastore.Property{Name: "DIC", Value: dicJBytes, NoIndex: true})
 	return props, nil
 }

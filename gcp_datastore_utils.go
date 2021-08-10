@@ -1,7 +1,6 @@
 package ideas
 
 import (
-	"encoding/base64"
 	"encoding/json"
 	"fmt"
 
@@ -29,11 +28,7 @@ func (dfs *DictionaryFactsheet) Load(ps []datastore.Property) error {
 			fmt.Printf("-> %#v\n", p.Value)
 			fmt.Printf("-> %t\n", p.Value)
 			dicJBytes := p.Value.([]byte)
-			dicJStr, err := base64.StdEncoding.DecodeString(string(dicJBytes))
-			if err != nil {
-				return err
-			}
-			err = json.Unmarshal(dicJStr, &dfs.dic)
+			err := json.Unmarshal(dicJBytes, &dfs.dic)
 			if err != nil {
 				return err
 			}

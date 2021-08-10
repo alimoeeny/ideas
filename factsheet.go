@@ -1,5 +1,7 @@
 package ideas
 
+import "fmt"
+
 type Factsheet interface {
 	ID() string
 	CurrentValue(key string) interface{}
@@ -24,6 +26,7 @@ func (dfs *DictionaryFactsheet) ID() string {
 
 func (dfs *DictionaryFactsheet) CurrentValue(key string) interface{} {
 	if dfs == nil || dfs.dic == nil {
+		fmt.Println("This factsheet is not initialized properly")
 		return nil
 	}
 	return dfs.dic[key]
@@ -34,5 +37,9 @@ func (dfs *DictionaryFactsheet) Reset() error {
 }
 
 func (dfs *DictionaryFactsheet) SetValue(key string, value interface{}) {
+	if dfs == nil || dfs.dic == nil {
+		fmt.Println("This factsheet is not initialized properly, starting a new one with a new id")
+		dfs = NewDictionaryFactsheet(newStrID())
+	}
 	dfs.dic[key] = value
 }

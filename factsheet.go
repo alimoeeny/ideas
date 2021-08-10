@@ -1,11 +1,15 @@
 package ideas
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 type Factsheet interface {
 	ID() string
 	CurrentValue(key string) interface{}
 	Reset() error
+	String() string // for debugging
 }
 
 func NewDictionaryFactsheet(id string) *DictionaryFactsheet {
@@ -42,4 +46,17 @@ func (dfs *DictionaryFactsheet) SetValue(key string, value interface{}) {
 		dfs = NewDictionaryFactsheet(newStrID())
 	}
 	dfs.dic[key] = value
+}
+
+func (dfs *DictionaryFactsheet) String() string {
+	jDic := dfs.dic
+	if jDic == nil {
+		return "uninitialized factsheet"
+	}
+	jDic["id"] = dfs.id
+	jBytes, err := json.Marshal(jDic)
+	if err != nil {
+		return err.Error()
+	}
+	return string(jBytes)
 }

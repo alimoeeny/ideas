@@ -49,6 +49,9 @@ func (dfs *DictionaryFactsheet) SetValue(key string, value interface{}) {
 }
 
 func (dfs *DictionaryFactsheet) String() string {
+	if dfs == nil || dfs.dic == nil {
+		return "This factsheet is not initialized properly"
+	}
 	jDic := dfs.dic
 	if jDic == nil {
 		return "uninitialized factsheet"

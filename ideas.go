@@ -24,8 +24,10 @@ type MutuallyExclusiveConceptSet struct {
 	ConceptSet
 }
 
-// Idea represents an instant of one or more Concepts being releazed
-// like for the concept or RBC count, and Idea is this patient has an RBC count of 4.8 /µl at this timestamp
+// Idea represents an instant of one or more Concepts being realized
+// for example when we are talking about someones RBC count,
+// basically we are associating the concept of RBC count with the measurment of their rbcs at a particular time
+// like the Idea is this patient has an RBC count of 4.8M /µl at this timestamp
 type Idea struct {
 	id                             int64
 	englishHumanReadableExpression string

@@ -1,9 +1,13 @@
 package ideas
 
+func NewConcept(id string, expression string, description string) Concept {
+	return Concept{id, expression, description}
+}
+
 // Concept represents a bit of knowledge that can be queried form the user or from the machines
 // an example concept is RBC count, an workflow can ask for RBC count from an algorith or from the user
 type Concept struct {
-	id                             int64
+	id                             string
 	englishHumanReadableExpression string
 	englishDescription             string
 }
@@ -24,12 +28,16 @@ type MutuallyExclusiveConceptSet struct {
 	ConceptSet
 }
 
+func NewIdea(description string, facts map[*Concept]Measurement) Idea {
+	return Idea{newStrID(), description, facts}
+}
+
 // Idea represents an instant of one or more Concepts being realized
 // for example when we are talking about someones RBC count,
 // basically we are associating the concept of RBC count with the measurement of their rbcs at a particular time
 // like the Idea is this patient has an RBC count of 4.8M /µl at this timestamp
 type Idea struct {
-	id                             int64
+	id                             string
 	englishHumanReadableExpression string
 	facts                          map[*Concept]Measurement
 }

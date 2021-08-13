@@ -6,7 +6,7 @@ import (
 )
 
 func Test_concept(t *testing.T) {
-	nid := newID()
+	nid := newStrID()
 	c := Concept{
 		id:                             nid,
 		englishHumanReadableExpression: "RBC Count",
@@ -19,17 +19,17 @@ func Test_concept(t *testing.T) {
 
 func Test_idea(t *testing.T) {
 	crbcc := Concept{
-		id:                             newID(),
+		id:                             newStrID(),
 		englishHumanReadableExpression: "RBC Count",
 		englishDescription:             "Average number of RBCs per µl",
 	}
 	p := Concept{
-		id:                             newID(),
+		id:                             newStrID(),
 		englishHumanReadableExpression: "Related to Patient with ID",
 		englishDescription:             "to express association of other concepts in the same idea to a particular patient with id",
 	}
 
-	nid := newID()
+	nid := newStrID()
 	i := Idea{
 		id:                             nid,
 		englishHumanReadableExpression: "Patient with id 123 had RBC count of 5.3 µl at time t",

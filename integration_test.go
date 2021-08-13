@@ -8,9 +8,9 @@ import (
 )
 
 func Test_integration_needMoreInfo(t *testing.T) {
-	itIsRaining := Idea{id: newID(), englishHumanReadableExpression: "It is raining", facts: map[*Concept]Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: true}}}
-	itIsNotRaining := Idea{id: newID(), englishHumanReadableExpression: "It is not raining", facts: map[*Concept]Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: false}}}
-	needMoreInfo := Idea{id: newID(), englishHumanReadableExpression: "Need More Info", facts: map[*Concept]Measurement{CONCEPT_DATA_NEEDED: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: true}}}
+	itIsRaining := Idea{id: newStrID(), englishHumanReadableExpression: "It is raining", facts: map[*Concept]Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: true}}}
+	itIsNotRaining := Idea{id: newStrID(), englishHumanReadableExpression: "It is not raining", facts: map[*Concept]Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: false}}}
+	needMoreInfo := Idea{id: newStrID(), englishHumanReadableExpression: "Need More Info", facts: map[*Concept]Measurement{CONCEPT_DATA_NEEDED: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: true}}}
 	factsheet := NewDictionaryFactsheet("110")
 	isItRaining := NewFactConditionalStep("is it raining", factsheet, func(f Factsheet) ([]Step, error) {
 		if f.CurrentValue("raining") == "YES" {
@@ -49,8 +49,8 @@ func Test_integration_needMoreInfo(t *testing.T) {
 }
 
 func Test_integration_giveMeIdeas(t *testing.T) {
-	itIsRaining := Idea{id: newID(), englishHumanReadableExpression: "It is raining", facts: map[*Concept]Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: true}}}
-	itIsNotRaining := Idea{id: newID(), englishHumanReadableExpression: "It is not raining", facts: map[*Concept]Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: false}}}
+	itIsRaining := Idea{id: newStrID(), englishHumanReadableExpression: "It is raining", facts: map[*Concept]Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: true}}}
+	itIsNotRaining := Idea{id: newStrID(), englishHumanReadableExpression: "It is not raining", facts: map[*Concept]Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: false}}}
 	factsheet := NewDictionaryFactsheet("110")
 	isItRaining := NewFactConditionalStep("is it raining", factsheet, func(f Factsheet) ([]Step, error) {
 		// NOTE: this is not a good way to do this, but for the purposes of this test it is fine
@@ -223,7 +223,7 @@ func Test_integration_001(t *testing.T) {
 		id: newID(),
 		ideas: []*Idea{
 			{
-				id:                             newID(),
+				id:                             newStrID(),
 				englishHumanReadableExpression: "Battery is at 100miles estimates range",
 				facts: map[*Concept]Measurement{
 					batteryRangeEstimate: {
@@ -235,7 +235,7 @@ func Test_integration_001(t *testing.T) {
 				},
 			},
 			{
-				id:                             newID(),
+				id:                             newStrID(),
 				englishHumanReadableExpression: "Distance to destination is 200miles",
 				facts: map[*Concept]Measurement{
 					distanceToDestination: {

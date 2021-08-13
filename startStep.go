@@ -64,7 +64,7 @@ func (s *StartStep) Status() StepStatus {
 	return s.status
 }
 
-func (s *StartStep) StepForward() ([]Step, error) {
+func (s *StartStep) StepForward() ([]Step, []Idea, error) {
 	if s.status == Running {
 		s.status = Stopped
 		for _, step := range s.next {
@@ -72,10 +72,10 @@ func (s *StartStep) StepForward() ([]Step, error) {
 				step.Reset()
 			}
 		}
-		return s.next, nil
+		return s.next, []Idea{}, nil
 	}
 
-	return []Step{}, ErrAlreadyStopped(s.title)
+	return []Step{}, []Idea{}, ErrAlreadyStopped(s.title)
 }
 
 func (s *StartStep) ForwardConnections() []Step {

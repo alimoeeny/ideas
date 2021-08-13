@@ -35,7 +35,7 @@ type Step interface {
 	Title() string
 	Status() StepStatus
 	Reset() error
-	StepForward() ([]Step, error)
+	StepForward() ([]Step, []Idea, error)
 	ForwardConnections() []Step
 	String() string
 }

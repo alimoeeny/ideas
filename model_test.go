@@ -12,7 +12,7 @@ func Test_basics(t *testing.T) {
 		t.FailNow()
 	}
 
-	m := Measurment{nid, time.Now().UnixNano(), "42", &u}
+	m := Measurement{nid, time.Now().UnixNano(), "42", &u}
 	if m.ID != nid {
 		t.FailNow()
 	}

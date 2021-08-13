@@ -5,21 +5,21 @@ import (
 	"sync"
 )
 
-func NewFailStep(title string, messages []string) Step {
+func NewFailStep(title string, ideas []Idea) Step {
 	return &FailStep{
-		id:       newID(),
-		title:    title,
-		status:   Stopped,
-		messages: messages,
+		id:     newID(),
+		title:  title,
+		status: Stopped,
+		ideas:  ideas,
 	}
 }
 
 type FailStep struct {
 	sync.Mutex
-	id       int64
-	title    string
-	status   StepStatus
-	messages []string
+	id     int64
+	title  string
+	status StepStatus
+	ideas  []Idea
 }
 
 func (s *FailStep) String() string {
@@ -45,14 +45,10 @@ func (s *FailStep) Status() StepStatus {
 	return s.status
 }
 
-func (s *FailStep) StepForward() ([]Step, error) {
-	return []Step{}, ErrWorkflowFailed
+func (s *FailStep) StepForward() ([]Step, []Idea, error) {
+	return []Step{}, s.ideas, ErrWorkflowFailed
 }
 
 func (s *FailStep) ForwardConnections() []Step {
 	return []Step{}
-}
-
-func (s *FailStep) Messages() []string {
-	return s.messages
 }

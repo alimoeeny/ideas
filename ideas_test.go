@@ -33,7 +33,7 @@ func Test_idea(t *testing.T) {
 	i := Idea{
 		id:                             nid,
 		englishHumanReadableExpression: "Patient with id 123 had RBC count of 5.3 µl at time t",
-		facts: map[*Concept]Measurment{
+		facts: map[*Concept]Measurement{
 			&p: {
 				ID:        newStrID(),
 				Timestamp: 0,

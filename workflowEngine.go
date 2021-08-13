@@ -14,6 +14,7 @@ func NewWorkFlow(title string, startStep *StartStep) *WorkFlow {
 		status:    Stopped,
 		startStep: startStep,
 		next:      []Step{startStep},
+		ideas:     []Idea{},
 	}
 
 	return wf
@@ -26,6 +27,7 @@ type WorkFlow struct {
 	status    StepStatus
 	startStep *StartStep
 	next      []Step
+	ideas     []Idea
 }
 
 func (wf *WorkFlow) MarshalJSON() ([]byte, error) {
@@ -70,27 +72,30 @@ func (s *WorkFlow) Status() StepStatus {
 	return s.status
 }
 
-func (s *WorkFlow) StepForward() ([]Step, error) {
+func (s *WorkFlow) StepForward() ([]Step, []Idea, error) {
 	nextSteps := []Step{}
+	nextIdeas := []Idea{}
 	if s.status == Running {
 		for _, step := range s.next {
-			next, err := step.StepForward()
+			next, outcomingIdeas, err := step.StepForward()
 			if err != nil {
-				return nextSteps, err
+				return nextSteps, nextIdeas, err
 			}
 			for _, s := range next {
 				s.Reset()
 			}
 			nextSteps = append(nextSteps, next...)
+			nextIdeas = append(nextIdeas, outcomingIdeas...)
 		}
 		if len(nextSteps) == 0 {
 			s.status = Stopped
 		}
 		s.next = nextSteps
-		return s.next, nil
+		s.ideas = nextIdeas
+		return s.next, nextIdeas, nil
 	}
 
-	return []Step{}, ErrAlreadyStopped(s.title)
+	return []Step{}, s.ideas, ErrAlreadyStopped(s.title)
 }
 
 func (s *WorkFlow) ForwardConnections() []Step {
@@ -110,19 +115,15 @@ func (wf *WorkFlow) validate() error {
 	return nil
 }
 
-// func (wf *WorkFlow) TakeStep() error {
-// 	// TODO
-// 	return nil
-// }
-
 func (wf *WorkFlow) Run() error {
 	for wf.status != Stopped {
-		next, err := wf.StepForward()
+		next, nextIdeas, err := wf.StepForward()
 		if err != nil || len(next) == 0 {
 			wf.status = Stopped
 			return err
 		}
 		wf.next = next
+		wf.ideas = nextIdeas
 	}
 	return nil
 }

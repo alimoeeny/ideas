@@ -12,4 +12,4 @@
 - **FactConditionalStep** checks a factsheet for a condition and sends to the next steps depending
 - **FailStep** if a workflow gets to a FailStep it fails
 - **WaitForItStep** it calls a func every step and will not proceed until fun returns either a true or an error or it crossed a timeout.
-- **IdeaStep**
+- **MoreInfoNeededStep**

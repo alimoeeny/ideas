@@ -82,17 +82,17 @@ func (s *WaitForItStep) Status() StepStatus {
 	return s.status
 }
 
-func (s *WaitForItStep) StepForward() ([]Step, error) {
+func (s *WaitForItStep) StepForward() ([]Step, []Idea, error) {
 	if s.status == Running {
 		if s.goNoGo == nil {
-			return nil, fmt.Errorf("no go/no go function provided")
+			return nil, nil, fmt.Errorf("no go/no go function provided")
 		}
 		if s.timeout > 0 && time.Since(s.started) > s.timeout {
-			return s.timeoutNext, fmt.Errorf("timeout")
+			return s.timeoutNext, nil, fmt.Errorf("timeout")
 		}
 		shallWe, err := s.goNoGo()
 		if err != nil {
-			return nil, err
+			return nil, nil, err
 		}
 		if shallWe {
 			s.status = Stopped
@@ -101,13 +101,13 @@ func (s *WaitForItStep) StepForward() ([]Step, error) {
 					step.Reset()
 				}
 			}
-			return s.next, nil
+			return s.next, nil, nil
 		} else {
-			return []Step{}, nil
+			return []Step{}, nil, nil
 		}
 	}
 
-	return []Step{}, ErrAlreadyStopped(s.title)
+	return []Step{}, nil, ErrAlreadyStopped(s.title)
 }
 
 // func (s *WaitForItStep) StepForward() ([]Step, error) {

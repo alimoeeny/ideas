@@ -11,6 +11,7 @@ type PipeStep struct {
 	title  string
 	status StepStatus
 	next   []Step
+	ideas  []Idea
 }
 
 func (s *PipeStep) String() string {
@@ -36,7 +37,7 @@ func (s *PipeStep) Status() StepStatus {
 	return s.status
 }
 
-func (s *PipeStep) StepForward() ([]Step, error) {
+func (s *PipeStep) StepForward() ([]Step, []Idea, error) {
 	if s.status == Running {
 		s.status = Stopped
 		for _, step := range s.next {
@@ -44,10 +45,10 @@ func (s *PipeStep) StepForward() ([]Step, error) {
 				step.Reset()
 			}
 		}
-		return s.next, nil
+		return s.next, s.ideas, nil
 	}
 
-	return []Step{}, ErrAlreadyStopped(s.title)
+	return []Step{}, s.ideas, ErrAlreadyStopped(s.title)
 }
 
 func (s *PipeStep) ForwardConnections() []Step {

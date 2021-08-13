@@ -26,12 +26,12 @@ type MutuallyExclusiveConceptSet struct {
 
 // Idea represents an instant of one or more Concepts being realized
 // for example when we are talking about someones RBC count,
-// basically we are associating the concept of RBC count with the measurment of their rbcs at a particular time
+// basically we are associating the concept of RBC count with the measurement of their rbcs at a particular time
 // like the Idea is this patient has an RBC count of 4.8M /µl at this timestamp
 type Idea struct {
 	id                             int64
 	englishHumanReadableExpression string
-	facts                          map[*Concept]Measurment
+	facts                          map[*Concept]Measurement
 }
 
 func (idea Idea) String() string {

@@ -18,7 +18,7 @@ func (dfs *DictionaryFactsheet) Load(ps []datastore.Property) error {
 		case "ID":
 			//fmt.Printf("-> %#v\n", p)
 			//fmt.Printf("-> %#v\n", p.Value)
-			//fmt.Printf("-> %t\n", p.Value)
+			//fmt.Printf("-> %T\n", p.Value)
 			dfs.id = p.Value.(string)
 		case "version":
 			dfs.version = p.Value.(int64)
@@ -28,7 +28,7 @@ func (dfs *DictionaryFactsheet) Load(ps []datastore.Property) error {
 			}
 			// fmt.Printf("-> %#v\n", p)
 			// fmt.Printf("-> %#v\n", p.Value)
-			// fmt.Printf("-> %t\n", p.Value)
+			// fmt.Printf("-> %T\n", p.Value)
 			dicJBytes := p.Value.([]byte)
 			err := json.Unmarshal(dicJBytes, &dfs.dic)
 			if err != nil {
@@ -59,10 +59,10 @@ func (dfs *DictionaryFactsheet) Save() ([]datastore.Property, error) {
 	return props, nil
 }
 
-// Measurment
-func (m *Measurment) Load(ps []datastore.Property) error {
+// Measurement
+func (m *Measurement) Load(ps []datastore.Property) error {
 	if m == nil {
-		m = &Measurment{}
+		m = &Measurement{}
 	}
 	for _, p := range ps {
 		switch p.Name {
@@ -72,16 +72,16 @@ func (m *Measurment) Load(ps []datastore.Property) error {
 			m.Timestamp = p.Value.(int64)
 		case "DIC":
 			dicJBytes := p.Value.([]byte)
-			var measurmentAsDic Measurment
-			err := json.Unmarshal([]byte(dicJBytes), &measurmentAsDic)
+			var measurementAsDic Measurement
+			err := json.Unmarshal([]byte(dicJBytes), &measurementAsDic)
 			if err != nil {
 				return err
 			}
-			if m.ID != measurmentAsDic.ID {
-				return fmt.Errorf("something has gone horribly wrong here, measurment ID mismatch. Expected %s. Got %s", m.ID, measurmentAsDic.ID)
+			if m.ID != measurementAsDic.ID {
+				return fmt.Errorf("something has gone horribly wrong here, measurement ID mismatch. Expected %s. Got %s", m.ID, measurementAsDic.ID)
 			}
-			m.Value = measurmentAsDic.Value
-			m.Unit = measurmentAsDic.Unit
+			m.Value = measurementAsDic.Value
+			m.Unit = measurementAsDic.Unit
 		default:
 			msg := fmt.Sprintf("Property %s is not supported. Value: %v", p.Name, p.Value)
 			fmt.Println(msg)
@@ -90,10 +90,10 @@ func (m *Measurment) Load(ps []datastore.Property) error {
 	return nil
 }
 
-func (m *Measurment) Save() ([]datastore.Property, error) {
+func (m *Measurement) Save() ([]datastore.Property, error) {
 	props := []datastore.Property{}
 	if m == nil {
-		return props, fmt.Errorf("Measurment is nil")
+		return props, fmt.Errorf("Measurement is nil")
 	}
 	props = append(props, datastore.Property{Name: "ID", Value: m.ID})
 	props = append(props, datastore.Property{Name: "timestamp", Value: m.Timestamp})

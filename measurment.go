@@ -3,7 +3,7 @@ package ideas
 import "fmt"
 
 // TODO
-type Conversion func(measurement *Measurment, targetUnit Unit) (interface{}, Unit)
+type Conversion func(measurement *Measurement, targetUnit Unit) (interface{}, Unit)
 
 type Unit struct {
 	ID     string `json:"id,omitempty"`
@@ -11,13 +11,13 @@ type Unit struct {
 	Short1 string `json:"short_1,omitempty"`
 }
 
-type Measurment struct {
+type Measurement struct {
 	ID        string      `json:"id,omitempty"`
 	Timestamp int64       `json:"timestamp,omitempty"`
 	Value     interface{} `json:"value,omitempty"`
 	Unit      *Unit       `json:"unit,omitempty"`
 }
 
-func (m Measurment) String() string {
+func (m Measurement) String() string {
 	return fmt.Sprintf("%v [%v]", m.Value, m.Unit.Name)
 }

@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-func NewFactConditionalStep(title string, factsheet Factsheet, goNoGo func(Factsheet) ([]Step, error)) *FactConditionalStep {
+func NewFactConditionalStep(title string, factsheet Factsheet, goNoGo func(Factsheet) ([]Step, error)) Step {
 	return &FactConditionalStep{
 		id:     newID(),
 		title:  title,
@@ -53,11 +53,11 @@ func (s *FactConditionalStep) Status() StepStatus {
 	return s.status
 }
 
-func (s *FactConditionalStep) StepForward() ([]Step, error) {
+func (s *FactConditionalStep) StepForward() ([]Step, []Idea, error) {
 	if s.status == Running {
 		next, err := s.goNoGo(s.facts)
 		if err != nil {
-			return nil, err
+			return nil, nil, err
 		}
 		if next != nil {
 			s.status = Stopped
@@ -66,11 +66,11 @@ func (s *FactConditionalStep) StepForward() ([]Step, error) {
 					step.Reset()
 				}
 			}
-			return next, nil
+			return next, nil, nil
 		}
 	}
 
-	return []Step{}, ErrAlreadyStopped(s.title)
+	return []Step{}, nil, ErrAlreadyStopped(s.title)
 }
 
 func (s *FactConditionalStep) ForwardConnections() []Step {

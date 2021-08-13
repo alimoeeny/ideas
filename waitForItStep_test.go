@@ -17,11 +17,15 @@ func Test_WaitForItStep_StuckForEver(t *testing.T) {
 			t.Errorf("Error: %s", err)
 			t.FailNow()
 		}
-		next, err := wfis.StepForward()
+		next, outcomingIdeas, err := wfis.StepForward()
 		if err != nil {
 			t.Errorf("Error: %s", err)
 		}
 		if len(next) > 0 {
+			t.FailNow()
+		}
+		if len(outcomingIdeas) > 0 {
+			t.Error("DIdn't expect any new ideas coming out of wait for it")
 			t.FailNow()
 		}
 	}
@@ -42,7 +46,7 @@ func Test_WaitForItStep_GoFromGetGo(t *testing.T) {
 			t.Errorf("Error: %s", err)
 			t.FailNow()
 		}
-		next, err := wfis.StepForward()
+		next, _, err := wfis.StepForward()
 		if err != nil {
 			t.Errorf("Error: %s", err)
 		}
@@ -70,9 +74,9 @@ func Test_WaitForItStep_ActuallyWait(t *testing.T) {
 			t.Errorf("Error: %s", err)
 			t.FailNow()
 		}
-		next, err := wfis.StepForward()
+		next, _, err := wfis.StepForward()
 		for len(next) < 1 && err == nil {
-			next, err = wfis.StepForward()
+			next, _, err = wfis.StepForward()
 		}
 		if err != nil {
 			t.Errorf("Error: %s", err)
@@ -108,9 +112,9 @@ func Test_WaitForItStep_Timeout(t *testing.T) {
 			t.Errorf("Error: %s", err)
 			t.FailNow()
 		}
-		next, err := wfis.StepForward()
+		next, _, err := wfis.StepForward()
 		for len(next) < 1 && err == nil {
-			next, err = wfis.StepForward()
+			next, _, err = wfis.StepForward()
 		}
 		if !strings.Contains(err.Error(), "timeout") {
 			t.Errorf("Expected timeout error: %s", err)
@@ -149,9 +153,9 @@ func Test_WaitForItStep_WaitAsync(t *testing.T) {
 			t.Errorf("Error: %s", err)
 			t.FailNow()
 		}
-		next, err := wfis.StepForward()
+		next, _, err := wfis.StepForward()
 		for len(next) < 1 && err == nil {
-			next, err = wfis.StepForward()
+			next, _, err = wfis.StepForward()
 		}
 		if err != nil {
 			t.Errorf("Error: %s", err)

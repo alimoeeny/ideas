@@ -19,5 +19,14 @@ type Measurement struct {
 }
 
 func (m Measurement) String() string {
-	return fmt.Sprintf("%v [%v]", m.Value, m.Unit.Name)
+	s := ""
+	if m.Value != nil {
+		s = fmt.Sprintf("%v", m.Value)
+	} else {
+		s = "N/A"
+	}
+	if m.Unit != nil {
+		s = fmt.Sprintf("%v [%v]", s, m.Unit.Short1)
+	}
+	return s
 }

@@ -115,15 +115,21 @@ func (wf *WorkFlow) validate() error {
 	return nil
 }
 
-func (wf *WorkFlow) Run() error {
+// Run taks StepForward after StepForward until the workflow is stopped
+// and returns the last ste of steps (usually a StopStep or a FailStep),
+// and ALL the accumulated ideas
+// and an error which hopefuly is nil
+func (wf *WorkFlow) Run() ([]Step, []Idea, error) {
+	resultingIdeas := []Idea{}
 	for wf.status != Stopped {
 		next, nextIdeas, err := wf.StepForward()
+		resultingIdeas = append(resultingIdeas, nextIdeas...)
 		if err != nil || len(next) == 0 {
 			wf.status = Stopped
-			return err
+			return next, resultingIdeas, err
 		}
 		wf.next = next
 		wf.ideas = nextIdeas
 	}
-	return nil
+	return []Step{}, []Idea{}, nil
 }

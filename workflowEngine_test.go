@@ -81,7 +81,7 @@ func Test_Workflow_and_Factsheet(t *testing.T) {
 	// 	fmt.Printf("next is: %v and error is %v", next, err)
 	// 	t.FailNow()
 	// }
-	err := wf.Run()
+	_, _, err := wf.Run()
 	//fmt.Printf("next is: %v and error is %v", next, err)
 	if err != ErrWorkflowFailed {
 		t.Error("a failed workflow should fail")

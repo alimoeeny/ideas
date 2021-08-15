@@ -45,7 +45,7 @@ type Idea struct {
 func (idea Idea) String() string {
 	s := ""
 	for concept, measurement := range idea.facts {
-		s += concept.String() + " -> " + measurement.String() + "\n"
+		s += concept.String() + " -> " + measurement.String()
 	}
 	return s
 }
@@ -59,7 +59,7 @@ type IdeaSet struct {
 func (ids IdeaSet) String() string {
 	s := ""
 	for _, id := range ids.ideas {
-		s += id.String() + "\n"
+		s += id.String() + ", "
 	}
 	return s
 }

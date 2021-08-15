@@ -3,6 +3,7 @@ package ideas
 import (
 	"encoding/json"
 	"fmt"
+	"time"
 )
 
 type Factsheet interface {
@@ -81,4 +82,15 @@ func (dfs *DictionaryFactsheet) VersionBump() int64 {
 	}
 	dfs.version++
 	return dfs.version
+}
+
+func (dfs *DictionaryFactsheet) MarshalJSON() ([]byte, error) {
+	if dfs == nil || dfs.dic == nil {
+		return nil, fmt.Errorf("this factsheet is not initialized properly")
+	}
+	tdic := dfs.dic
+	tdic["_VERSION"] = dfs.version
+	tdic["_ID"] = dfs.id
+	tdic["_TIMESTAMP"] = time.Now().UnixNano()
+	return json.Marshal(tdic)
 }

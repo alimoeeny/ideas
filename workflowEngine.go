@@ -120,6 +120,10 @@ func (wf *WorkFlow) validate() error {
 // and ALL the accumulated ideas
 // and an error which hopefuly is nil
 func (wf *WorkFlow) Run() ([]Step, []Idea, error) {
+	err := wf.Reset()
+	if err != nil {
+		return nil, nil, err
+	}
 	resultingIdeas := []Idea{}
 	for wf.status != Stopped {
 		next, nextIdeas, err := wf.StepForward()
@@ -132,4 +136,19 @@ func (wf *WorkFlow) Run() ([]Step, []Idea, error) {
 		wf.ideas = nextIdeas
 	}
 	return []Step{}, []Idea{}, nil
+}
+
+// TODO: Looks like our best bet is to save the code as a text file
+//       and compile it at runtime and load it using go's plugin
+//       OR
+//       alternatively, we can use a JSON file to save the workflow
+//       BUT not to support states that have func in them, like
+//       create a specific limited factsheetStep that does simple logic
+//       and drop support for serilization of generic conditional state
+func (wf *WorkFlow) Serialize() ([]byte, error) {
+	return []byte(""), fmt.Errorf("not implemented yet")
+}
+
+func (wf *WorkFlow) Deserialize(data []byte) error {
+	return fmt.Errorf("not implemented yet")
 }

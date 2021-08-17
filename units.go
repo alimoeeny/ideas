@@ -1,5 +1,6 @@
 package ideas
 
+var UNIT_UNITLESS = &Unit{ID: "1", Name: "Unitless", Short1: ""}
 var UNIT_IDENTIFIER = &Unit{ID: "110", Name: "identifier", Short1: ""}
 var UNIT_COUNT = &Unit{ID: "123", Name: "count", Short1: ""}
 var UNIT_COUNT_PER_UL = &Unit{ID: "124", Name: "count per microlitter", Short1: "/µl"}

@@ -71,14 +71,14 @@ func (m *Measurement) Load(ps []datastore.Property) error {
 		case "timestamp":
 			m.Timestamp = p.Value.(int64)
 		case "DIC":
+			fmt.Printf("-> %#v\n", p)
+			fmt.Printf("-> %#v\n", p.Value)
+			fmt.Printf("-> %T\n", p.Value)
 			dicJBytes := p.Value.([]byte)
 			var measurementAsDic Measurement
 			err := json.Unmarshal([]byte(dicJBytes), &measurementAsDic)
 			if err != nil {
 				return err
-			}
-			if m.ID != measurementAsDic.ID {
-				return fmt.Errorf("something has gone horribly wrong here, measurement ID mismatch. Expected %s. Got %s", m.ID, measurementAsDic.ID)
 			}
 			m.Value = measurementAsDic.Value
 			m.Unit = measurementAsDic.Unit

@@ -46,6 +46,10 @@ func (idea Idea) FactCheck(concept Concept) *Measurement {
 	return idea.facts[concept]
 }
 
+func (idea Idea) Facts() map[Concept]*Measurement {
+	return idea.facts
+}
+
 func (idea Idea) String() string {
 	s := ""
 	for concept, measurement := range idea.facts {

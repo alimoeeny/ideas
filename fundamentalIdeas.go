@@ -1,5 +1,7 @@
 package ideas
 
+import "time"
+
 var CONCEPT_NOT_DETECTED = Concept{
 	id:                             "7788",
 	englishHumanReadableExpression: "not detected",
@@ -34,4 +36,8 @@ var CONCEPT_NOT_APPLICABLE_HERE = Concept{
 	id:                             "7793",
 	englishHumanReadableExpression: "not applicable here",
 	englishDescription:             "indicates that the observation or measurement is not applicable here",
+}
+
+func MeasurementIsValueNow(value interface{}) Measurement {
+	return Measurement{ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: value}
 }

@@ -19,7 +19,7 @@ func (c Concept) String() string {
 // ConceptSet represents a group of related Concepts
 type ConceptSet struct {
 	id       int64
-	concepts []*Concept
+	concepts []Concept
 }
 
 // MutuallyExclusiveConceptSet represents a group of Concepts where only one of them can be true at a time
@@ -28,7 +28,7 @@ type MutuallyExclusiveConceptSet struct {
 	ConceptSet
 }
 
-func NewIdea(description string, facts map[*Concept]Measurement) Idea {
+func NewIdea(description string, facts map[Concept]*Measurement) Idea {
 	return Idea{newStrID(), description, facts}
 }
 
@@ -39,7 +39,11 @@ func NewIdea(description string, facts map[*Concept]Measurement) Idea {
 type Idea struct {
 	id                             string
 	englishHumanReadableExpression string
-	facts                          map[*Concept]Measurement
+	facts                          map[Concept]*Measurement
+}
+
+func (idea Idea) FactCheck(concept Concept) *Measurement {
+	return idea.facts[concept]
 }
 
 func (idea Idea) String() string {

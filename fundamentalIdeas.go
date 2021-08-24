@@ -38,6 +38,6 @@ var CONCEPT_NOT_APPLICABLE_HERE = Concept{
 	englishDescription:             "indicates that the observation or measurement is not applicable here",
 }
 
-func MeasurementIsValueNow(value interface{}) Measurement {
-	return Measurement{ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: value}
+func MeasurementIsValueNow(value interface{}) *Measurement {
+	return &Measurement{ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: value}
 }

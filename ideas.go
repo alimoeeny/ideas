@@ -18,7 +18,7 @@ func (c Concept) String() string {
 
 // ConceptSet represents a group of related Concepts
 type ConceptSet struct {
-	id       int64
+	ID       int64
 	concepts []Concept
 }
 

@@ -30,8 +30,11 @@ type MutuallyExclusiveConceptSet struct {
 	ConceptSet
 }
 
-func NewIdea(description string, facts map[Concept]*Measurement) Idea {
-	return Idea{newStrID(), description, facts}
+func NewIdea(id string, description string, facts map[Concept]*Measurement) *Idea {
+	if id == "" {
+		id = newStrID()
+	}
+	return &Idea{id, description, facts}
 }
 
 // Idea represents an instant of one or more Concepts being realized
@@ -76,4 +79,8 @@ func (ids IdeaSet) String() string {
 		s += id.String() + ", "
 	}
 	return s
+}
+
+func NewIdeaSet(id string, ideas []*Idea) IdeaSet {
+	return IdeaSet{id, ideas}
 }

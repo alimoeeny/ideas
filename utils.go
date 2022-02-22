@@ -7,8 +7,8 @@ import (
 
 // Identifier unlinke lowlevel id, can be exposed externally
 type Identifier struct {
-	id     int64
-	source string
+	ID     string
+	Source string
 }
 
 func newID() int64 {
@@ -20,5 +20,5 @@ func newStrID() string {
 }
 
 func newIdentifier() Identifier {
-	return Identifier{newID(), "https://identifier.suprafrontal.com/"}
+	return Identifier{newStrID(), "https://identifier.suprafrontal.com/"}
 }

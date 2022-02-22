@@ -114,12 +114,12 @@ type CBC struct {
 
 var alisCBC = CBC{
 	PatientIdentifier: newIdentifier(),
-	IdeaSet: IdeaSet{
-		id: "1645524588060025000",
-		ideas: []*Idea{{
-			id:                             "sqwvmbncwu",
-			englishHumanReadableExpression: "RBC Count",
-			facts: map[Concept]*Measurement{
+	IdeaSet: NewIdeaSet(
+		"1645524588060025000",
+		[]*Idea{NewIdea(
+			"sqwvmbncwu",
+			"RBC Count",
+			map[Concept]*Measurement{
 				CONCEPT_RBC_COUNT: {
 					ID:        "fvvzwarsyx",
 					Timestamp: 1645525355974859000,
@@ -133,6 +133,5 @@ var alisCBC = CBC{
 					Unit:      UNIT_COUNT_PER_UL,
 				},
 			},
-		}},
-	},
+		)}),
 }

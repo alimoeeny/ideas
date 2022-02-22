@@ -12,6 +12,14 @@ type Concept struct {
 	EnglishDescription             string `json:"english_description,omitempty"`
 }
 
+func (c Concept) MarshalText() (text []byte, err error) {
+	key := c.ID
+	if key == "" {
+		key += c.EnglishHumanReadableExpression + c.EnglishDescription
+	}
+	return []byte(key), nil
+}
+
 func (c Concept) String() string {
 	return c.EnglishHumanReadableExpression
 }

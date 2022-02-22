@@ -1,6 +1,7 @@
 package ideas
 
 import (
+	"encoding/json"
 	"testing"
 	"time"
 )
@@ -57,5 +58,18 @@ func Test_FactCheck(t *testing.T) {
 	i := NewIdea("", "something", map[Concept]*Measurement{})
 	if i.FactCheck(CONCEPT_APPLICABLE_HERE) != nil {
 		t.Errorf("Expected nil, got %v", i.FactCheck(CONCEPT_APPLICABLE_HERE))
+	}
+}
+
+func Test_Idea_JSON(t *testing.T) {
+	i := NewIdea("xyz", "abc", map[Concept]*Measurement{CONCEPT_DETECTED: &Measurement{Value: true}})
+	j, err := json.Marshal(i)
+	if err != nil {
+		t.Errorf("Error marshaling idea into json: %v", err)
+		t.FailNow()
+	}
+	if len(j) < 10 {
+		t.Errorf("this is not a correct json serialization of the Idea %s", string(j))
+		t.FailNow()
 	}
 }

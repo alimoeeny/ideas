@@ -5,14 +5,15 @@ var UNIT_IDENTIFIER = &Unit{ID: "110", Name: "identifier", Short1: ""}
 
 var UNIT_COUNT = &Unit{ID: "12300", Name: "count", Short1: ""}
 
-var UNIT_COUNTS_PER_LITER = &Unit{ID: "12400", Name: "counts per liter", Short1: "/l"}
-var UNIT_COUNTS_MILLION_PER_LITER = &Unit{ID: "12500", Name: "counts million per liter", Short1: "/l"}   // 10^6 / l
-var UNIT_COUNTS_BILLION_PER_LITER = &Unit{ID: "12501", Name: "counts billion per liter", Short1: "/l"}   // 10^9 / l
-var UNIT_COUNTS_TRILLION_PER_LITER = &Unit{ID: "12502", Name: "counts trillion per liter", Short1: "/l"} // 10^12 / l
+var UNIT_COUNT_PER_LITER = &Unit{ID: "12400", Name: "counts per liter", Short1: "/l"}
+var UNIT_COUNT_MILLION_PER_LITER = &Unit{ID: "12500", Name: "counts million per liter", Short1: "/l"}   // 10^6 / l
+var UNIT_COUNT_BILLION_PER_LITER = &Unit{ID: "12501", Name: "counts billion per liter", Short1: "/l"}   // 10^9 / l
+var UNIT_COUNT_TRILLION_PER_LITER = &Unit{ID: "12502", Name: "counts trillion per liter", Short1: "/l"} // 10^12 / l
 
 var UNIT_COUNTS_PER_MILLILITER = &Unit{ID: "12600", Name: "counts per milliliter", Short1: "/ml"}
 
 var UNIT_COUNT_PER_UL = &Unit{ID: "125", Name: "count per microliter", Short1: "/µl"}
+var UNIT_COUNT_MILLION_PER_UL = &Unit{ID: "125", Name: "count per microliter", Short1: "/µl"}
 
 var UNIT_MILES = &Unit{ID: "1013", Name: "miles", Short1: "miles"}
 

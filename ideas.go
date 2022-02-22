@@ -62,8 +62,12 @@ func (idea Idea) String() string {
 
 // IdeaSet is a set of related Ideas
 type IdeaSet struct {
-	id    int64
+	id    string
 	ideas []*Idea
+}
+
+func (ids IdeaSet) ID() string {
+	return ids.id
 }
 
 func (ids IdeaSet) String() string {

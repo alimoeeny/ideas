@@ -115,7 +115,7 @@ type CBC struct {
 var alisCBC = CBC{
 	PatientIdentifier: newIdentifier(),
 	IdeaSet: IdeaSet{
-		id: 1645524588060025000,
+		id: "1645524588060025000",
 		ideas: []*Idea{{
 			id:                             "sqwvmbncwu",
 			englishHumanReadableExpression: "RBC Count",

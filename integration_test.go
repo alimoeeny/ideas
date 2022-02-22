@@ -220,7 +220,7 @@ func Test_integration_wait_for_channels(t *testing.T) {
 func Test_integration_001(t *testing.T) {
 
 	notEnoughBatteryToGetToDestination := IdeaSet{
-		id: newID(),
+		id: newStrID(),
 		ideas: []*Idea{
 			{
 				id:                             newStrID(),

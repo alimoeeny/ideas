@@ -3,39 +3,39 @@ package ideas
 import "time"
 
 var CONCEPT_NOT_DETECTED = Concept{
-	id:                             "7788",
-	englishHumanReadableExpression: "not detected",
-	englishDescription:             "indicates that the observation or measurement did not find anything",
+	ID:                             "7788",
+	EnglishHumanReadableExpression: "not detected",
+	EnglishDescription:             "indicates that the observation or measurement did not find anything",
 }
 
 var CONCEPT_DETECTED = Concept{
-	id:                             "7789",
-	englishHumanReadableExpression: "detected",
-	englishDescription:             "indicates that the observation or measurement did detect what it was meant to detect",
+	ID:                             "7789",
+	EnglishHumanReadableExpression: "detected",
+	EnglishDescription:             "indicates that the observation or measurement did detect what it was meant to detect",
 }
 
 var CONCEPT_DATA_NOT_AVAILABLE = Concept{
-	id:                             "7790",
-	englishHumanReadableExpression: "data not available",
-	englishDescription:             "indicates that the observation or measurement result will not be available or accissible and we need to do without them",
+	ID:                             "7790",
+	EnglishHumanReadableExpression: "data not available",
+	EnglishDescription:             "indicates that the observation or measurement result will not be available or accissible and we need to do without them",
 }
 
 var CONCEPT_DATA_NEEDED = Concept{
-	id:                             "7791",
-	englishHumanReadableExpression: "data needed",
-	englishDescription:             "indicates that the observation or measurement result is missing or not yet ready and we may want to wait for it to become available",
+	ID:                             "7791",
+	EnglishHumanReadableExpression: "data needed",
+	EnglishDescription:             "indicates that the observation or measurement result is missing or not yet ready and we may want to wait for it to become available",
 }
 
 var CONCEPT_APPLICABLE_HERE = Concept{
-	id:                             "7792",
-	englishHumanReadableExpression: "applicable here",
-	englishDescription:             "indicates that the observation or measurement is applicable here",
+	ID:                             "7792",
+	EnglishHumanReadableExpression: "applicable here",
+	EnglishDescription:             "indicates that the observation or measurement is applicable here",
 }
 
 var CONCEPT_NOT_APPLICABLE_HERE = Concept{
-	id:                             "7793",
-	englishHumanReadableExpression: "not applicable here",
-	englishDescription:             "indicates that the observation or measurement is not applicable here",
+	ID:                             "7793",
+	EnglishHumanReadableExpression: "not applicable here",
+	EnglishDescription:             "indicates that the observation or measurement is not applicable here",
 }
 
 func MeasurementIsValueNow(value interface{}) *Measurement {

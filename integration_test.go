@@ -8,9 +8,9 @@ import (
 )
 
 func Test_integration_needMoreInfo(t *testing.T) {
-	itIsRaining := Idea{id: newStrID(), englishHumanReadableExpression: "It is raining", facts: map[Concept]*Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: true}}}
-	itIsNotRaining := Idea{id: newStrID(), englishHumanReadableExpression: "It is not raining", facts: map[Concept]*Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: false}}}
-	needMoreInfo := Idea{id: newStrID(), englishHumanReadableExpression: "Need More Info", facts: map[Concept]*Measurement{CONCEPT_DATA_NEEDED: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: true}}}
+	itIsRaining := Idea{ID: newStrID(), EnglishHumanReadableExpression: "It is raining", Facts: map[Concept]*Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: true}}}
+	itIsNotRaining := Idea{ID: newStrID(), EnglishHumanReadableExpression: "It is not raining", Facts: map[Concept]*Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: false}}}
+	needMoreInfo := Idea{ID: newStrID(), EnglishHumanReadableExpression: "Need More Info", Facts: map[Concept]*Measurement{CONCEPT_DATA_NEEDED: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: true}}}
 	factsheet := NewDictionaryFactsheet("110")
 	isItRaining := NewFactConditionalStep("is it raining", factsheet, func(f Factsheet) ([]Step, error) {
 		if f.CurrentValue("raining") == "YES" {
@@ -42,15 +42,15 @@ func Test_integration_needMoreInfo(t *testing.T) {
 		t.FailNow()
 	}
 
-	c, ok := ideas[0].facts[CONCEPT_DATA_NEEDED]
+	c, ok := ideas[0].Facts[CONCEPT_DATA_NEEDED]
 	if !(ok && c.Value == true) {
 		t.Error("Expected missing data")
 	}
 }
 
 func Test_integration_giveMeIdeas(t *testing.T) {
-	itIsRaining := Idea{id: newStrID(), englishHumanReadableExpression: "It is raining", facts: map[Concept]*Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: true}}}
-	itIsNotRaining := Idea{id: newStrID(), englishHumanReadableExpression: "It is not raining", facts: map[Concept]*Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: false}}}
+	itIsRaining := Idea{ID: newStrID(), EnglishHumanReadableExpression: "It is raining", Facts: map[Concept]*Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: true}}}
+	itIsNotRaining := Idea{ID: newStrID(), EnglishHumanReadableExpression: "It is not raining", Facts: map[Concept]*Measurement{CONCEPT_WEATHER_IS_RAINING: {ID: newStrID(), Timestamp: time.Now().UnixNano(), Value: false}}}
 	factsheet := NewDictionaryFactsheet("110")
 	isItRaining := NewFactConditionalStep("is it raining", factsheet, func(f Factsheet) ([]Step, error) {
 		// NOTE: this is not a good way to do this, but for the purposes of this test it is fine
@@ -82,7 +82,7 @@ func Test_integration_giveMeIdeas(t *testing.T) {
 		t.FailNow()
 	}
 	fmt.Printf("%#v\n", ideas)
-	c, ok := ideas[0].facts[CONCEPT_WEATHER_IS_RAINING]
+	c, ok := ideas[0].Facts[CONCEPT_WEATHER_IS_RAINING]
 	if !ok || c.Value == true {
 		t.Error("Expected NOT raining")
 	}
@@ -220,12 +220,12 @@ func Test_integration_wait_for_channels(t *testing.T) {
 func Test_integration_001(t *testing.T) {
 
 	notEnoughBatteryToGetToDestination := IdeaSet{
-		id: newStrID(),
-		ideas: []*Idea{
+		ID: newStrID(),
+		Ideas: []*Idea{
 			{
-				id:                             newStrID(),
-				englishHumanReadableExpression: "Battery is at 100miles estimates range",
-				facts: map[Concept]*Measurement{
+				ID:                             newStrID(),
+				EnglishHumanReadableExpression: "Battery is at 100miles estimates range",
+				Facts: map[Concept]*Measurement{
 					batteryRangeEstimate: {
 						ID:        newStrID(),
 						Timestamp: time.Now().UnixNano(),
@@ -235,9 +235,9 @@ func Test_integration_001(t *testing.T) {
 				},
 			},
 			{
-				id:                             newStrID(),
-				englishHumanReadableExpression: "Distance to destination is 200miles",
-				facts: map[Concept]*Measurement{
+				ID:                             newStrID(),
+				EnglishHumanReadableExpression: "Distance to destination is 200miles",
+				Facts: map[Concept]*Measurement{
 					distanceToDestination: {
 						ID:        newStrID(),
 						Timestamp: time.Now().UnixNano(),

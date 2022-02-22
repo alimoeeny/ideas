@@ -7,8 +7,8 @@ import (
 
 // Identifier unlinke lowlevel id, can be exposed externally
 type Identifier struct {
-	ID     string
-	Source string
+	ID     string `json:"id,omitempty"`
+	Source string `json:"source,omitempty"`
 }
 
 func newID() int64 {

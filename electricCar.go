@@ -1,4 +1,4 @@
 package ideas
 
-var batteryRangeEstimate = Concept{id: "53000689", englishHumanReadableExpression: "Battery Range Estimate"}
-var distanceToDestination = Concept{id: "53000690", englishHumanReadableExpression: "Distance to Destination"}
+var batteryRangeEstimate = Concept{ID: "53000689", EnglishHumanReadableExpression: "Battery Range Estimate"}
+var distanceToDestination = Concept{ID: "53000690", EnglishHumanReadableExpression: "Distance to Destination"}

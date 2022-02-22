@@ -7,21 +7,21 @@ func NewConcept(id string, expression string, description string) Concept {
 // Concept represents a bit of knowledge that can be queried form the user or from the machines
 // an example concept is RBC count, a workflow can ask for RBC count from an algorithm or from the user
 type Concept struct {
-	id                             string
-	englishHumanReadableExpression string
-	englishDescription             string
+	ID                             string `json:"id,omitempty"`
+	EnglishHumanReadableExpression string `json:"english_human_readable_expression,omitempty"`
+	EnglishDescription             string `json:"english_description,omitempty"`
 }
 
 func (c Concept) String() string {
-	return c.englishHumanReadableExpression
+	return c.EnglishHumanReadableExpression
 }
 
 // ConceptSet represents a group of related Concepts
 type ConceptSet struct {
-	ID                             string
-	englishHumanReadableExpression string
-	englishDescription             string
-	concepts                       []Concept
+	ID                             string    `json:"id,omitempty"`
+	EnglishHumanReadableExpression string    `json:"english_human_readable_expression,omitempty"`
+	EnglishDescription             string    `json:"english_description,omitempty"`
+	concepts                       []Concept `json:"concepts,omitempty"`
 }
 
 // MutuallyExclusiveConceptSet represents a group of Concepts where only one of them can be true at a time
@@ -42,22 +42,18 @@ func NewIdea(id string, description string, facts map[Concept]*Measurement) *Ide
 // basically we are associating the concept of RBC count with the measurement of their rbcs at a particular time
 // like the Idea is this patient has an RBC count of 4.8M /µl at this timestamp
 type Idea struct {
-	id                             string
-	englishHumanReadableExpression string
-	facts                          map[Concept]*Measurement
+	ID                             string                   `json:"id,omitempty"`
+	EnglishHumanReadableExpression string                   `json:"english_human_readable_expression,omitempty"`
+	Facts                          map[Concept]*Measurement `json:"facts,omitempty"`
 }
 
 func (idea Idea) FactCheck(concept Concept) *Measurement {
-	return idea.facts[concept]
-}
-
-func (idea Idea) Facts() map[Concept]*Measurement {
-	return idea.facts
+	return idea.Facts[concept]
 }
 
 func (idea Idea) String() string {
 	s := ""
-	for concept, measurement := range idea.facts {
+	for concept, measurement := range idea.Facts {
 		s += concept.String() + " -> " + measurement.String()
 	}
 	return s
@@ -65,17 +61,13 @@ func (idea Idea) String() string {
 
 // IdeaSet is a set of related Ideas
 type IdeaSet struct {
-	id    string
-	ideas []*Idea
-}
-
-func (ids IdeaSet) ID() string {
-	return ids.id
+	ID    string  `json:"id,omitempty"`
+	Ideas []*Idea `json:"ideas,omitempty"`
 }
 
 func (ids IdeaSet) String() string {
 	s := ""
-	for _, id := range ids.ideas {
+	for _, id := range ids.Ideas {
 		s += id.String() + ", "
 	}
 	return s

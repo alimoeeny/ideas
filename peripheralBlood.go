@@ -6,7 +6,7 @@ var CONCEPT_CBC = ConceptSet{
 	ID:                             "131313",
 	EnglishHumanReadableExpression: "Complete Blood Count",
 	EnglishDescription:             "Complete Blood Cound",
-	concepts: []Concept{
+	Concepts: []Concept{
 		CONCEPT_RBC_COUNT,
 		CONCEPT_WBC_COUNT,
 		CONCEPT_HEMOLOBIN_CONCENTRATION,
@@ -29,7 +29,7 @@ var CONCEPT_RBC_COUNT = Concept{ID: "131314", EnglishHumanReadableExpression: "R
 var CONCEPT_NORMAL_RBCCount = Concept{ID: "42000768", EnglishHumanReadableExpression: "Normal RBC count"}
 var CONCEPT_HIGH_RBCCount = Concept{ID: "42000769", EnglishHumanReadableExpression: "High RBC count"}
 var CONCEPT_LOW_RBCCount = Concept{ID: "42000770", EnglishHumanReadableExpression: "Low RBC count"}
-var RBCCountXSet = MutuallyExclusiveConceptSet{ConceptSet{ID: "42000771", concepts: []Concept{CONCEPT_NORMAL_RBCCount, CONCEPT_HIGH_RBCCount, CONCEPT_LOW_RBCCount}}}
+var RBCCountXSet = MutuallyExclusiveConceptSet{ConceptSet{ID: "42000771", Concepts: []Concept{CONCEPT_NORMAL_RBCCount, CONCEPT_HIGH_RBCCount, CONCEPT_LOW_RBCCount}}}
 
 var CONCEPT_rbcShapeTargetCell = Concept{ID: "42000772", EnglishHumanReadableExpression: "target cell"}
 
@@ -119,14 +119,14 @@ var alisCBC = CBC{
 		[]*Idea{NewIdea(
 			"sqwvmbncwu",
 			"RBC Count",
-			map[Concept]*Measurement{
-				CONCEPT_RBC_COUNT: {
+			map[string]*Measurement{
+				CONCEPT_RBC_COUNT.ID: {
 					ID:        "fvvzwarsyx",
 					Timestamp: 1645525355974859000,
 					Value:     5,
 					Unit:      UNIT_COUNT_PER_UL,
 				},
-				CONCEPT_WBC_COUNT: {
+				CONCEPT_WBC_COUNT.ID: {
 					ID:        "zrblcflizl",
 					Timestamp: 1645538338859452000,
 					Value:     8569,

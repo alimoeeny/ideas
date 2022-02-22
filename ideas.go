@@ -12,13 +12,13 @@ type Concept struct {
 	EnglishDescription             string `json:"english_description,omitempty"`
 }
 
-func (c Concept) MarshalText() (text []byte, err error) {
-	key := c.ID
-	if key == "" {
-		key += c.EnglishHumanReadableExpression + c.EnglishDescription
-	}
-	return []byte(key), nil
-}
+// func (c Concept) MarshalText() (text []byte, err error) {
+// 	key := c.ID
+// 	if key == "" {
+// 		key += c.EnglishHumanReadableExpression + c.EnglishDescription
+// 	}
+// 	return []byte(key), nil
+// }
 
 func (c Concept) String() string {
 	return c.EnglishHumanReadableExpression
@@ -29,7 +29,7 @@ type ConceptSet struct {
 	ID                             string    `json:"id,omitempty"`
 	EnglishHumanReadableExpression string    `json:"english_human_readable_expression,omitempty"`
 	EnglishDescription             string    `json:"english_description,omitempty"`
-	concepts                       []Concept `json:"concepts,omitempty"`
+	Concepts                       []Concept `json:"concepts,omitempty"`
 }
 
 // MutuallyExclusiveConceptSet represents a group of Concepts where only one of them can be true at a time
@@ -38,7 +38,7 @@ type MutuallyExclusiveConceptSet struct {
 	ConceptSet
 }
 
-func NewIdea(id string, description string, facts map[Concept]*Measurement) *Idea {
+func NewIdea(id string, description string, facts map[string]*Measurement) *Idea {
 	if id == "" {
 		id = newStrID()
 	}
@@ -49,23 +49,24 @@ func NewIdea(id string, description string, facts map[Concept]*Measurement) *Ide
 // for example when we are talking about someones RBC count at a specific time,
 // basically we are associating the concept of RBC count with the measurement of their rbcs at a particular time
 // like the Idea is this patient has an RBC count of 4.8M /µl at this timestamp
+// Facts are maps of concept ids to measurments, the user is responsible to keep track of the concepts ids and to make sure they are unique
 type Idea struct {
-	ID                             string                   `json:"id,omitempty"`
-	EnglishHumanReadableExpression string                   `json:"english_human_readable_expression,omitempty"`
-	Facts                          map[Concept]*Measurement `json:"facts,omitempty"`
+	ID                             string                  `json:"id,omitempty"`
+	EnglishHumanReadableExpression string                  `json:"english_human_readable_expression,omitempty"`
+	Facts                          map[string]*Measurement `json:"facts,omitempty"`
 }
 
-func (idea Idea) FactCheck(concept Concept) *Measurement {
-	return idea.Facts[concept]
+func (idea Idea) FactCheck(conceptID string) *Measurement {
+	return idea.Facts[conceptID]
 }
 
-func (idea Idea) String() string {
-	s := ""
-	for concept, measurement := range idea.Facts {
-		s += concept.String() + " -> " + measurement.String()
-	}
-	return s
-}
+// func (idea Idea) String() string {
+// 	s := ""
+// 	for concept, measurement := range idea.Facts {
+// 		s += concept.String() + " -> " + measurement.String()
+// 	}
+// 	return s
+// }
 
 // IdeaSet is a set of related Ideas
 type IdeaSet struct {
@@ -73,13 +74,13 @@ type IdeaSet struct {
 	Ideas []*Idea `json:"ideas,omitempty"`
 }
 
-func (ids IdeaSet) String() string {
-	s := ""
-	for _, id := range ids.Ideas {
-		s += id.String() + ", "
-	}
-	return s
-}
+// func (ids IdeaSet) String() string {
+// 	s := ""
+// 	for _, id := range ids.Ideas {
+// 		s += id.String() + ", "
+// 	}
+// 	return s
+// }
 
 func NewIdeaSet(id string, ideas []*Idea) IdeaSet {
 	return IdeaSet{id, ideas}

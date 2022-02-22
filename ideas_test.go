@@ -2,6 +2,7 @@ package ideas
 
 import (
 	"encoding/json"
+	"fmt"
 	"testing"
 	"time"
 )
@@ -34,14 +35,14 @@ func Test_idea(t *testing.T) {
 	i := Idea{
 		ID:                             nid,
 		EnglishHumanReadableExpression: "Patient with id 123 had RBC count of 5.3 µl at time t",
-		Facts: map[Concept]*Measurement{
-			p: {
+		Facts: map[string]*Measurement{
+			p.ID: {
 				ID:        newStrID(),
 				Timestamp: 0,
 				Value:     "PATIENT-123",
 				Unit:      UNIT_IDENTIFIER,
 			},
-			crbcc: {
+			crbcc.ID: {
 				ID:        newStrID(),
 				Timestamp: time.Now().UnixNano(),
 				Value:     5900000,
@@ -55,21 +56,46 @@ func Test_idea(t *testing.T) {
 }
 
 func Test_FactCheck(t *testing.T) {
-	i := NewIdea("", "something", map[Concept]*Measurement{})
-	if i.FactCheck(CONCEPT_APPLICABLE_HERE) != nil {
-		t.Errorf("Expected nil, got %v", i.FactCheck(CONCEPT_APPLICABLE_HERE))
+	i := NewIdea("", "something", map[string]*Measurement{})
+	if i.FactCheck(CONCEPT_APPLICABLE_HERE.ID) != nil {
+		t.Errorf("Expected nil, got %v\n", i.FactCheck(CONCEPT_APPLICABLE_HERE.ID))
 	}
 }
 
 func Test_Idea_JSON(t *testing.T) {
-	i := NewIdea("xyz", "abc", map[Concept]*Measurement{CONCEPT_DETECTED: &Measurement{Value: true}})
+	i := NewIdea("xyz", "abc", map[string]*Measurement{CONCEPT_DETECTED.ID: {Value: true}})
 	j, err := json.Marshal(i)
 	if err != nil {
-		t.Errorf("Error marshaling idea into json: %v", err)
+		t.Errorf("Error marshaling idea into json: %v\n", err)
 		t.FailNow()
 	}
 	if len(j) < 10 {
-		t.Errorf("this is not a correct json serialization of the Idea %s", string(j))
+		t.Errorf("this is not a correct json serialization of the Idea %s\n", string(j))
 		t.FailNow()
+	}
+
+	fmt.Printf("%s\n", string(j))
+	var iBack Idea
+	err = json.Unmarshal(j, &iBack)
+	if err != nil {
+		t.Errorf("Error unmarshaling idea %v \n", err)
+		t.FailNow()
+	}
+	fmt.Printf("iBack, %#v\n", iBack)
+	if i.ID != iBack.ID {
+		t.Errorf("expected id to be %s but got %s\n", i.ID, iBack.ID)
+	}
+	if i.EnglishHumanReadableExpression != iBack.EnglishHumanReadableExpression {
+		t.Errorf("expected EnglishHumanReadableExpression to be %s but got %s\n", i.EnglishHumanReadableExpression, iBack.EnglishHumanReadableExpression)
+	}
+	for idx, f := range i.Facts {
+		if f.Value != iBack.Facts[idx].Value || f.ID != iBack.Facts[idx].ID {
+			t.Errorf("expected facts to be %s but got %s\n", f, iBack.Facts[idx])
+		}
+	}
+	for idx, f := range iBack.Facts {
+		if f.Value != i.Facts[idx].Value || f.ID != iBack.Facts[idx].ID {
+			t.Errorf("REVERSE expected facts to be %s but got %s\n", f, i.Facts[idx])
+		}
 	}
 }

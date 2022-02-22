@@ -1,7 +1,13 @@
 package ideas
 
-func NewConcept(id string, expression string, description string) Concept {
-	return Concept{id, expression, description}
+func (repo *ConceptsRepository) NewConcept(id string, expression string, description string) Concept {
+	if id == "" {
+		id = newStrID()
+	}
+	c := Concept{id, expression, description}
+	// let it crash if they pass in a nil repo, it is danguarous to do anything else
+	(*repo)[id] = &c
+	return c
 }
 
 // Concept represents a bit of knowledge that can be queried form the user or from the machines
@@ -11,6 +17,9 @@ type Concept struct {
 	EnglishHumanReadableExpression string `json:"english_human_readable_expression,omitempty"`
 	EnglishDescription             string `json:"english_description,omitempty"`
 }
+
+// a map of CoceptIDs to Concepts
+type ConceptsRepository map[string]*Concept
 
 // func (c Concept) MarshalText() (text []byte, err error) {
 // 	key := c.ID
@@ -60,13 +69,18 @@ func (idea Idea) FactCheck(conceptID string) *Measurement {
 	return idea.Facts[conceptID]
 }
 
-// func (idea Idea) String() string {
-// 	s := ""
-// 	for concept, measurement := range idea.Facts {
-// 		s += concept.String() + " -> " + measurement.String()
-// 	}
-// 	return s
-// }
+func (idea Idea) String(conceptMap ConceptsRepository) string {
+	s := ""
+	for conceptID, measurement := range idea.Facts {
+		concept := conceptMap[conceptID]
+		if concept != nil {
+			s += concept.EnglishHumanReadableExpression + " -> " + measurement.String()
+		} else {
+			s += conceptID + " -> " + measurement.String()
+		}
+	}
+	return s
+}
 
 // IdeaSet is a set of related Ideas
 type IdeaSet struct {

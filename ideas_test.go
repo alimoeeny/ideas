@@ -2,7 +2,6 @@ package ideas
 
 import (
 	"encoding/json"
-	"fmt"
 	"testing"
 	"time"
 )
@@ -74,14 +73,13 @@ func Test_Idea_JSON(t *testing.T) {
 		t.FailNow()
 	}
 
-	fmt.Printf("%s\n", string(j))
 	var iBack Idea
 	err = json.Unmarshal(j, &iBack)
 	if err != nil {
 		t.Errorf("Error unmarshaling idea %v \n", err)
 		t.FailNow()
 	}
-	fmt.Printf("iBack, %#v\n", iBack)
+
 	if i.ID != iBack.ID {
 		t.Errorf("expected id to be %s but got %s\n", i.ID, iBack.ID)
 	}
@@ -97,5 +95,13 @@ func Test_Idea_JSON(t *testing.T) {
 		if f.Value != i.Facts[idx].Value || f.ID != iBack.Facts[idx].ID {
 			t.Errorf("REVERSE expected facts to be %s but got %s\n", f, i.Facts[idx])
 		}
+	}
+}
+
+func Test_NewConcept(t *testing.T) {
+	c := DEFAULT_CONCEPT_REPO.NewConcept("a", "b", "c")
+	if DEFAULT_CONCEPT_REPO[c.ID].ID != c.ID || DEFAULT_CONCEPT_REPO[c.ID].EnglishHumanReadableExpression != c.EnglishHumanReadableExpression {
+		t.Fatalf("expected c to be in the default repo, but it is not!!!\n %v != %v", DEFAULT_CONCEPT_REPO[c.ID], &c)
+		t.FailNow()
 	}
 }

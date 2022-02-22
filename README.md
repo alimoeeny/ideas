@@ -1,4 +1,15 @@
 # ideas
+- **Concept** Concept represents a bit of knowledge that can be queried form the user or from the machines, an example concept is RBC count, a workflow can ask for RBC count from an algorithm or from the user
+- **Idea** Idea represents an instant of one or more Concepts being realized, it's a map of concepts to measurments. For example when we are talking about someones RBC count at a specific time, basically we are associating the concept of RBC count with the measurement of their rbcs at a particular time
+- **Measurement**
+- **ConceptSet**
+- **MutuallyExclusiveConceptSet**
+- **IdeaSet**
+-
+#### Example
+
+
+
 
 ## Workflow Engine
 

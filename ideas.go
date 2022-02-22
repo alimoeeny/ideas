@@ -5,7 +5,7 @@ func NewConcept(id string, expression string, description string) Concept {
 }
 
 // Concept represents a bit of knowledge that can be queried form the user or from the machines
-// an example concept is RBC count, an workflow can ask for RBC count from an algorith or from the user
+// an example concept is RBC count, a workflow can ask for RBC count from an algorithm or from the user
 type Concept struct {
 	id                             string
 	englishHumanReadableExpression string
@@ -18,8 +18,10 @@ func (c Concept) String() string {
 
 // ConceptSet represents a group of related Concepts
 type ConceptSet struct {
-	ID       int64
-	concepts []Concept
+	ID                             string
+	englishHumanReadableExpression string
+	englishDescription             string
+	concepts                       []Concept
 }
 
 // MutuallyExclusiveConceptSet represents a group of Concepts where only one of them can be true at a time
@@ -33,7 +35,7 @@ func NewIdea(description string, facts map[Concept]*Measurement) Idea {
 }
 
 // Idea represents an instant of one or more Concepts being realized
-// for example when we are talking about someones RBC count,
+// for example when we are talking about someones RBC count at a specific time,
 // basically we are associating the concept of RBC count with the measurement of their rbcs at a particular time
 // like the Idea is this patient has an RBC count of 4.8M /µl at this timestamp
 type Idea struct {

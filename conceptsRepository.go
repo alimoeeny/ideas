@@ -1,6 +1,9 @@
 package ideas
 
-var DEFAULT_CONCEPT_REPO = ConceptsRepository{}
+var DEFAULT_CONCEPT_REPO = ConceptsRepository{
+	ID:   "vczncfpjwr",
+	dict: map[string]*Concept{},
+}
 
 func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_NOT_DETECTED)

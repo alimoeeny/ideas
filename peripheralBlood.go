@@ -1,7 +1,19 @@
 package ideas
 
 // CONCEPTS
-
+var CONCEPT_PERIPHERAL_BLOOD_FILM_FINDINGS = ConceptSet{
+	ID:                             "131314",
+	EnglishHumanReadableExpression: "Blood Film Findings",
+	EnglishDescription:             "Peripheral Blood Film Description",
+	Concepts: []Concept{
+		// TODO: can we have an exhastive list?
+		{ID: "42010768", EnglishHumanReadableExpression: "Microcytic anemia with frequent (10%) spherocytes"},
+		{ID: "42010769", EnglishHumanReadableExpression: "occasional fragments (2%) and acantocytes."},
+		{ID: "42010770", EnglishHumanReadableExpression: "Granulocytes are left shifted with neutrophilia and toxic changes."},
+		{ID: "42010771", EnglishHumanReadableExpression: "No circulating blasts encountered."},
+		{ID: "42010772", EnglishHumanReadableExpression: "Marked thrombocytopenia}"},
+	},
+}
 var CONCEPT_CBC = ConceptSet{
 	ID:                             "131313",
 	EnglishHumanReadableExpression: "Complete Blood Count",
@@ -107,10 +119,36 @@ var CONCEPT_LOW_RETICULOCYTE_COUNT = Concept{ID: "131413", EnglishHumanReadableE
 
 // ---------------------------
 
+type PeripheralBloodFilmFindings struct {
+	IdeaSet           `json:"idea_set,omitempty"`
+	PatientIdentifier Identifier `json:"patient_identifier,omitempty"`
+}
+
 type CBC struct {
 	IdeaSet           `json:"idea_set,omitempty"`
 	PatientIdentifier Identifier `json:"patient_identifier,omitempty"`
 }
+
+var CBCIdeaSet = NewIdeaSet(
+	"1645524588060025001",
+	[]*Idea{NewIdea(
+		"sqwvmbncwu",
+		"RBC Count",
+		map[string]*Measurement{
+			CONCEPT_RBC_COUNT.ID:               nil,
+			CONCEPT_WBC_COUNT.ID:               nil,
+			CONCEPT_HEMOLOBIN_CONCENTRATION.ID: nil,
+			CONCEPT_MVC.ID:                     nil,
+			CONCEPT_MCH.ID:                     nil,
+			CONCEPT_MCHC.ID:                    nil,
+			CONCEPT_NEUTROPHIL_COUNT.ID:        nil,
+			CONCEPT_LYMPHOCYTE_COUNT.ID:        nil,
+			CONCEPT_MONOCYTE_COUNT.ID:          nil,
+			CONCEPT_EOSINOPHIL_COUNT.ID:        nil,
+			CONCEPT_EOSINOPHIL_COUNT.ID:        nil,
+			CONCEPT_RETICULOCYTE_COUNT.ID:      nil,
+		},
+	)})
 
 var alisCBC = CBC{
 	PatientIdentifier: newIdentifier(),

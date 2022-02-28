@@ -1,13 +1,30 @@
 package ideas
 
-func (repo *ConceptsRepository) NewConcept(id string, expression string, description string) Concept {
+import "fmt"
+
+func (repo *ConceptsRepository) ConceptWithID(id string) *Concept {
+	return (*repo).dict[id]
+}
+
+func (repo *ConceptsRepository) SetConcept(c Concept) error {
+	if c.ID == "" {
+		return fmt.Errorf("concept needs to have an non-enpty id")
+	}
+	if (*repo).dict[c.ID] != nil {
+		return fmt.Errorf("another concept with the same ID already exists")
+	}
+	// let it crash if they pass in a nil repo, it is danguarous to do anything else
+	(*repo).dict[c.ID] = &c
+	return nil
+}
+
+func (repo *ConceptsRepository) NewConcept(id string, expression string, description string) (Concept, error) {
 	if id == "" {
 		id = newStrID()
 	}
 	c := Concept{id, expression, description}
-	// let it crash if they pass in a nil repo, it is danguarous to do anything else
-	(*repo)[id] = &c
-	return c
+	err := repo.SetConcept(c)
+	return c, err
 }
 
 // Concept represents a bit of knowledge that can be queried form the user or from the machines
@@ -19,7 +36,10 @@ type Concept struct {
 }
 
 // a map of CoceptIDs to Concepts
-type ConceptsRepository map[string]*Concept
+type ConceptsRepository struct {
+	ID   string
+	dict map[string]*Concept
+}
 
 // func (c Concept) MarshalText() (text []byte, err error) {
 // 	key := c.ID
@@ -72,7 +92,7 @@ func (idea Idea) FactCheck(conceptID string) *Measurement {
 func (idea Idea) String(conceptMap ConceptsRepository) string {
 	s := ""
 	for conceptID, measurement := range idea.Facts {
-		concept := conceptMap[conceptID]
+		concept := conceptMap.ConceptWithID(conceptID)
 		if concept != nil {
 			s += concept.EnglishHumanReadableExpression + " -> " + measurement.String()
 		} else {

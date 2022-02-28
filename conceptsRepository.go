@@ -31,4 +31,10 @@ func init() {
 	// DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_PERIPHERAL_BLOOD_FILM_FINDINGS)
 	//------------
 	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_WEATHER_IS_RAINING)
+	// TEMP
+	DEFAULT_CONCEPT_REPO.SetConcept(tempConcept1)
+	DEFAULT_CONCEPT_REPO.SetConcept(tempConcept2)
+	DEFAULT_CONCEPT_REPO.SetConcept(tempConcept3)
+	DEFAULT_CONCEPT_REPO.SetConcept(tempConcept4)
+	DEFAULT_CONCEPT_REPO.SetConcept(tempConcept5)
 }

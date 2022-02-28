@@ -1,17 +1,20 @@
 package ideas
 
 // CONCEPTS
+// TEMP:
+var tempConcept1 = Concept{ID: "42010768", EnglishHumanReadableExpression: "Microcytic anemia with frequent (10%) spherocytes"}
+var tempConcept2 = Concept{ID: "42010769", EnglishHumanReadableExpression: "occasional fragments (2%) and acantocytes."}
+var tempConcept3 = Concept{ID: "42010770", EnglishHumanReadableExpression: "Granulocytes are left shifted with neutrophilia and toxic changes."}
+var tempConcept4 = Concept{ID: "42010771", EnglishHumanReadableExpression: "No circulating blasts encountered."}
+var tempConcept5 = Concept{ID: "42010772", EnglishHumanReadableExpression: "Marked thrombocytopenia}"}
+
 var CONCEPT_PERIPHERAL_BLOOD_FILM_FINDINGS = ConceptSet{
 	ID:                             "131314",
 	EnglishHumanReadableExpression: "Blood Film Findings",
 	EnglishDescription:             "Peripheral Blood Film Description",
 	Concepts: []Concept{
 		// TODO: can we have an exhastive list?
-		{ID: "42010768", EnglishHumanReadableExpression: "Microcytic anemia with frequent (10%) spherocytes"},
-		{ID: "42010769", EnglishHumanReadableExpression: "occasional fragments (2%) and acantocytes."},
-		{ID: "42010770", EnglishHumanReadableExpression: "Granulocytes are left shifted with neutrophilia and toxic changes."},
-		{ID: "42010771", EnglishHumanReadableExpression: "No circulating blasts encountered."},
-		{ID: "42010772", EnglishHumanReadableExpression: "Marked thrombocytopenia}"},
+		tempConcept1, tempConcept2, tempConcept3, tempConcept4, tempConcept5,
 	},
 }
 var CONCEPT_CBC = ConceptSet{

@@ -72,6 +72,10 @@ func (repo *UnitsRepository) SetUnit(c Unit) error {
 	return nil
 }
 
+func (repo *UnitsRepository) All() map[string]*Unit {
+	return repo.dict
+}
+
 func (repo *UnitsRepository) NewUnit(id string, name string, short_01 string) (Unit, error) {
 	if id == "" {
 		id = newStrID()

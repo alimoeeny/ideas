@@ -18,6 +18,10 @@ func (repo *ConceptsRepository) SetConcept(c Concept) error {
 	return nil
 }
 
+func (repo *ConceptsRepository) All() map[string]*Concept {
+	return repo.dict
+}
+
 func (repo *ConceptsRepository) NewConcept(id string, expression string, description string) (Concept, error) {
 	if id == "" {
 		id = newStrID()

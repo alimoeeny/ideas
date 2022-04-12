@@ -7,8 +7,8 @@ import (
 	"sync"
 )
 
-func NewWorkFlow(title string, startStep *StartStep) *WorkFlow {
-	wf := &WorkFlow{
+func NewWorkflow(title string, startStep *StartStep) *Workflow {
+	wf := &Workflow{
 		id:        newID(),
 		title:     title,
 		status:    Stopped,
@@ -20,7 +20,7 @@ func NewWorkFlow(title string, startStep *StartStep) *WorkFlow {
 	return wf
 }
 
-type WorkFlow struct {
+type Workflow struct {
 	sync.Mutex
 	id        int64
 	title     string
@@ -30,7 +30,7 @@ type WorkFlow struct {
 	ideas     []Idea
 }
 
-func (wf *WorkFlow) MarshalJSON() ([]byte, error) {
+func (wf *Workflow) MarshalJSON() ([]byte, error) {
 	temp := struct {
 		ID        int64      `json:"id"`
 		Title     string     `json:"title"`
@@ -47,19 +47,19 @@ func (wf *WorkFlow) MarshalJSON() ([]byte, error) {
 	return json.MarshalIndent(temp, "", "  ")
 }
 
-func (wf *WorkFlow) String() string {
+func (wf *Workflow) String() string {
 	return fmt.Sprintf("Workflow: %s [%d]", wf.title, wf.id)
 }
 
-func (wf *WorkFlow) ID() int64 {
+func (wf *Workflow) ID() int64 {
 	return wf.id
 }
 
-func (wf *WorkFlow) Title() string {
+func (wf *Workflow) Title() string {
 	return wf.title
 }
 
-func (s *WorkFlow) Reset() error {
+func (s *Workflow) Reset() error {
 	s.Lock()
 	defer s.Unlock()
 	s.status = Running
@@ -68,11 +68,11 @@ func (s *WorkFlow) Reset() error {
 	return nil
 }
 
-func (s *WorkFlow) Status() StepStatus {
+func (s *Workflow) Status() StepStatus {
 	return s.status
 }
 
-func (s *WorkFlow) StepForward() ([]Step, []Idea, error) {
+func (s *Workflow) StepForward() ([]Step, []Idea, error) {
 	nextSteps := []Step{}
 	nextIdeas := []Idea{}
 	if s.status == Running {
@@ -98,11 +98,11 @@ func (s *WorkFlow) StepForward() ([]Step, []Idea, error) {
 	return []Step{}, s.ideas, ErrAlreadyStopped(s.title)
 }
 
-func (s *WorkFlow) ForwardConnections() []Step {
+func (s *Workflow) ForwardConnections() []Step {
 	return s.next
 }
 
-func (wf *WorkFlow) validate() error {
+func (wf *Workflow) validate() error {
 	// RULES
 	// Have a Start
 	// Don't have orphan states
@@ -119,7 +119,7 @@ func (wf *WorkFlow) validate() error {
 // and returns the last ste of steps (usually a StopStep or a FailStep),
 // and ALL the accumulated ideas
 // and an error which hopefuly is nil
-func (wf *WorkFlow) Run() ([]Step, []Idea, error) {
+func (wf *Workflow) Run() ([]Step, []Idea, error) {
 	err := wf.Reset()
 	if err != nil {
 		return nil, nil, err
@@ -145,10 +145,10 @@ func (wf *WorkFlow) Run() ([]Step, []Idea, error) {
 //       BUT not to support states that have func in them, like
 //       create a specific limited factsheetStep that does simple logic
 //       and drop support for serilization of generic conditional state
-func (wf *WorkFlow) Serialize() ([]byte, error) {
+func (wf *Workflow) Serialize() ([]byte, error) {
 	return []byte(""), fmt.Errorf("not implemented yet")
 }
 
-func (wf *WorkFlow) Deserialize(data []byte) error {
+func (wf *Workflow) Deserialize(data []byte) error {
 	return fmt.Errorf("not implemented yet")
 }

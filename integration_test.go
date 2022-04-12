@@ -22,7 +22,7 @@ func Test_integration_needMoreInfo(t *testing.T) {
 		return []Step{NewStopStep("need more info", []Idea{needMoreInfo})}, nil
 	})
 	ss := NewStartStep("Start", []Step{isItRaining})
-	wrkflw := NewWorkFlow("is it raining", ss)
+	wrkflw := NewWorkflow("is it raining", ss)
 	if wrkflw.validate() != nil {
 		t.Error("Workflow is not valid")
 	}
@@ -62,7 +62,7 @@ func Test_integration_giveMeIdeas(t *testing.T) {
 		return []Step{NewStopStep("failure", []Idea{itIsNotRaining})}, nil
 	})
 	ss := NewStartStep("Start", []Step{isItRaining})
-	wrkflw := NewWorkFlow("is it raining", ss)
+	wrkflw := NewWorkflow("is it raining", ss)
 	if wrkflw.validate() != nil {
 		t.Error("Workflow is not valid")
 	}
@@ -110,7 +110,7 @@ func Test_integration_spherocyte(t *testing.T) {
 		facts: factsheet,
 	}
 	ss := NewStartStep("Start Sphericyteflow", []Step{moderateSpherocyte})
-	wrkflw := NewWorkFlow("Spherocyte", ss)
+	wrkflw := NewWorkflow("Spherocyte", ss)
 	if wrkflw.validate() != nil {
 		t.Error("Workflow is not valid")
 	}
@@ -201,7 +201,7 @@ func Test_integration_wait_for_channels(t *testing.T) {
 
 	waitForAllSensorsToBeReady := NewWaitForItStep("Wait for all the sensors", time.Hour, func() (bool, error) { return waitForAllTheSensors(allSensorChannels) })
 	ss := NewStartStep("Start Sphericyteflow", []Step{waitForAllSensorsToBeReady})
-	wrkflw := NewWorkFlow("Spherocyte", ss)
+	wrkflw := NewWorkflow("Spherocyte", ss)
 	if wrkflw.validate() != nil {
 		t.Error("Workflow is not valid")
 	}
@@ -253,7 +253,7 @@ func Test_integration_001(t *testing.T) {
 
 	step11 := &StopStep{}
 	// step12 := &Step{}
-	wrkfklw := WorkFlow{
+	wrkfklw := Workflow{
 		id:     newID(),
 		status: Stopped,
 		startStep: &StartStep{

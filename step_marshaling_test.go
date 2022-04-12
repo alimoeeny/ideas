@@ -20,7 +20,7 @@ func Test_Marshaling(t *testing.T) {
 		goNoGo: func() (bool, error) { return step2Go, nil },
 		next:   []Step{&step3},
 	}
-	wrkflw := &WorkFlow{
+	wrkflw := &Workflow{
 		id:        newID(),
 		title:     "testing testing",
 		status:    Stopped,

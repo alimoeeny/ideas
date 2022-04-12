@@ -6,7 +6,7 @@ import (
 )
 
 func Test_WorkflowIsAStepToo(t *testing.T) {
-	wf := &WorkFlow{}
+	wf := &Workflow{}
 	stepInterface := reflect.TypeOf((*Step)(nil)).Elem()
 	if !reflect.TypeOf(wf).Implements(stepInterface) {
 		t.Error("workflow does not implement Step")
@@ -15,14 +15,14 @@ func Test_WorkflowIsAStepToo(t *testing.T) {
 
 func Test_WorkflowValidateStart(t *testing.T) {
 	{
-		wf := &WorkFlow{}
+		wf := &Workflow{}
 		if wf.validate().Error() != "workflow must have a start step" {
 			t.Error("workflow should not be valid")
 			t.FailNow()
 		}
 	}
 	{
-		wf := &WorkFlow{}
+		wf := &Workflow{}
 		wf.startStep = &StartStep{}
 		if wf.validate() != nil {
 			t.Error("an empty workflow is a valid workflow")
@@ -32,7 +32,7 @@ func Test_WorkflowValidateStart(t *testing.T) {
 }
 
 func Test_WorkflowFundamentals(t *testing.T) {
-	wf := &WorkFlow{}
+	wf := &Workflow{}
 	wf.startStep = &StartStep{next: []Step{&PipeStep{next: []Step{&StopStep{}}}}}
 	if wf.validate() != nil {
 		t.Error("a valid workflow should be valid")
@@ -51,7 +51,7 @@ func Test_WorkflowFundamentals(t *testing.T) {
 }
 
 func Test_Workflow_and_Factsheet(t *testing.T) {
-	wf := &WorkFlow{}
+	wf := &Workflow{}
 	factsheet := &DictionaryFactsheet{
 		dic: map[string]interface{}{
 			"name":   "test",

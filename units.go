@@ -4,6 +4,8 @@ var UNIT_UNITLESS = &Unit{ID: "1", Name: "Unitless", Short1: ""}
 var UNIT_IDENTIFIER = &Unit{ID: "110", Name: "identifier", Short1: ""}
 
 var UNIT_COUNT = &Unit{ID: "12300", Name: "count", Short1: ""}
+var UNIT_CATEGORICAL = &Unit{ID: "12350", Name: "categorical", Short1: "cat"}
+var UNIT_POSITIVE_NEGATIVE_MISSING = &Unit{ID: "12360", Name: "Positive Negative Missing", Short1: "PNM"}
 
 var UNIT_COUNT_PER_LITER = &Unit{ID: "12400", Name: "counts per liter", Short1: "/l"}
 var UNIT_COUNT_MILLION_PER_LITER = &Unit{ID: "12500", Name: "counts million per liter", Short1: "/l"}   // 10^6 / l
@@ -37,3 +39,5 @@ var UNIT_MICROGRAM = &Unit{ID: "14028", Name: "microgram", Short1: "µg"}
 var UNIT_NANOGRAM = &Unit{ID: "14029", Name: "nanogram", Short1: "ng"}
 var UNIT_PICOGRAM = &Unit{ID: "14030", Name: "picogram", Short1: "pg"}   // 1e-12 gram
 var UNIT_FEMTOGRAM = &Unit{ID: "14031", Name: "femtogram", Short1: "fg"} // 1e-15 gram
+
+var UNIT_TIMESTAMP = &Unit{ID: "1651075578382886759", Name: "timestamp", Short1: "timestamp"}

@@ -3,30 +3,50 @@ package ideas
 import "fmt"
 
 func (repo *ConceptsRepository) ConceptWithID(id string) *Concept {
-	return (*repo).dict[id]
+	return (*repo).conceptsDict[id]
+}
+
+func (repo *ConceptsRepository) AcceptableUnitsForConceptWithID(id string) []Unit {
+	units := []Unit{}
+	uids := repo.conceptsToUnitsMap[id]
+	for _, uid := range uids {
+		units = append(units, *repo.unitsRepo.UnitWithID(uid))
+	}
+	return units
 }
 
 func (repo *ConceptsRepository) SetConcept(c Concept) error {
 	if c.ID == "" {
-		return fmt.Errorf("concept needs to have an non-enpty id")
+		return fmt.Errorf("concept needs to have an non-empty id")
 	}
-	if (*repo).dict[c.ID] != nil {
+	if (*repo).conceptsDict[c.ID] != nil {
 		return fmt.Errorf("another concept with the same ID already exists")
 	}
 	// let it crash if they pass in a nil repo, it is danguarous to do anything else
-	(*repo).dict[c.ID] = &c
+	(*repo).conceptsDict[c.ID] = &c
+	return nil
+}
+
+func (repo *ConceptsRepository) SetAvailableUnitsForConceptWithID(conceptID string, unitIDs ...string) error {
+	if repo.conceptsToUnitsMap != nil {
+		return fmt.Errorf("this repo is not initialized correctly")
+	}
+	if conceptID == "" {
+		return fmt.Errorf("concept id cannot be empty or blank")
+	}
+	repo.conceptsToUnitsMap[conceptID] = unitIDs
 	return nil
 }
 
 func (repo *ConceptsRepository) All() map[string]*Concept {
-	return repo.dict
+	return repo.conceptsDict
 }
 
-func (repo *ConceptsRepository) NewConcept(id string, expression string, description string) (Concept, error) {
+func (repo *ConceptsRepository) NewConcept(id string, expression string, short1 string, description string) (Concept, error) {
 	if id == "" {
 		id = newStrID()
 	}
-	c := Concept{id, expression, description}
+	c := Concept{id, expression, short1, description}
 	err := repo.SetConcept(c)
 	return c, err
 }
@@ -36,13 +56,16 @@ func (repo *ConceptsRepository) NewConcept(id string, expression string, descrip
 type Concept struct {
 	ID                             string `json:"id,omitempty"`
 	EnglishHumanReadableExpression string `json:"english_human_readable_expression,omitempty"`
+	Short1                         string `json:"short_1,omitempty"`
 	EnglishDescription             string `json:"english_description,omitempty"`
 }
 
 // a map of CoceptIDs to Concepts
 type ConceptsRepository struct {
-	ID   string
-	dict map[string]*Concept
+	ID                 string
+	conceptsDict       map[string]*Concept
+	unitsRepo          UnitsRepository
+	conceptsToUnitsMap map[string][]string // mapping of concept ids to an array of unit ids
 }
 
 // func (c Concept) MarshalText() (text []byte, err error) {

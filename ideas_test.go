@@ -99,9 +99,9 @@ func Test_Idea_JSON(t *testing.T) {
 }
 
 func Test_NewConcept(t *testing.T) {
-	c, err := DEFAULT_CONCEPT_REPO.NewConcept("a", "b", "c")
-	if err != nil || DEFAULT_CONCEPT_REPO.dict[c.ID].ID != c.ID || DEFAULT_CONCEPT_REPO.dict[c.ID].EnglishHumanReadableExpression != c.EnglishHumanReadableExpression {
-		t.Fatalf("expected c to be in the default repo, but it is not!!!\n %v != %v", DEFAULT_CONCEPT_REPO.dict[c.ID], &c)
+	c, err := DEFAULT_CONCEPT_REPO.NewConcept("a", "b", "short", "c")
+	if err != nil || DEFAULT_CONCEPT_REPO.conceptsDict[c.ID].ID != c.ID || DEFAULT_CONCEPT_REPO.conceptsDict[c.ID].EnglishHumanReadableExpression != c.EnglishHumanReadableExpression {
+		t.Fatalf("expected c to be in the default repo, but it is not!!!\n %v != %v", DEFAULT_CONCEPT_REPO.conceptsDict[c.ID], &c)
 		t.FailNow()
 	}
 }

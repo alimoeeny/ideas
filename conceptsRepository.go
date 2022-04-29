@@ -3,7 +3,7 @@ package ideas
 var DEFAULT_CONCEPT_REPO = ConceptsRepository{
 	ID:                 "vczncfpjwr",
 	conceptsDict:       map[string]*Concept{},
-	unitsRepo:          DEFAULT_UNIT_REPO,
+	unitsRepo:          &DEFAULT_UNIT_REPO,
 	conceptsToUnitsMap: map[string][]string{},
 }
 

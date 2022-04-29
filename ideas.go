@@ -28,7 +28,7 @@ func (repo *ConceptsRepository) SetConcept(c Concept) error {
 }
 
 func (repo *ConceptsRepository) SetAvailableUnitsForConceptWithID(conceptID string, unitIDs ...string) error {
-	if repo.conceptsToUnitsMap != nil {
+	if repo.conceptsToUnitsMap == nil {
 		return fmt.Errorf("this repo is not initialized correctly")
 	}
 	if conceptID == "" {
@@ -64,7 +64,7 @@ type Concept struct {
 type ConceptsRepository struct {
 	ID                 string
 	conceptsDict       map[string]*Concept
-	unitsRepo          UnitsRepository
+	unitsRepo          *UnitsRepository
 	conceptsToUnitsMap map[string][]string // mapping of concept ids to an array of unit ids
 }
 

@@ -43,4 +43,10 @@ func Test_DefaultConceptsRepository(t *testing.T) {
 		t.FailNow()
 	}
 
+	{
+		us := DEFAULT_CONCEPT_REPO.AcceptableUnitsForConceptWithID("SENS-Blast-count-over-WBC-count")
+		if len(us) < 1 {
+			t.FailNow()
+		}
+	}
 }

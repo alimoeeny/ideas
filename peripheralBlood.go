@@ -61,10 +61,10 @@ var CONCEPT_HIGH_HEMOLOBIN_CONCENTRATION = Concept{ID: "131318", EnglishHumanRea
 var CONCEPT_LOW_HEMOLOBIN_CONCENTRATION = Concept{ID: "131319", EnglishHumanReadableExpression: "Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood"}
 
 ///----------------------------
-var CONCEPT_MVC = Concept{ID: "131320", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_NORMAL_MVC = Concept{ID: "131321", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_HIGH_MVC = Concept{ID: "131322", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_LOW_MVC = Concept{ID: "131323", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+var CONCEPT_MVC = Concept{ID: "131320", EnglishHumanReadableExpression: "Mean corpuscular volume", Short1: "MCV", EnglishDescription: "Mean corpuscular volume"}
+var CONCEPT_NORMAL_MVC = Concept{ID: "131321", EnglishHumanReadableExpression: "Normal mean corpuscular volume", Short1: "Normal MCV", EnglishDescription: ""}
+var CONCEPT_HIGH_MVC = Concept{ID: "131322", EnglishHumanReadableExpression: "High mean corpuscular volume", Short1: "High MCV", EnglishDescription: ""}
+var CONCEPT_LOW_MVC = Concept{ID: "131323", EnglishHumanReadableExpression: "Low mean corpuscular volume", Short1: "Low MCV", EnglishDescription: ""}
 
 // ---------------------------
 var CONCEPT_MCH = Concept{ID: "131330", EnglishHumanReadableExpression: "", EnglishDescription: ""}

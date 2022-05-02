@@ -47,3 +47,21 @@ func newStrID() string {
 func newIdentifier() Identifier {
 	return Identifier{newStrID(), "https://identifier.suprafrontal.com/"}
 }
+
+// TODO: move to a general utils lib
+func uniqueArray[K comparable](a []K) []K {
+	if a == nil {
+		return a
+	}
+	m := map[K]bool{}
+	for _, x := range a {
+		m[x] = true
+	}
+	r := make([]K, len(m))
+	index := 0
+	for k := range m {
+		r[index] = k
+		index++
+	}
+	return r
+}

@@ -41,19 +41,19 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(tempConcept5)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Spherocyte-over-RBC-count", EnglishHumanReadableExpression: "Spherocyte over RBC count", Short1: "Spherocyte", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Spherocyte-over-RBC-count", UNIT_UNITLESS.ID)
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Spherocyte-over-RBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Acanthocyte-over-RBC-count", EnglishHumanReadableExpression: "Acanthocyte-over-RBC-count", Short1: "Acanthocyte", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Spherocyte-over-RBC-count", UNIT_COUNT.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Fragment-over-RBC-count", EnglishHumanReadableExpression: "Fragment-over-RBC-count", Short1: "Fragment", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Fragment-over-RBC-count", UNIT_UNITLESS.ID)
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Fragment-over-RBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Platelet-count", EnglishHumanReadableExpression: "Platelet-count", Short1: "PLT", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Platelet-count", UNIT_COUNT.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Reticulocyte-over-RBC-count", EnglishHumanReadableExpression: "Reticulocyte-over-RBC-count", Short1: "Retic", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Reticulocyte-over-RBC-count", UNIT_UNITLESS.ID)
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Reticulocyte-over-RBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Hemoglobin-concentration", EnglishHumanReadableExpression: "Hemoglobin-concentration", Short1: "Hb", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Hemoglobin-concentration")
@@ -113,13 +113,13 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-diagnosis-High-Monocytes", UNIT_TIMESTAMP.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Blast-count-over-WBC-count", EnglishHumanReadableExpression: "Blast count over WBC count", Short1: "Blast / WBC", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Blast-count-over-WBC-count", UNIT_UNITLESS.ID)
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Blast-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Monoblast-count-over-WBC-count", EnglishHumanReadableExpression: "Monoblast-count-over-WBC-count", Short1: "Monoblast / WBC", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Monoblast-count-over-WBC-count", UNIT_UNITLESS.ID)
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Monoblast-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Promonocytes-count-over-WBC-count", EnglishHumanReadableExpression: "Promonocytes-count-over-WBC-count", Short1: "Promonocytes / WBC", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Promonocytes-count-over-WBC-count", UNIT_UNITLESS.ID)
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Promonocytes-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Auer-Rods", EnglishHumanReadableExpression: "Auer-Rods", Short1: "Auer rods", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Auer-Rods")

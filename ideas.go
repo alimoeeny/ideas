@@ -34,7 +34,7 @@ func (repo *ConceptsRepository) SetAvailableUnitsForConceptWithID(conceptID stri
 	if conceptID == "" {
 		return fmt.Errorf("concept id cannot be empty or blank")
 	}
-	repo.conceptsToUnitsMap[conceptID] = unitIDs
+	repo.conceptsToUnitsMap[conceptID] = uniqueArray(append(repo.conceptsToUnitsMap[conceptID], unitIDs...))
 	return nil
 }
 

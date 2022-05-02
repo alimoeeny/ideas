@@ -54,7 +54,7 @@ func Test_DefaultConceptsRepository(t *testing.T) {
 		if len(cups) < 1 {
 			t.FailNow()
 		}
-		if len(cups["SENS-Blast-count-over-WBC-count"].Units) < 1 {
+		if len(cups["SENS-Blast-count-over-WBC-count"].UnitIDs) < 1 {
 			t.FailNow()
 		}
 	}

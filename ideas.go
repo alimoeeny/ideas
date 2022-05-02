@@ -46,11 +46,11 @@ func (repo *ConceptsRepository) All() map[string]*Concept {
 // returns an arrayc of structs containing pairs of concepts along with arrays of ids for their units
 func (repo *ConceptsRepository) AllConceptsWithUnitIDs() map[string]struct {
 	Concept *Concept `json:"concept,omitempty"`
-	Units   []string `json:"units,omitempty"`
+	UnitIDs []string `json:"unit_ids,omitempty"`
 } {
 	r := map[string]struct {
 		Concept *Concept `json:"concept,omitempty"`
-		Units   []string `json:"units,omitempty"`
+		UnitIDs []string `json:"unit_ids,omitempty"`
 	}{}
 	for _, c := range repo.conceptsDict {
 		// units := []Unit{}
@@ -59,7 +59,7 @@ func (repo *ConceptsRepository) AllConceptsWithUnitIDs() map[string]struct {
 		// }
 		r[c.ID] = struct {
 			Concept *Concept `json:"concept,omitempty"`
-			Units   []string `json:"units,omitempty"`
+			UnitIDs []string `json:"unit_ids,omitempty"`
 		}{c, repo.conceptsToUnitsMap[c.ID]}
 	}
 	return r

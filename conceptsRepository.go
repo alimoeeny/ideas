@@ -86,7 +86,7 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Hypogranular-Platelet-over-RBC-count")
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Most-Recent-date-time-of-diagnosis-MDS", EnglishHumanReadableExpression: "Most-Recent-date-time-of-diagnosis-MDS", Short1: "History of MDS", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-diagnosis-MDS", UNIT_TIMESTAMP.ID)
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-diagnosis-MDS", UNIT_TIMESTAMP.ID, UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-NRBC-count-over-RBC-count", EnglishHumanReadableExpression: "NRBC-count-over-RBC-count", Short1: "NRBC", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-NRBC-count-over-RBC-count")
@@ -104,13 +104,13 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Teardrop-RBC-count-over-RBC-count")
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Most-Recent-date-time-of-diagnosis-PMN", EnglishHumanReadableExpression: "Most-Recent-date-time-of-diagnosis-PMN", Short1: "History of PMN", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-diagnosis-PMN", UNIT_TIMESTAMP.ID)
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-diagnosis-PMN", UNIT_TIMESTAMP.ID, UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Monocyte-count-over-RBC-count", EnglishHumanReadableExpression: "Monocyte-count-over-RBC-count", Short1: "Monocyte", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Monocyte-count-over-RBC-count")
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Most-Recent-date-time-of-diagnosis-High-Monocytes", EnglishHumanReadableExpression: "Most-Recent-date-time-of-diagnosis-High-Monocytes", Short1: "History of High Monocytes", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-diagnosis-High-Monocytes", UNIT_TIMESTAMP.ID)
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-diagnosis-High-Monocytes", UNIT_TIMESTAMP.ID, UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Blast-count-over-WBC-count", EnglishHumanReadableExpression: "Blast count over WBC count", Short1: "Blast / WBC", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Blast-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
@@ -125,10 +125,10 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Auer-Rods")
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Most-Recent-date-time-of-diagnosis-MDS-MPN-CMML", EnglishHumanReadableExpression: "Most-Recent-date-time-of-diagnosis-MDS-MPN-CMML", Short1: "History of MDS/MPN (CMML)", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-diagnosis-MDS-MPN-CMML", UNIT_TIMESTAMP.ID)
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-diagnosis-MDS-MPN-CMML", UNIT_TIMESTAMP.ID, UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Most-Recent-date-time-of-diagnosis-Leukemia", EnglishHumanReadableExpression: "Most-Recent-date-time-of-diagnosis-Leukemia", Short1: "History of Leukemia", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-diagnosis-Leukemia", UNIT_TIMESTAMP.ID)
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-diagnosis-Leukemia", UNIT_TIMESTAMP.ID, UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Serum-concentration-of-Creatinine", EnglishHumanReadableExpression: "Serum-concentration-of-Creatinine", Short1: "Serum Creatinine", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Serum-concentration-of-Creatinine")
@@ -152,10 +152,10 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Toxic-Changes-in-Neutrophils", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Most-Recent-date-time-of-Chemotherapy", EnglishHumanReadableExpression: "Most-Recent-date-time-of-Chemotherapy", Short1: "History of recent chemotherapy", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-Chemotherapy", UNIT_TIMESTAMP.ID)
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-Chemotherapy", UNIT_TIMESTAMP.ID, UNIT_POSITIVE_NEGATIVE_MISSING.ID, UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Most-Recent-date-time-of-GCSF-infusion", EnglishHumanReadableExpression: "Most-Recent-date-time-of-GCSF-infusion", Short1: "History of recent GCSF", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-GCSF-infusion", UNIT_TIMESTAMP.ID)
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-GCSF-infusion", UNIT_TIMESTAMP.ID, UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Blast-Over20p", EnglishHumanReadableExpression: "Blast / WBC >= 20%", Short1: "Blast >= 20%", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Blast-Over20p")

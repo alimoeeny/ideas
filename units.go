@@ -1,13 +1,13 @@
 package ideas
 
-var UNIT_UNITLESS = &Unit{ID: "1", Name: "Unitless", Short1: ""}
+var UNIT_UNITLESS = &Unit{ID: "1", Name: "Unitless", Short1: "Unitless"}
 
 var UNIT_RATIO = &Unit{ID: "10", Name: "Ratio", Short1: "ratio"}
 var UNIT_PERCENTAGE = &Unit{ID: "20", Name: "Percentage", Short1: "%"}
 
-var UNIT_IDENTIFIER = &Unit{ID: "110", Name: "identifier", Short1: ""}
+var UNIT_IDENTIFIER = &Unit{ID: "110", Name: "identifier", Short1: "identifier"}
 
-var UNIT_COUNT = &Unit{ID: "12300", Name: "count", Short1: ""}
+var UNIT_COUNT = &Unit{ID: "12300", Name: "count", Short1: "count"}
 var UNIT_CATEGORICAL = &Unit{ID: "12350", Name: "categorical", Short1: "cat"}
 var UNIT_POSITIVE_NEGATIVE_MISSING = &Unit{ID: "12360", Name: "Positive Negative Missing", Short1: "PNM"}
 

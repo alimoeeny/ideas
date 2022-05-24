@@ -26,6 +26,7 @@ var UNIT_MILES = &Unit{ID: "1013", Name: "miles", Short1: "miles"}
 var UNIT_MILLIMOLES = &Unit{ID: "11014", Name: "millimoles", Short1: "mmol"}
 
 var UNIT_GRAMS_PER_LITER = &Unit{ID: "12015", Name: "grams per liter", Short1: "g/l"}
+var UNIT_GRAMS_PER_DECILITER = &Unit{ID: "12016", Name: "grams per deciliter", Short1: "g/dl"}
 
 var UNIT_LITER = &Unit{ID: "13016", Name: "liters", Short1: "l"}
 var UNIT_DECILITER = &Unit{ID: "13017", Name: "deciliter", Short1: "dl"}

@@ -67,8 +67,8 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Direct-Antiglobulin-Testing", EnglishHumanReadableExpression: "Direct-Antiglobulin-Testing", Short1: "DAT", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Direct-Antiglobulin-Testing")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Bilirubin-concentration", EnglishHumanReadableExpression: "Bilirubin-concentration", Short1: "Bilirubin", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Bilirubin-concentration")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Bilirubin-serum-concentration", EnglishHumanReadableExpression: "Bilirubin serum concentration", Short1: "Bilirubin", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Bilirubin-serum-concentration")
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Mean-Corpuscular-Volume", EnglishHumanReadableExpression: "Mean-Corpuscular-Volume", Short1: "MCV", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Mean-Corpuscular-Volume")
@@ -157,6 +157,78 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Most-Recent-date-time-of-GCSF-infusion", EnglishHumanReadableExpression: "Most-Recent-date-time-of-GCSF-infusion", Short1: "History of recent GCSF", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Most-Recent-date-time-of-GCSF-infusion", UNIT_TIMESTAMP.ID, UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Target-Cell-count-over-RBC-count", EnglishHumanReadableExpression: "Target cell count over RBC count", Short1: "TRG / RBC", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Target-Cell-count-over-RBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Serum-Ferritin-level", EnglishHumanReadableExpression: "Serum Ferritin Level", Short1: "Serum Ferritin", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Serum-Ferritin-level", UNIT_MICROGRAM_PER_LITER.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Serum-Iron-level", EnglishHumanReadableExpression: "Serum Iron Level", Short1: "Serum Iron", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Serum-Iron-level", UNIT_MICROGRAM_PER_DECILITER.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Total-Iron-Binding-Capacity", EnglishHumanReadableExpression: "Total iron-binding capacity", Short1: "TIBC", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Total-Iron-Binding-Capacity", UNIT_MICROGRAM_PER_DECILITER.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Blood-Oxygen-Saturation", EnglishHumanReadableExpression: "Blood Oxygen Saturation", Short1: "O2 Sat", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Blood-Oxygen-Saturation", UNIT_PERCENTAGE.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Red-Cell-Distribution-Width", EnglishHumanReadableExpression: "Red Cell Distribution Width", Short1: "RDW", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Red-Cell-Distribution-Width", UNIT_PERCENTAGE.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Elevated-LFTs", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Elevated-LFTs", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-History-of-Splenectomy", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-History-of-Splenectomy", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Basophilic-Stippling-count-over-RBC-count", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Basophilic-Stippling-count-over-RBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Howell-Jolly-Bodies-count-over-RBC-count", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Howell-Jolly-Bodies-count-over-RBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Alanine-Transaminase-blood-concentration", EnglishHumanReadableExpression: "ALT", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Alanine-Transaminase-blood-concentration", UNIT_INTERNATIONAL_UNITS_PER_LITER.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Aspartate-Transaminase-blood-concentration", EnglishHumanReadableExpression: "AST", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Aspartate-Transaminase-blood-concentration", UNIT_INTERNATIONAL_UNITS_PER_LITER.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Alkaline-Phosphatase", EnglishHumanReadableExpression: "ALP", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-alkaline phosphatase", UNIT_INTERNATIONAL_UNITS_PER_LITER.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Gamma-Glutamyl-Transferase", EnglishHumanReadableExpression: "GGT", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-gamma-glutamyl transferase ", UNIT_INTERNATIONAL_UNITS_PER_LITER.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-international normalized ratio", EnglishHumanReadableExpression: "INR", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-international normalized ratio", UNIT_RATIO.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Albumin-Serum-Concentration", EnglishHumanReadableExpression: "Albumin", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Albumin-serum-concentration", UNIT_GRAMS_PER_LITER.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Pappenheimer-Body-count-over-RBC-count", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Pappenheimer-Body-count-over-RBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-History-of-Hemoglobinopathy", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-History-of-Hemoglobinopathy", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Patient-Age", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Patient-Age", UNIT_DAY.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Atypical-Lymphocytes-count-over-WBC-count", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Atypical-Lymphocytes-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Mononucleosis-Spot-Test", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Mononucleosis-Spot-Test", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Accelerating-Lymphocytosis", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Accelerating-Lymphocytosis", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Smudge-Cell-count-over-WBC-count", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Smudge-Cell-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-History-of-Lymphoproliferative-Disorders ", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-History-of-Lymphoproliferative-Disorders ", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Blast-Over20p", EnglishHumanReadableExpression: "Blast / WBC >= 20%", Short1: "Blast >= 20%", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Blast-Over20p")
 
@@ -239,16 +311,16 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-NRBC-count-elevated", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Elevated-Metamyelocyte-over-WBC-count", EnglishHumanReadableExpression: "Elevated Metamyelocyte count", Short1: "Elevated Metamyelocyte", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Elevated-Metamyelocyte-over-WBC-count")
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Elevated-Metamyelocyte-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Elevated-Promyelocyte-count-over-WBC-count", EnglishHumanReadableExpression: "Elevated Promyelocyte count", Short1: "Elevated Promyelocyte", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Elevated-Promyelocyte-count-over-WBC-count")
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Elevated-Promyelocyte-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Elevated-Myelocyte-count-over-WBC-count", EnglishHumanReadableExpression: "Elevated Myelocyte count", Short1: "Elevated Myelocyte", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Elevated-Myelocyte-count-over-WBC-count")
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Elevated-Myelocyte-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Elevated-Teardrop-RBC-count-over-RBC-count", EnglishHumanReadableExpression: "Elevated Teardrop count", Short1: "Elevated Teardrop RBC", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Elevated-Teardrop-RBC-count-over-RBC-count")
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Elevated-Teardrop-RBC-count-over-RBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-MAHA", EnglishHumanReadableExpression: "MAHA", Short1: "", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("DDX-MAHA", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
@@ -279,5 +351,9 @@ func init() {
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-History-of-recent-GCSF", EnglishHumanReadableExpression: "History of recent GCSF", Short1: "Recent GCSF", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("DDX-History-of-recent-GCSF", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Iron-Deficiency-Anemia", EnglishHumanReadableExpression: "Iron Deficiency Anemia", Short1: "Iron Deficiency Anemia", EnglishDescription: ""})
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Monoclonal-B-Lymphocytosis", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
 
 }

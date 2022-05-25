@@ -47,4 +47,9 @@ var UNIT_NANOGRAM = &Unit{ID: "14029", Name: "nanogram", Short1: "ng"}
 var UNIT_PICOGRAM = &Unit{ID: "14030", Name: "picogram", Short1: "pg"}   // 1e-12 gram
 var UNIT_FEMTOGRAM = &Unit{ID: "14031", Name: "femtogram", Short1: "fg"} // 1e-15 gram
 
+var UNIT_INTERNATIONAL_UNITS = &Unit{ID: "15111", Name: "International Units", Short1: "IU"}
+var UNIT_INTERNATIONAL_UNITS_PER_LITER = &Unit{ID: "15112", Name: "International Units per liter", Short1: "IU/l"}
+
+var UNIT_NANOSECOND = &Unit{ID: "1653477003213596111", Name: "nanoseconds", Short1: "nsec"}
+var UNIT_DAY = &Unit{ID: "365", Name: "Days", Short1: "Days"}
 var UNIT_TIMESTAMP = &Unit{ID: "1651075578382886759", Name: "timestamp", Short1: "timestamp"}

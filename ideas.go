@@ -69,7 +69,15 @@ func (repo *ConceptsRepository) NewConcept(id string, expression string, short1 
 	if id == "" {
 		id = newStrID()
 	}
-	c := Concept{id, expression, short1, description}
+	c := Concept{
+		ID:                             id,
+		EnglishHumanReadableExpression: expression,
+		Short1:                         short1,
+		EnglishDescription:             description,
+		AKA:                            []string{},
+		Includes:                       []string{},
+		IsIncludedIn:                   []string{},
+	}
 	err := repo.SetConcept(c)
 	return c, err
 }
@@ -77,10 +85,13 @@ func (repo *ConceptsRepository) NewConcept(id string, expression string, short1 
 // Concept represents a bit of knowledge that can be queried form the user or from the machines
 // an example concept is RBC count, a workflow can ask for RBC count from an algorithm or from the user
 type Concept struct {
-	ID                             string `json:"id,omitempty"`
-	EnglishHumanReadableExpression string `json:"english_human_readable_expression,omitempty"`
-	Short1                         string `json:"short_1,omitempty"`
-	EnglishDescription             string `json:"english_description,omitempty"`
+	ID                             string   `json:"id,omitempty"`
+	EnglishHumanReadableExpression string   `json:"english_human_readable_expression,omitempty"`
+	Short1                         string   `json:"short_1,omitempty"`
+	EnglishDescription             string   `json:"english_description,omitempty"`
+	AKA                            []string `json:"aka,omitempty"`
+	Includes                       []string `json:"includes,omitempty"`
+	IsIncludedIn                   []string `json:"is_included_in,omitempty"`
 }
 
 // a map of CoceptIDs to Concepts

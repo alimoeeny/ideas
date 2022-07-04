@@ -17,7 +17,7 @@ func Test_ConceptsRepository(t *testing.T) {
 		if c != nil {
 			t.FailNow()
 		}
-		err := r.SetConcept(Concept{"abcd", "b", "short", "c"})
+		err := r.SetConcept(Concept{ID: "abcd", EnglishHumanReadableExpression: "b", Short1: "short", EnglishDescription: "c"})
 		if err != nil {
 			t.FailNow()
 		}

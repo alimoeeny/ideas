@@ -7,11 +7,22 @@ import (
 
 // TODO
 type Conversion func(measurement *Measurement, targetUnit Unit) (interface{}, Unit)
+type UnitType string
+
+//type NormalRange func(ageInDays int, sexChromosome string,) ()
+
+const (
+	NonnegativeInteger UnitType = "NonnegativeInteger" // Natural Number
+	PositiveInteger    UnitType = "PositiveInteger"
+	RealNumber         UnitType = "RealNumber"
+	Integer            UnitType = "Integer"
+)
 
 type Unit struct {
-	ID     string `json:"id,omitempty"`
-	Name   string `json:"name,omitempty"`
-	Short1 string `json:"short_1,omitempty"`
+	ID     string   `json:"id,omitempty"`
+	Name   string   `json:"name,omitempty"`
+	Short1 string   `json:"short_1,omitempty"`
+	Type   UnitType `json:"type,omitempty"`
 }
 
 type Measurement struct {

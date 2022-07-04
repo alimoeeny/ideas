@@ -17,7 +17,7 @@ func init() {
 	//----------
 	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_RBC_COUNT)
 	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_WBC_COUNT)
-	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_HEMOLOBIN_CONCENTRATION)
+
 	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_MVC)
 	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_MCH)
 	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_MCHC)
@@ -55,7 +55,7 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Reticulocyte-over-RBC-count", EnglishHumanReadableExpression: "Reticulocyte-over-RBC-count", Short1: "Retic", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Reticulocyte-over-RBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Hemoglobin-concentration", EnglishHumanReadableExpression: "Hemoglobin-concentration", Short1: "Hb", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_HEMOLOBIN_CONCENTRATION)
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Hemoglobin-concentration")
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Hemoglobin-delta-7-days", EnglishHumanReadableExpression: "Hemoglobin-delta-7-days", Short1: "Hb ∆ 7 days", EnglishDescription: ""})
@@ -226,8 +226,51 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Smudge-Cell-count-over-WBC-count", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Smudge-Cell-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-History-of-Lymphoproliferative-Disorders ", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-History-of-Lymphoproliferative-Disorders", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-History-of-Lymphoproliferative-Disorders ", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+
+	// --------------------------------------------------
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Chest-pain", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Severe-lower chest-pain", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-upper-abdominal-pain", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Sudden-breathlessness, onset over seconds", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Breathlessness on minimal exertion", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-orthopnoea", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-paroxysmal nocturnal dyspnoea (PND)", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Palpitations", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Acute breathlessness", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-wheeze ± cough", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Cough and pink frothy sputum", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Syncope", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Leg pain on walking—intermittent claudication", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Leg pain on standing—relieved by lying down", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Unilateral calf swelling", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Bilateral ankle swelling", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Thoughts on interpreting cardiovascular signs", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Peripheral cyanosis", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Central cyanosis", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Tachycardia (e.g. pulse rate >20bpm) 200 Bradycardia (<60bpm) 202", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Pulse irregular", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Pulse volume high", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Pulse volume low", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Blood pressure high—hypertension", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Blood pressure very low", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Postural fall in blood pressure", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-BP/pulse difference between arms", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-BP/pulse difference between arm and legs", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Prominent leg veins ± unilateral leg swelling", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Unilateral leg and ankle swelling", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Bilateral leg and ankle swelling", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Raised jugular venous pressure", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Abnormal apex impulse", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Extra heart sounds", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Diastolic murmur", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Mid-systolic murmur", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Pansystolic murmur", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Murmurs not entirely in systole or diastole", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+
+	// --------------------------------------------------
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Blast-Over20p", EnglishHumanReadableExpression: "Blast / WBC >= 20%", Short1: "Blast >= 20%", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Blast-Over20p")
@@ -355,6 +398,8 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Iron-Deficiency-Anemia", EnglishHumanReadableExpression: "Iron Deficiency Anemia", Short1: "Iron Deficiency Anemia", EnglishDescription: ""})
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Monoclonal-B-Lymphocytosis", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Sideroblastic-Anemia", EnglishHumanReadableExpression: "Sideroblastic anemia", Short1: "", EnglishDescription: ""})
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Angina", EnglishHumanReadableExpression: "Angina", Short1: "Angina", EnglishDescription: "", AKA: []string{}})
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-STEMI", EnglishHumanReadableExpression: "ST Elevated Myocardial Infarction", Short1: "STEMI", EnglishDescription: "", AKA: []string{}})
@@ -1189,5 +1234,4 @@ func init() {
 	// Vanillylmandelic acid
 	// Ventilation/perfusion scanning
 	// White blood cell
-
 }

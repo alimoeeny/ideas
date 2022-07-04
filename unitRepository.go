@@ -98,11 +98,11 @@ func (repo *UnitsRepository) All() map[string]*Unit {
 	return repo.dict
 }
 
-func (repo *UnitsRepository) NewUnit(id string, name string, short_01 string) (Unit, error) {
+func (repo *UnitsRepository) NewUnit(id string, name string, short_01 string, unitType UnitType) (Unit, error) {
 	if id == "" {
 		id = newStrID()
 	}
-	u := Unit{id, name, short_01}
+	u := Unit{ID: id, Name: name, Short1: short_01, Type: unitType}
 	err := repo.SetUnit(u)
 	return u, err
 }

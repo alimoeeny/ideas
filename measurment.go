@@ -12,10 +12,11 @@ type UnitType string
 //type NormalRange func(ageInDays int, sexChromosome string,) ()
 
 const (
-	NonnegativeInteger UnitType = "NonnegativeInteger" // Natural Number
-	PositiveInteger    UnitType = "PositiveInteger"
-	RealNumber         UnitType = "RealNumber"
-	Integer            UnitType = "Integer"
+	TYPE_NotSet             UnitType = ""
+	TYPE_NonnegativeInteger UnitType = "NonnegativeInteger" // Natural Number
+	TYPE_PositiveInteger    UnitType = "PositiveInteger"
+	TYPE_RealNumber         UnitType = "RealNumber"
+	TYPE_Integer            UnitType = "Integer"
 )
 
 type Unit struct {

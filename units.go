@@ -21,7 +21,11 @@ var UNIT_COUNTS_PER_MILLILITER = &Unit{ID: "12600", Name: "counts per milliliter
 var UNIT_COUNT_PER_UL = &Unit{ID: "125", Name: "count per microliter", Short1: "/µl"}
 var UNIT_COUNT_MILLION_PER_UL = &Unit{ID: "125", Name: "count per microliter", Short1: "/µl"}
 
-var UNIT_MILES = &Unit{ID: "1013", Name: "miles", Short1: "miles"}
+var UNIT_METER = &Unit{ID: "1010", Name: "meter", Short1: "m"}
+var UNIT_CENTIMETER = &Unit{ID: "1011", Name: "centimeter", Short1: "cm"}
+var UNIT_MILLIMETER = &Unit{ID: "1012", Name: "millimeter", Short1: "mm"}
+var UNIT_MICROMETER = &Unit{ID: "1013", Name: "micrometer", Short1: "µ"}
+var UNIT_MILES = &Unit{ID: "1014", Name: "miles", Short1: "miles"}
 
 var UNIT_MILLIMOLES = &Unit{ID: "11014", Name: "millimoles", Short1: "mmol"}
 

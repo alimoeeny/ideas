@@ -94,3 +94,19 @@ func (dfs *DictionaryFactsheet) MarshalJSON() ([]byte, error) {
 	tdic["_TIMESTAMP"] = time.Now().UnixNano()
 	return json.Marshal(tdic)
 }
+
+func MergeFactsheetsAndOverwriteLeft(factsheets ...DictionaryFactsheet) DictionaryFactsheet {
+	if len(factsheets) < 1 {
+		return *NewDictionaryFactsheet("")
+	}
+	result := factsheets[0]
+	for idx, fs := range factsheets {
+		if idx == 0 {
+			continue
+		}
+		for k, v := range fs.dic {
+			result.SetValue(k, v)
+		}
+	}
+	return result
+}

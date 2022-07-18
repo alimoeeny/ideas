@@ -47,3 +47,77 @@ func Test_FactsheetJSON(t *testing.T) {
 	}
 	fmt.Println(string(jb))
 }
+
+func Test_Factsheet_Merge(t *testing.T) {
+	// emtpy
+	{
+		fs := MergeFactsheetsAndOverwriteLeft(*NewDictionaryFactsheet(""))
+		if fs.ID() != "" {
+			t.Errorf("Expect '' but got %s\n", fs.ID())
+			t.FailNow()
+		}
+
+		fs = MergeFactsheetsAndOverwriteLeft(*NewDictionaryFactsheet("12"))
+		if fs.ID() != "12" {
+			t.Errorf("Expect '12' but got %s\n", fs.ID())
+			t.FailNow()
+		}
+
+		fs = MergeFactsheetsAndOverwriteLeft(*NewDictionaryFactsheet("12"), *NewDictionaryFactsheet("13"))
+		if fs.ID() != "12" {
+			t.Errorf("Expect '12' but got %s\n", fs.ID())
+			t.FailNow()
+		}
+	}
+	// basics
+	{
+		A := NewDictionaryFactsheet("12")
+		A.SetValue("a", 1)
+		A.SetValue("b", 2)
+		B := NewDictionaryFactsheet("13")
+		B.SetValue("A", 11)
+		fs := MergeFactsheetsAndOverwriteLeft(*A, *B)
+		if fs.ID() != "12" {
+			t.Errorf("Expect '12' but got %s\n", fs.ID())
+			t.FailNow()
+		}
+		if fs.CurrentValue("a") != 1 {
+			t.Errorf("Expect '1' for 'a' but got %s\n", fs.CurrentValue("a"))
+			t.FailNow()
+		}
+		if fs.CurrentValue("b") != 2 {
+			t.Errorf("Expect '2' for 'b' but got %s\n", fs.CurrentValue("b"))
+			t.FailNow()
+		}
+		if fs.CurrentValue("A") != 11 {
+			t.Errorf("Expect '11' for 'A' but got %s\n", fs.CurrentValue("A"))
+			t.FailNow()
+		}
+	}
+	// left overwrite
+	{
+		A := NewDictionaryFactsheet("12")
+		A.SetValue("a", 1)
+		A.SetValue("b", 2)
+		B := NewDictionaryFactsheet("13")
+		B.SetValue("A", 11)
+		B.SetValue("b", 12)
+		fs := MergeFactsheetsAndOverwriteLeft(*A, *B)
+		if fs.ID() != "12" {
+			t.Errorf("Expect '12' but got %s\n", fs.ID())
+			t.FailNow()
+		}
+		if fs.CurrentValue("a") != 1 {
+			t.Errorf("Expect '1' for 'a' but got %s\n", fs.CurrentValue("a"))
+			t.FailNow()
+		}
+		if fs.CurrentValue("b") != 12 {
+			t.Errorf("Expect '12' for 'b' but got %s\n", fs.CurrentValue("b"))
+			t.FailNow()
+		}
+		if fs.CurrentValue("A") != 11 {
+			t.Errorf("Expect '11' for 'A' but got %s\n", fs.CurrentValue("A"))
+			t.FailNow()
+		}
+	}
+}

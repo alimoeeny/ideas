@@ -95,9 +95,9 @@ func (dfs *DictionaryFactsheet) MarshalJSON() ([]byte, error) {
 	return json.Marshal(tdic)
 }
 
-func MergeFactsheetsAndOverwriteLeft(factsheets ...DictionaryFactsheet) DictionaryFactsheet {
+func MergeFactsheetsAndOverwriteLeft(factsheets ...*DictionaryFactsheet) *DictionaryFactsheet {
 	if len(factsheets) < 1 {
-		return *NewDictionaryFactsheet("")
+		return NewDictionaryFactsheet("")
 	}
 	result := factsheets[0]
 	for idx, fs := range factsheets {

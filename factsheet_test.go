@@ -51,19 +51,19 @@ func Test_FactsheetJSON(t *testing.T) {
 func Test_Factsheet_Merge(t *testing.T) {
 	// emtpy
 	{
-		fs := MergeFactsheetsAndOverwriteLeft(*NewDictionaryFactsheet(""))
+		fs := MergeFactsheetsAndOverwriteLeft(NewDictionaryFactsheet(""))
 		if fs.ID() != "" {
 			t.Errorf("Expect '' but got %s\n", fs.ID())
 			t.FailNow()
 		}
 
-		fs = MergeFactsheetsAndOverwriteLeft(*NewDictionaryFactsheet("12"))
+		fs = MergeFactsheetsAndOverwriteLeft(NewDictionaryFactsheet("12"))
 		if fs.ID() != "12" {
 			t.Errorf("Expect '12' but got %s\n", fs.ID())
 			t.FailNow()
 		}
 
-		fs = MergeFactsheetsAndOverwriteLeft(*NewDictionaryFactsheet("12"), *NewDictionaryFactsheet("13"))
+		fs = MergeFactsheetsAndOverwriteLeft(NewDictionaryFactsheet("12"), NewDictionaryFactsheet("13"))
 		if fs.ID() != "12" {
 			t.Errorf("Expect '12' but got %s\n", fs.ID())
 			t.FailNow()
@@ -76,7 +76,7 @@ func Test_Factsheet_Merge(t *testing.T) {
 		A.SetValue("b", 2)
 		B := NewDictionaryFactsheet("13")
 		B.SetValue("A", 11)
-		fs := MergeFactsheetsAndOverwriteLeft(*A, *B)
+		fs := MergeFactsheetsAndOverwriteLeft(A, B)
 		if fs.ID() != "12" {
 			t.Errorf("Expect '12' but got %s\n", fs.ID())
 			t.FailNow()
@@ -102,7 +102,7 @@ func Test_Factsheet_Merge(t *testing.T) {
 		B := NewDictionaryFactsheet("13")
 		B.SetValue("A", 11)
 		B.SetValue("b", 12)
-		fs := MergeFactsheetsAndOverwriteLeft(*A, *B)
+		fs := MergeFactsheetsAndOverwriteLeft(A, B)
 		if fs.ID() != "12" {
 			t.Errorf("Expect '12' but got %s\n", fs.ID())
 			t.FailNow()

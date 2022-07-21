@@ -84,6 +84,10 @@ func (dfs *DictionaryFactsheet) VersionBump() int64 {
 	return dfs.version
 }
 
+func (dfs *DictionaryFactsheet) Itterator() map[string]interface{} {
+	return dfs.dic
+}
+
 func (dfs *DictionaryFactsheet) MarshalJSON() ([]byte, error) {
 	if dfs == nil || dfs.dic == nil {
 		return nil, fmt.Errorf("this factsheet is not initialized properly")

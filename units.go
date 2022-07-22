@@ -1,6 +1,9 @@
 package ideas
 
+var UNIT_UNKNOW = &Unit{ID: "0", Name: "Unknow", Short1: "Unknown"}
 var UNIT_UNITLESS = &Unit{ID: "1", Name: "Unitless", Short1: "Unitless"}
+
+var UNIT_PROBABILITY = &Unit{ID: "324", Name: "Probability", Short1: "Probability"}
 
 var UNIT_RATIO = &Unit{ID: "10", Name: "Ratio", Short1: "ratio"}
 var UNIT_PERCENTAGE = &Unit{ID: "20", Name: "Percentage", Short1: "%"}

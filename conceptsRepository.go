@@ -226,13 +226,13 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Accelerating-Lymphocytosis", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Accelerating-Lymphocytosis", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Smudge-Cell-count-over-WBC-count", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Smudge-Cell-count-over-WBC-count", EnglishHumanReadableExpression: "Smudge Cells over WBC", Short1: "Smudge Cells / WBC", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Smudge-Cell-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-History-of-Lymphoproliferative-Disorders", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-History-of-Lymphoproliferative-Disorders ", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Circulating-Plasma-Cell-count-over-WBC-count", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Circulating-Plasma-Cell-count-over-WBC-count", EnglishHumanReadableExpression: "Circulating Plasma Cells over WBC count", Short1: "Circulating Plasma Cells / WBC", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Circulating-Plasma-Cell-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	// --------------------------------------------------

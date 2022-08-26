@@ -91,6 +91,9 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-NRBC-count-over-RBC-count", EnglishHumanReadableExpression: "NRBC-count-over-RBC-count", Short1: "NRBC", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-NRBC-count-over-RBC-count")
 
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Rouleaux-Formation-count-over-RBC-count", EnglishHumanReadableExpression: "Rouleaux-Formation-count-over-RBC-count", Short1: "Rouleaux", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Rouleaux-Formation-count-over-RBC-count", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Metamyelocyte-over-WBC-count", EnglishHumanReadableExpression: "Metamyelocyte-over-WBC-count", Short1: "Metamyelocyte", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Metamyelocyte-over-WBC-count")
 
@@ -229,6 +232,9 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-History-of-Lymphoproliferative-Disorders", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-History-of-Lymphoproliferative-Disorders ", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Circulating-Plasma-Cell-count-over-WBC-count", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Circulating-Plasma-Cell-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+
 	// --------------------------------------------------
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Chest-pain", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
@@ -305,8 +311,14 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Prolonged-activated-partial-thromboplastin-time", EnglishHumanReadableExpression: "Prolonged activated Partial Thromboplastin Time", Short1: "Prolonged aPTT", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Prolonged-activated-partial-thromboplastin-time")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Retic", EnglishHumanReadableExpression: "Reticulocyte", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Retic", EnglishHumanReadableExpression: "Reticulocyte", Short1: "Retic", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Retic")
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Rouleaux-Formation", EnglishHumanReadableExpression: "Rouleaux Formation", Short1: "Rouleaux", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Rouleaux-Formation", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Circulating-Plasma-Cells-Over20p", EnglishHumanReadableExpression: "Circulating Plasma Cells over 20 percent", Short1: "Circulating Plasma Cells Over 20 percent", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Circulating-Plasma-Cells-Over20p")
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Positive-History-of-Acute-Leukemia", EnglishHumanReadableExpression: "Positive History of Acute Leukemia", Short1: "History of Acute Leukemia +", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Positive-History-of-Acute-Leukemia")
@@ -373,6 +385,12 @@ func init() {
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-HS", EnglishHumanReadableExpression: "HS", Short1: "", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("DDX-HS", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Plasma-Cell-Leukemia", EnglishHumanReadableExpression: "Plasma Cell Leukemia", Short1: "Plasma Cell Leukemia", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("DDX-Plasma-Cell-Leukemia", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Multiple-Myeloma", EnglishHumanReadableExpression: "Multiple Myeloma", Short1: "Multiple Myeloma", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("DDX-Multiple-Myeloma", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Acute-Leukemia", EnglishHumanReadableExpression: "Acute Leukemia", Short1: "Acute Leukemia", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("DDX-Acute-Leukemia", UNIT_POSITIVE_NEGATIVE_MISSING.ID)

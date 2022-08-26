@@ -91,8 +91,8 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-NRBC-count-over-RBC-count", EnglishHumanReadableExpression: "NRBC-count-over-RBC-count", Short1: "NRBC", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-NRBC-count-over-RBC-count")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Rouleaux-Formation-count-over-RBC-count", EnglishHumanReadableExpression: "Rouleaux-Formation-count-over-RBC-count", Short1: "Rouleaux", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Rouleaux-Formation-count-over-RBC-count", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Rouleaux-Formation-count-over-RBC-count", EnglishHumanReadableExpression: "Rouleaux-Formation-count-over-RBC-count", Short1: "Rouleaux", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Rouleaux-Formation-count-over-RBC-count", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Metamyelocyte-over-WBC-count", EnglishHumanReadableExpression: "Metamyelocyte-over-WBC-count", Short1: "Metamyelocyte", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Metamyelocyte-over-WBC-count")

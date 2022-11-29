@@ -409,6 +409,8 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-CML", EnglishHumanReadableExpression: "Chronic Myeloid Leukemia", Short1: "CML", EnglishDescription: "Chronic Myeloid Leukemia"})
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-JMML", EnglishHumanReadableExpression: "Juvenile Myelomonocytic Leukemia", Short1: "JMML", EnglishDescription: "Juvenile Myelomonocytic Leukemia"})
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-CLL", EnglishHumanReadableExpression: "Chronic Lymphocytic Leukemia (CLL)", Short1: "CLL", EnglishDescription: "Chronic Lymphocytic Leukemia (CLL)"})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-CBL", EnglishHumanReadableExpression: "Chronic Basophilic Leukemia (CBL)", Short1: "CBL", EnglishDescription: "Chronic Basophilic Leukemia (CBL)"})
+
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Hypochromic-Anemia", EnglishHumanReadableExpression: "Hypochromic Anemia", Short1: "Hypochromic Anemia", EnglishDescription: "Hypochromic Anemia"})
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Thrombocytopenia", EnglishHumanReadableExpression: "Thrombocytopenia", Short1: "Thrombocytopenia", EnglishDescription: "Thrombocytopenia"})
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Neutropenia", EnglishHumanReadableExpression: "Neutropenia", Short1: "Neutropenia", EnglishDescription: "Neutropenia"})

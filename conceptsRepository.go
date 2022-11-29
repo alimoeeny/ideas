@@ -118,6 +118,24 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Blast-count-over-WBC-count", EnglishHumanReadableExpression: "Blast count over WBC count", Short1: "Blast / WBC", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Blast-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Hypochromic-RBC-over-RBC-count", EnglishHumanReadableExpression: "Hypochromic RBC over RBC count", Short1: "Hypochromic RBC", EnglishDescription: "Hypochromic RBC over RBC count"})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Hypochromic-RBC-over-RBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Teardrop-RBC-over-RBC-count", EnglishHumanReadableExpression: "Teardrop RBC over RBC count", Short1: "Teardrop-RBC-over-RBC-count", EnglishDescription: "Teardrop-RBC-over-RBC-count"})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Teardrop-RBC-over-RBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Blasts-with-vacuoles-count-over-WBC-count", EnglishHumanReadableExpression: "SENS-Blasts with vacuoles-count-over-WBC-count", Short1: "SENS-Blasts with vacuoles / WBC", EnglishDescription: "SENS-Blasts with vacuoles-count-over-WBC-count"})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Blasts-with-vacuoles-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Basophilic-Metamyelocytes-count-over-WBC-count", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Basophilic Metamyelocytes-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Myeloblast-count-over-WBC-count", EnglishHumanReadableExpression: "SENS-Myeloblast-count-over-WBC-count", Short1: "SENS-Myeloblast / WBC", EnglishDescription: "SENS-Myeloblast-count-over-WBC-count"})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Myeloblast-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Neutrophilic-Metamylocyte-count-over-WBC-count", EnglishHumanReadableExpression: "Neutrophilic Metamylocyte count over WBC count", Short1: "Neutrophilic Metamylocyte / WBC", EnglishDescription: "Neutrophilic Metamylocyte over WBC count"})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Neutrophilic-Metamylocyte-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Monoblast-count-over-WBC-count", EnglishHumanReadableExpression: "Monoblast-count-over-WBC-count", Short1: "Monoblast / WBC", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Monoblast-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
@@ -385,6 +403,15 @@ func init() {
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-HS", EnglishHumanReadableExpression: "HS", Short1: "", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("DDX-HS", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-AML", EnglishHumanReadableExpression: "Acute Myeloid Leukemia", Short1: "AML", EnglishDescription: "Acute Myeloid Leukemia"})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-ALL", EnglishHumanReadableExpression: "Acute Lymphocytic Leukemia", Short1: "ALL", EnglishDescription: "Acute Lymphocytic Leukemia"})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-CML", EnglishHumanReadableExpression: "Chronic Myeloid Leukemia", Short1: "CML", EnglishDescription: "Chronic Myeloid Leukemia"})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-JMML", EnglishHumanReadableExpression: "Juvenile Myelomonocytic Leukemia", Short1: "JMML", EnglishDescription: "Juvenile Myelomonocytic Leukemia"})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-CLL", EnglishHumanReadableExpression: "Chronic Lymphocytic Leukemia (CLL)", Short1: "CLL", EnglishDescription: "Chronic Lymphocytic Leukemia (CLL)"})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Hypochromic-Anemia", EnglishHumanReadableExpression: "Hypochromic Anemia", Short1: "Hypochromic Anemia", EnglishDescription: "Hypochromic Anemia"})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Thrombocytopenia", EnglishHumanReadableExpression: "Thrombocytopenia", Short1: "Thrombocytopenia", EnglishDescription: "Thrombocytopenia"})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Neutropenia", EnglishHumanReadableExpression: "Neutropenia", Short1: "Neutropenia", EnglishDescription: "Neutropenia"})
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Plasma-Cell-Leukemia", EnglishHumanReadableExpression: "Plasma Cell Leukemia", Short1: "Plasma Cell Leukemia", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("DDX-Plasma-Cell-Leukemia", UNIT_POSITIVE_NEGATIVE_MISSING.ID)

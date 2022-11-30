@@ -20,6 +20,7 @@ var UNIT_COUNT_BILLION_PER_LITER = &Unit{ID: "12501", Name: "counts billion per 
 var UNIT_COUNT_TRILLION_PER_LITER = &Unit{ID: "12502", Name: "counts trillion per liter", Short1: "/l"} // 10^12 / l
 
 var UNIT_COUNTS_PER_MILLILITER = &Unit{ID: "12600", Name: "counts per milliliter", Short1: "/ml"}
+var UNIT_COUNTS_PER_MICROLITER = &Unit{ID: "12700", Name: "counts per microliter", Short1: "/µl"}
 
 var UNIT_COUNT_PER_UL = &Unit{ID: "125", Name: "count per microliter", Short1: "/µl"}
 var UNIT_COUNT_MILLION_PER_UL = &Unit{ID: "125", Name: "count per microliter", Short1: "/µl"}

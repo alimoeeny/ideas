@@ -76,8 +76,11 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Sickle-Cell-over-RBC-count", EnglishHumanReadableExpression: "Sickle-Cell-over-RBC-count", Short1: "Sickle cell", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Sickle-Cell-over-RBC-count")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Neutrophil-count-over-WBC-count", EnglishHumanReadableExpression: "Neutrophil count over WBC count", Short1: "Neutrophil", EnglishDescription: "Nuetrophil / WBC"})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Neutrophil-count-over-WBC-count")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Neutrophil-count-over-WBC-count", EnglishHumanReadableExpression: "Neutrophil count over WBC count", Short1: "Neutrophil %", EnglishDescription: "Nuetrophil / WBC"})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Neutrophil-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Neutrophil-count-absolute", EnglishHumanReadableExpression: "Neutrophil count", Short1: "Neutrophil count", EnglishDescription: "Nuetrophil Count"})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Neutrophil-count-absolute", UNIT_COUNT.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Hypogranular-Neutrophils-over-WBC-count", EnglishHumanReadableExpression: "Hypogranular-Neutrophils-over-WBC-count", Short1: "Hypogranular Neutrophils", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Hypogranular-Neutrophils-over-WBC-count")

@@ -127,13 +127,13 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Teardrop-RBC-over-RBC-count", EnglishHumanReadableExpression: "Teardrop RBC over RBC count", Short1: "Teardrop-RBC-over-RBC-count", EnglishDescription: "Teardrop-RBC-over-RBC-count"})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Teardrop-RBC-over-RBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Blasts-with-vacuoles-count-over-WBC-count", EnglishHumanReadableExpression: "SENS-Blasts with vacuoles-count-over-WBC-count", Short1: "SENS-Blasts with vacuoles / WBC", EnglishDescription: "SENS-Blasts with vacuoles-count-over-WBC-count"})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Blasts-with-vacuoles-count-over-WBC-count", EnglishHumanReadableExpression: "Blasts with vacuoles-count-over-WBC-count", Short1: "Blasts with vacuoles / WBC", EnglishDescription: "SENS-Blasts with vacuoles-count-over-WBC-count"})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Blasts-with-vacuoles-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Basophilic-Metamyelocytes-count-over-WBC-count", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Basophilic Metamyelocytes-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Myeloblast-count-over-WBC-count", EnglishHumanReadableExpression: "SENS-Myeloblast-count-over-WBC-count", Short1: "SENS-Myeloblast / WBC", EnglishDescription: "SENS-Myeloblast-count-over-WBC-count"})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Myeloblast-count-over-WBC-count", EnglishHumanReadableExpression: "Myeloblast count over WBC count", Short1: "Myeloblast / WBC", EnglishDescription: "SENS-Myeloblast-count-over-WBC-count"})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("SENS-Myeloblast-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "SENS-Neutrophilic-Metamylocyte-count-over-WBC-count", EnglishHumanReadableExpression: "Neutrophilic Metamylocyte count over WBC count", Short1: "Neutrophilic Metamylocyte / WBC", EnglishDescription: "Neutrophilic Metamylocyte over WBC count"})

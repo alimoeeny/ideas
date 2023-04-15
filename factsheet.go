@@ -114,3 +114,14 @@ func MergeFactsheetsAndOverwriteLeft(factsheets ...*DictionaryFactsheet) *Dictio
 	}
 	return result
 }
+
+func (fds *DictionaryFactsheet) UnmarshalJSON(data []byte) error {
+	var dic map[string]interface{}
+	if err := json.Unmarshal(data, &dic); err != nil {
+		return err
+	}
+	fds.dic = dic
+	fds.id = dic["_ID"].(string)
+	fds.version = int64(dic["_VERSION"].(float64))
+	return nil
+}

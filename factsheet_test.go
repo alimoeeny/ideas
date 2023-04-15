@@ -46,6 +46,53 @@ func Test_FactsheetJSON(t *testing.T) {
 		t.Errorf("JSON should contain ali, but does not: %s", string(jb))
 	}
 	fmt.Println(string(jb))
+
+	fs2 := NewDictionaryFactsheet(newStrID())
+	err = json.Unmarshal(jb, fs2)
+	if err != nil {
+		t.Errorf("Error unmarshaling factsheet: %v", err)
+	}
+	if fs2.CurrentValue("ali") != "ali" {
+		t.Errorf("Value should be ali, but is %s", fs2.CurrentValue("ali"))
+	}
+}
+
+func Test_FactsheeJSON_Marshal_Unmarshal(t *testing.T) {
+	fs := NewDictionaryFactsheet(newStrID())
+	fs.SetValue("ali", "ali")
+	fs.SetValue("age", 12)
+	fs.SetValue("isMale", true)
+	fs.SetValue("isFemale", false)
+	fs.SetValue("isAli", nil)
+
+	jb, err := json.Marshal(fs)
+	if err != nil {
+		t.Errorf("Error marshaling factsheet: %v", err)
+	}
+
+	fs2 := NewDictionaryFactsheet(newStrID())
+	err = json.Unmarshal(jb, fs2)
+	if err != nil {
+		t.Errorf("Error unmarshaling factsheet: %v", err)
+	}
+	if fs.ID() != fs2.ID() {
+		t.Errorf("ID should be %s, but is %s", fs.ID(), fs2.ID())
+	}
+	if fs2.CurrentValue("ali") != "ali" {
+		t.Errorf("Value should be ali, but is %s", fs2.CurrentValue("ali"))
+	}
+	if fs2.CurrentValue("age") != 12.0 {
+		t.Errorf("Value should be 12, but is %f", fs2.CurrentValue("age"))
+	}
+	if fs2.CurrentValue("isMale") != true {
+		t.Errorf("Value should be true, but is %s", fs2.CurrentValue("isMale"))
+	}
+	if fs2.CurrentValue("isFemale") != false {
+		t.Errorf("Value should be false, but is %s", fs2.CurrentValue("isFemale"))
+	}
+	if fs2.CurrentValue("isAli") != nil {
+		t.Errorf("Value should be nil, but is %s", fs2.CurrentValue("isAli"))
+	}
 }
 
 func Test_Factsheet_Merge(t *testing.T) {

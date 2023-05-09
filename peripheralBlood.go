@@ -38,7 +38,7 @@ var CONCEPT_CBC = ConceptSet{
 	},
 }
 
-///----------------------------
+// /----------------------------
 var CONCEPT_RBC_COUNT = Concept{ID: "131314", EnglishHumanReadableExpression: "RBC Count", EnglishDescription: "Average Red Blood Cell Count per volume of whole blood"}
 
 var CONCEPT_NORMAL_RBCCount = Concept{ID: "42000768", EnglishHumanReadableExpression: "Normal RBC count"}
@@ -48,19 +48,21 @@ var RBCCountXSet = MutuallyExclusiveConceptSet{ConceptSet{ID: "42000771", Concep
 
 var CONCEPT_rbcShapeTargetCell = Concept{ID: "42000772", EnglishHumanReadableExpression: "target cell"}
 
-///----------------------------
+var CONCEPT_SICKLE_CELL_COUNT = Concept{ID: "42000793", EnglishHumanReadableExpression: "Sickle Cell Count", EnglishDescription: "Sickle Cell Count per volume of whole blood"}
+
+// /----------------------------
 var CONCEPT_WBC_COUNT = Concept{ID: "131315", EnglishHumanReadableExpression: "WBC Count", EnglishDescription: "White Blood Cell Count per volume of whole blood"}
 var CONCEPT_NORMAL_WBC_COUNT = Concept{ID: "42000873", EnglishHumanReadableExpression: "Normal WBC count"}
 var CONCEPT_HIGH_WBC_COUNT = Concept{ID: "42000874", EnglishHumanReadableExpression: "High WBC count"}
 var CONCEPT_LOW_WBC_COUNT = Concept{ID: "42000875", EnglishHumanReadableExpression: "Low WBC count"}
 
-///----------------------------
+// /----------------------------
 var CONCEPT_HEMOLOBIN_CONCENTRATION = Concept{ID: "SENS-Hemoglobin-concentration", EnglishHumanReadableExpression: "Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood", Short1: "Hb"}
 var CONCEPT_NORMAL_HEMOLOBIN_CONCENTRATION = Concept{ID: "131317", EnglishHumanReadableExpression: "Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood"}
 var CONCEPT_HIGH_HEMOLOBIN_CONCENTRATION = Concept{ID: "131318", EnglishHumanReadableExpression: "Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood"}
 var CONCEPT_LOW_HEMOLOBIN_CONCENTRATION = Concept{ID: "131319", EnglishHumanReadableExpression: "Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood"}
 
-///----------------------------
+// /----------------------------
 var CONCEPT_MVC = Concept{ID: "131320", EnglishHumanReadableExpression: "Mean corpuscular volume", Short1: "MCV", EnglishDescription: "Mean corpuscular volume"}
 var CONCEPT_NORMAL_MVC = Concept{ID: "131321", EnglishHumanReadableExpression: "Normal mean corpuscular volume", Short1: "Normal MCV", EnglishDescription: ""}
 var CONCEPT_HIGH_MVC = Concept{ID: "131322", EnglishHumanReadableExpression: "High mean corpuscular volume", Short1: "High MCV", EnglishDescription: ""}

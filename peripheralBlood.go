@@ -124,6 +124,16 @@ var CONCEPT_LOW_RETICULOCYTE_COUNT = Concept{ID: "131413", EnglishHumanReadableE
 
 // ---------------------------
 
+var CONCEPT_MALARIA_PARASITE_PRESENT = Concept{ID: "131420", EnglishHumanReadableExpression: "Malaria Parasite Detected", EnglishDescription: ""}
+var CONCEPT_MALARIA_ASEXUAL_PARASITE_PRESENT = Concept{ID: "131421", EnglishHumanReadableExpression: "Asexual form of Malaria Parasite Detected", EnglishDescription: ""}
+var CONCEPT_MALARIA_GAMETOCYTES_PRESENT = Concept{ID: "131422", EnglishHumanReadableExpression: "Malaria Gametocytes Detected", EnglishDescription: ""}
+var CONCEPT_MALARIA_FALCIPARUM_PARASITE_PRESENT = Concept{ID: "131423", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+var CONCEPT_MALARIA_VIVAX_PARASITE_PRESENT = Concept{ID: "131424", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+var CONCEPT_MALARIA_OVALE_PARASITE_PRESENT = Concept{ID: "131425", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+var CONCEPT_MALARIA_MALARIAE_PARASITE_PRESENT = Concept{ID: "131426", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+var CONCEPT_MALARIA_KNOWLESI_PARASITE_PRESENT = Concept{ID: "131427", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+var CONCEPT_MALARIA_PARASITE_CLASSIFICATION = Concept{ID: "131428", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+
 type PeripheralBloodFilmFindings struct {
 	IdeaSet           `json:"idea_set,omitempty"`
 	PatientIdentifier Identifier `json:"patient_identifier,omitempty"`

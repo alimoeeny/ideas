@@ -134,6 +134,10 @@ var CONCEPT_MALARIA_MALARIAE_PARASITE_PRESENT = Concept{ID: "131426", EnglishHum
 var CONCEPT_MALARIA_KNOWLESI_PARASITE_PRESENT = Concept{ID: "131427", EnglishHumanReadableExpression: "", EnglishDescription: ""}
 var CONCEPT_MALARIA_PARASITE_CLASSIFICATION = Concept{ID: "131428", EnglishHumanReadableExpression: "", EnglishDescription: ""}
 
+// ---------------------------
+
+var CONCEPT_BLAST_CELL_DETECTED = Concept{ID: "131480", EnglishHumanReadableExpression: "Blast Cell Detected", EnglishDescription: ""}
+
 type PeripheralBloodFilmFindings struct {
 	IdeaSet           `json:"idea_set,omitempty"`
 	PatientIdentifier Identifier `json:"patient_identifier,omitempty"`

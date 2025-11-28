@@ -69,58 +69,58 @@ var CONCEPT_HIGH_MVC = Concept{ID: "131322", EnglishHumanReadableExpression: "Hi
 var CONCEPT_LOW_MVC = Concept{ID: "131323", EnglishHumanReadableExpression: "Low mean corpuscular volume", Short1: "Low MCV", EnglishDescription: ""}
 
 // ---------------------------
-var CONCEPT_MCH = Concept{ID: "131330", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_NORMAL_MCH = Concept{ID: "131331", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEP_MCH = Concept{ID: "131332", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_LOW_MCH = Concept{ID: "131333", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+var CONCEPT_MCH = Concept{ID: "131330", EnglishHumanReadableExpression: "Mean corpuscular hemoglobin", Short1: "MCH", EnglishDescription: "Mean corpuscular hemoglobin"}
+var CONCEPT_NORMAL_MCH = Concept{ID: "131331", EnglishHumanReadableExpression: "Normal mean corpuscular hemoglobin", Short1: "Normal MCH", EnglishDescription: ""}
+var CONCEPT_HIGH_MCH = Concept{ID: "131332", EnglishHumanReadableExpression: "High mean corpuscular hemoglobin", Short1: "High MCH", EnglishDescription: ""}
+var CONCEPT_LOW_MCH = Concept{ID: "131333", EnglishHumanReadableExpression: "Low mean corpuscular hemoglobin", Short1: "Low MCH", EnglishDescription: ""}
 
 // ---------------------------
-var CONCEPT_MCHC = Concept{ID: "131340", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_NORMAL_MCHC = Concept{ID: "131341", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEP_MCHC = Concept{ID: "131342", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_LOW_MCHC = Concept{ID: "131343", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+var CONCEPT_MCHC = Concept{ID: "131340", EnglishHumanReadableExpression: "Mean corpuscular hemoglobin concentration", Short1: "MCHC", EnglishDescription: "Mean corpuscular hemoglobin concentration"}
+var CONCEPT_NORMAL_MCHC = Concept{ID: "131341", EnglishHumanReadableExpression: "Normal mean corpuscular hemoglobin concentration", Short1: "Normal MCHC", EnglishDescription: ""}
+var CONCEPT_HIGH_MCHC = Concept{ID: "131342", EnglishHumanReadableExpression: "High mean corpuscular hemoglobin concentration", Short1: "High MCHC", EnglishDescription: ""}
+var CONCEPT_LOW_MCHC = Concept{ID: "131343", EnglishHumanReadableExpression: "Low mean corpuscular hemoglobin concentration", Short1: "Low MCHC", EnglishDescription: ""}
 
 // ---------------------------
-var CONCEPT_PLATELET_COUNT = Concept{ID: "131350", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_NORMAL_PLATELET_COUNT = Concept{ID: "131351", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEP_PLATELET_COUNT = Concept{ID: "131352", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_LOW_PLATELET_COUNT = Concept{ID: "131353", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+var CONCEPT_PLATELET_COUNT = Concept{ID: "131350", EnglishHumanReadableExpression: "Platelet Count", Short1: "PLT", EnglishDescription: "Platelet Count"}
+var CONCEPT_NORMAL_PLATELET_COUNT = Concept{ID: "131351", EnglishHumanReadableExpression: "Normal platelet count", Short1: "Normal PLT", EnglishDescription: ""}
+var CONCEPT_HIGH_PLATELET_COUNT = Concept{ID: "131352", EnglishHumanReadableExpression: "High platelet count", Short1: "High PLT", EnglishDescription: ""}
+var CONCEPT_LOW_PLATELET_COUNT = Concept{ID: "131353", EnglishHumanReadableExpression: "Low platelet count", Short1: "Low PLT", EnglishDescription: ""}
 
 // ---------------------------
-var CONCEPT_NEUTROPHIL_COUNT = Concept{ID: "131360", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_NORMAL_NEUTROPHIL_COUNT = Concept{ID: "131361", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEP_NEUTROPHIL_COUNT = Concept{ID: "131362", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_LOW_NEUTROPHIL_COUNT = Concept{ID: "131363", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+var CONCEPT_NEUTROPHIL_COUNT = Concept{ID: "131360", EnglishHumanReadableExpression: "Neutrophil Count", Short1: "NEU", EnglishDescription: "Neutrophil Count"}
+var CONCEPT_NORMAL_NEUTROPHIL_COUNT = Concept{ID: "131361", EnglishHumanReadableExpression: "Normal neutrophil count", Short1: "Normal NEU", EnglishDescription: ""}
+var CONCEPT_HIGH_NEUTROPHIL_COUNT = Concept{ID: "131362", EnglishHumanReadableExpression: "High neutrophil count", Short1: "High NEU", EnglishDescription: ""}
+var CONCEPT_LOW_NEUTROPHIL_COUNT = Concept{ID: "131363", EnglishHumanReadableExpression: "Low neutrophil count", Short1: "Low NEU", EnglishDescription: ""}
 
 // ---------------------------
-var CONCEPT_LYMPHOCYTE_COUNT = Concept{ID: "131370", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_NORMAL_LYMPHOCYTE_COUNT = Concept{ID: "131371", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEP_LYMPHOCYTE_COUNT = Concept{ID: "131372", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_LOW_LYMPHOCYTE_COUNT = Concept{ID: "131373", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+var CONCEPT_LYMPHOCYTE_COUNT = Concept{ID: "131370", EnglishHumanReadableExpression: "Lymphocyte Count", Short1: "LYM", EnglishDescription: "Lymphocyte Count"}
+var CONCEPT_NORMAL_LYMPHOCYTE_COUNT = Concept{ID: "131371", EnglishHumanReadableExpression: "Normal lymphocyte count", Short1: "Normal LYM", EnglishDescription: ""}
+var CONCEPT_HIGH_LYMPHOCYTE_COUNT = Concept{ID: "131372", EnglishHumanReadableExpression: "High lymphocyte count", Short1: "High LYM", EnglishDescription: ""}
+var CONCEPT_LOW_LYMPHOCYTE_COUNT = Concept{ID: "131373", EnglishHumanReadableExpression: "Low lymphocyte count", Short1: "Low LYM", EnglishDescription: ""}
 
 // ---------------------------
-var CONCEPT_MONOCYTE_COUNT = Concept{ID: "131380", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_NORMAL_MONOCYTE_COUNT = Concept{ID: "131381", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEP_MONOCYTE_COUNT = Concept{ID: "131382", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_LOW_MONOCYTE_COUNT = Concept{ID: "131383", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+var CONCEPT_MONOCYTE_COUNT = Concept{ID: "131380", EnglishHumanReadableExpression: "Monocyte Count", Short1: "MON", EnglishDescription: "Monocyte Count"}
+var CONCEPT_NORMAL_MONOCYTE_COUNT = Concept{ID: "131381", EnglishHumanReadableExpression: "Normal monocyte count", Short1: "Normal MON", EnglishDescription: ""}
+var CONCEPT_HIGH_MONOCYTE_COUNT = Concept{ID: "131382", EnglishHumanReadableExpression: "High monocyte count", Short1: "High MON", EnglishDescription: ""}
+var CONCEPT_LOW_MONOCYTE_COUNT = Concept{ID: "131383", EnglishHumanReadableExpression: "Low monocyte count", Short1: "Low MON", EnglishDescription: ""}
 
 // ---------------------------
-var CONCEPT_EOSINOPHIL_COUNT = Concept{ID: "131390", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_NORMAL_EOSINOPHIL_COUNT = Concept{ID: "131391", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEP_EOSINOPHIL_COUNT = Concept{ID: "131392", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_LOW_EOSINOPHIL_COUNT = Concept{ID: "131393", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+var CONCEPT_EOSINOPHIL_COUNT = Concept{ID: "131390", EnglishHumanReadableExpression: "Eosinophil Count", Short1: "EOS", EnglishDescription: "Eosinophil Count"}
+var CONCEPT_NORMAL_EOSINOPHIL_COUNT = Concept{ID: "131391", EnglishHumanReadableExpression: "Normal eosinophil count", Short1: "Normal EOS", EnglishDescription: ""}
+var CONCEPT_HIGH_EOSINOPHIL_COUNT = Concept{ID: "131392", EnglishHumanReadableExpression: "High eosinophil count", Short1: "High EOS", EnglishDescription: ""}
+var CONCEPT_LOW_EOSINOPHIL_COUNT = Concept{ID: "131393", EnglishHumanReadableExpression: "Low eosinophil count", Short1: "Low EOS", EnglishDescription: ""}
 
 // ---------------------------
-var CONCEPT_BASOPHIL_COUNT = Concept{ID: "131400", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_NORMAL_BASOPHIL_COUNT = Concept{ID: "131401", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEP_BASOPHIL_COUNT = Concept{ID: "131402", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_LOW_BASOPHIL_COUNT = Concept{ID: "131403", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+var CONCEPT_BASOPHIL_COUNT = Concept{ID: "131400", EnglishHumanReadableExpression: "Basophil Count", Short1: "BAS", EnglishDescription: "Basophil Count"}
+var CONCEPT_NORMAL_BASOPHIL_COUNT = Concept{ID: "131401", EnglishHumanReadableExpression: "Normal basophil count", Short1: "Normal BAS", EnglishDescription: ""}
+var CONCEPT_HIGH_BASOPHIL_COUNT = Concept{ID: "131402", EnglishHumanReadableExpression: "High basophil count", Short1: "High BAS", EnglishDescription: ""}
+var CONCEPT_LOW_BASOPHIL_COUNT = Concept{ID: "131403", EnglishHumanReadableExpression: "Low basophil count", Short1: "Low BAS", EnglishDescription: ""}
 
 // ---------------------------
-var CONCEPT_RETICULOCYTE_COUNT = Concept{ID: "131410", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_NORMAL_RETICULOCYTE_COUNT = Concept{ID: "131411", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEP_RETICULOCYTE_COUNT = Concept{ID: "131412", EnglishHumanReadableExpression: "", EnglishDescription: ""}
-var CONCEPT_LOW_RETICULOCYTE_COUNT = Concept{ID: "131413", EnglishHumanReadableExpression: "", EnglishDescription: ""}
+var CONCEPT_RETICULOCYTE_COUNT = Concept{ID: "131410", EnglishHumanReadableExpression: "Reticulocyte Count", Short1: "RET", EnglishDescription: "Reticulocyte Count"}
+var CONCEPT_NORMAL_RETICULOCYTE_COUNT = Concept{ID: "131411", EnglishHumanReadableExpression: "Normal reticulocyte count", Short1: "Normal RET", EnglishDescription: ""}
+var CONCEPT_HIGH_RETICULOCYTE_COUNT = Concept{ID: "131412", EnglishHumanReadableExpression: "High reticulocyte count", Short1: "High RET", EnglishDescription: ""}
+var CONCEPT_LOW_RETICULOCYTE_COUNT = Concept{ID: "131413", EnglishHumanReadableExpression: "Low reticulocyte count", Short1: "Low RET", EnglishDescription: ""}
 
 // ---------------------------
 

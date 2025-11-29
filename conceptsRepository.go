@@ -368,104 +368,104 @@ func init() {
 
 	// --------------------------------------------------
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Blast-Over20p", EnglishHumanReadableExpression: "Blast / WBC >= 20%", Short1: "Blast >= 20%", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Blast-Over20p")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19469", EnglishHumanReadableExpression: "Blast / WBC >= 20%", Short1: "FACT-Blast-Over20p, Blast >= 20%", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19469")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Blast-Below20p", EnglishHumanReadableExpression: "Blast / WBC < 20%", Short1: "Blast < 20%", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Blast-Below20p")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19470", EnglishHumanReadableExpression: "Blast / WBC < 20%", Short1: "FACT-Blast-Below20p, Blast < 20%", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19470")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Monoblast-Over20p", EnglishHumanReadableExpression: "Monoblast / WBC >= 20%", Short1: "Moboblast >= 20%", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Monoblast-Over20p")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19471", EnglishHumanReadableExpression: "Monoblast / WBC >= 20%", Short1: "FACT-Monoblast-Over20p, Moboblast >= 20%", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19471")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Monoblast-Below20p", EnglishHumanReadableExpression: "Moboblast / WBC < 20%", Short1: "Monoblast < 20%", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Monoblast-Below20p")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19472", EnglishHumanReadableExpression: "Moboblast / WBC < 20%", Short1: "FACT-Monoblast-Below20p, Monoblast < 20%", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19472")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Promonocytes-Over20p", EnglishHumanReadableExpression: "Promonocytes / WBC >= 20%", Short1: "Promonocytes >= 20%", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Promonocytes-Over20p")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19473", EnglishHumanReadableExpression: "Promonocytes / WBC >= 20%", Short1: "FACT-Promonocytes-Over20p, Promonocytes >= 20%", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19473")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Promonocytes-Below20p", EnglishHumanReadableExpression: "Promonocytes / WBC < 20%", Short1: "Promonocytes < 20%", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Promonocytes-Below20p")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19474", EnglishHumanReadableExpression: "Promonocytes / WBC < 20%", Short1: "FACT-Promonocytes-Below20p, Promonocytes < 20%", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19474")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Spherocytosis", EnglishHumanReadableExpression: "Spherocytosis", Short1: "", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Spherocytosis")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19475", EnglishHumanReadableExpression: "Spherocytosis", Short1: "FACT-Spherocytosis", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19475")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-RBCFragments", EnglishHumanReadableExpression: "RBC Fragments", Short1: "", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-RBCFragments")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19476", EnglishHumanReadableExpression: "RBC Fragments", Short1: "FACT-RBCFragments", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19476")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Low-Platelet-count-Adult-150000-µl", EnglishHumanReadableExpression: "Thrombocytopenia", Short1: "Thrombocytopenia", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Low-Platelet-count-Adult-150000-µl")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19477", EnglishHumanReadableExpression: "Thrombocytopenia", Short1: "FACT-Low-Platelet-count-Adult-150000-µl, Thrombocytopenia", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19477")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Prolonged-Prothrombin-Time", EnglishHumanReadableExpression: "Prolonged Prothrombin Time", Short1: "Prolonged PT", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Prolonged-Prothrombin-Time")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19478", EnglishHumanReadableExpression: "Prolonged Prothrombin Time", Short1: "FACT-Prolonged-Prothrombin-Time, Prolonged PT", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19478")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Prolonged-activated-partial-thromboplastin-time", EnglishHumanReadableExpression: "Prolonged activated Partial Thromboplastin Time", Short1: "Prolonged aPTT", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Prolonged-activated-partial-thromboplastin-time")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19479", EnglishHumanReadableExpression: "Prolonged activated Partial Thromboplastin Time", Short1: "FACT-Prolonged-activated-partial-thromboplastin-time, Prolonged aPTT", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19479")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Retic", EnglishHumanReadableExpression: "Reticulocyte", Short1: "Retic", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Retic")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19480", EnglishHumanReadableExpression: "Reticulocyte", Short1: "FACT-Retic, Retic", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19480")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Rouleaux-Formation", EnglishHumanReadableExpression: "Rouleaux Formation", Short1: "Rouleaux", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Rouleaux-Formation", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19481", EnglishHumanReadableExpression: "Rouleaux Formation", Short1: "FACT-Rouleaux-Formation, Rouleaux", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19481", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Circulating-Plasma-Cells-Over20p", EnglishHumanReadableExpression: "Circulating Plasma Cells over 20 percent", Short1: "Circulating Plasma Cells Over 20 percent", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Circulating-Plasma-Cells-Over20p")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19482", EnglishHumanReadableExpression: "Circulating Plasma Cells over 20 percent", Short1: "FACT-Circulating-Plasma-Cells-Over20p, Circulating Plasma Cells Over 20 percent", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19482")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Positive-History-of-Acute-Leukemia", EnglishHumanReadableExpression: "Positive History of Acute Leukemia", Short1: "History of Acute Leukemia +", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Positive-History-of-Acute-Leukemia")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19483", EnglishHumanReadableExpression: "Positive History of Acute Leukemia", Short1: "FACT-Positive-History-of-Acute-Leukemia, History of Acute Leukemia +", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19483")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Promyelocyte-Detected", EnglishHumanReadableExpression: "Promyelocyte Detected", Short1: "Promyelocyte Detected", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Promyelocyte-Detected")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19484", EnglishHumanReadableExpression: "Promyelocyte Detected", Short1: "FACT-Promyelocyte-Detected, Promyelocyte Detected", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19484")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Positive-History-of-recent-chemotherapy", EnglishHumanReadableExpression: "Positive history of recent chemotherapy", Short1: "Recent Chemotherapy  +", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Positive-History-of-recent-chemotherapy")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19485", EnglishHumanReadableExpression: "Positive history of recent chemotherapy", Short1: "FACT-Positive-History-of-recent-chemotherapy, Recent Chemotherapy  +", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19485")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Positive-History-of-recent-GCSF", EnglishHumanReadableExpression: "Positive history of recent GCSF", Short1: "Recent GCSF  +", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Positive-History-of-recent-GCSF")
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19486", EnglishHumanReadableExpression: "Positive history of recent GCSF", Short1: "FACT-Positive-History-of-recent-GCSF, Recent GCSF  +", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19486")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Toxic-Changes-in-Neutrophils-Detected", EnglishHumanReadableExpression: "Toxic Changes in Neutrophils Detected", Short1: "Toxic changes +", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Toxic-Changes-in-Neutrophils-Detected", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19487", EnglishHumanReadableExpression: "Toxic Changes in Neutrophils Detected", Short1: "FACT-Toxic-Changes-in-Neutrophils-Detected, Toxic changes +", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19487", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-High-Serum-concentration-of-Lactate-DeHydrogenase", EnglishHumanReadableExpression: "High Serum concentration of Lactate DeHydrogenase", Short1: "High Serum LDH", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-High-Serum-concentration-of-Lactate-DeHydrogenase", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19488", EnglishHumanReadableExpression: "High Serum concentration of Lactate DeHydrogenase", Short1: "FACT-High-Serum-concentration-of-Lactate-DeHydrogenase, High Serum LDH", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19488", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-High-Serum-concentration-of-Creatinine", EnglishHumanReadableExpression: "High Serum concentration of Creatinine", Short1: "High Serum Creatinine", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-High-Serum-concentration-of-Creatinine", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19489", EnglishHumanReadableExpression: "High Serum concentration of Creatinine", Short1: "FACT-High-Serum-concentration-of-Creatinine, High Serum Creatinine", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19489", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-High-Serum-concentration-of-Urea", EnglishHumanReadableExpression: "High Serum concentration of Urea", Short1: "High Serum Urea", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-High-Serum-concentration-of-Urea", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19490", EnglishHumanReadableExpression: "High Serum concentration of Urea", Short1: "FACT-High-Serum-concentration-of-Urea, High Serum Urea", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19490", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-High-Serum-concentration-of-Potassium", EnglishHumanReadableExpression: "High Serum concentration of Potassium", Short1: "High Serum K", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-High-Serum-concentration-of-Potassium", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19491", EnglishHumanReadableExpression: "High Serum concentration of Potassium", Short1: "FACT-High-Serum-concentration-of-Potassium, High Serum K", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19491", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Hypogranular-Neutrophils-detected", EnglishHumanReadableExpression: "Hypogranular Neutrophils detected", Short1: "Hypogranular Neutrophils +", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Hypogranular-Neutrophils-detected", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19492", EnglishHumanReadableExpression: "Hypogranular Neutrophils detected", Short1: "FACT-Hypogranular-Neutrophils-detected, Hypogranular Neutrophils +", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19492", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Hypersegmented-Neurophil-detected", EnglishHumanReadableExpression: "Hypersegmented Neurophil detected", Short1: "Hypersegmented Neurophils +", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Hypersegmented-Neurophil-detected", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19493", EnglishHumanReadableExpression: "Hypersegmented Neurophil detected", Short1: "FACT-Hypersegmented-Neurophil-detected, Hypersegmented Neurophils +", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19493", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Hypogranular-Platelet-detected", EnglishHumanReadableExpression: "Hypogranular Platelet detected", Short1: "Hypogranular Platelets +", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Hypogranular-Platelet-detected", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19494", EnglishHumanReadableExpression: "Hypogranular Platelet detected", Short1: "FACT-Hypogranular-Platelet-detected, Hypogranular Platelets +", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19494", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Positive-History-of-MDS", EnglishHumanReadableExpression: "Positive History of MDS", Short1: "History of MDS +", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Positive-History-of-MDS", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19495", EnglishHumanReadableExpression: "Positive History of MDS", Short1: "FACT-Positive-History-of-MDS, History of MDS +", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19495", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Positive-History-of-MDS-MPN-CMML", EnglishHumanReadableExpression: "Positive History of MDS-MPN-CMML", Short1: "History of MDS-MPN-CMML +", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Positive-History-of-MDS-MPN-CMML", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19496", EnglishHumanReadableExpression: "Positive History of MDS-MPN-CMML", Short1: "FACT-Positive-History-of-MDS-MPN-CMML, History of MDS-MPN-CMML +", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19496", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-NRBC-count-elevated", EnglishHumanReadableExpression: "Elevated NRBC count", Short1: "Elevated NRBC", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-NRBC-count-elevated", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19497", EnglishHumanReadableExpression: "Elevated NRBC count", Short1: "FACT-NRBC-count-elevated, Elevated NRBC", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19497", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Elevated-Metamyelocyte-over-WBC-count", EnglishHumanReadableExpression: "Elevated Metamyelocyte count", Short1: "Elevated Metamyelocyte", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Elevated-Metamyelocyte-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19498", EnglishHumanReadableExpression: "Elevated Metamyelocyte count", Short1: "FACT-Elevated-Metamyelocyte-over-WBC-count, Elevated Metamyelocyte", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19498", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Elevated-Promyelocyte-count-over-WBC-count", EnglishHumanReadableExpression: "Elevated Promyelocyte count", Short1: "Elevated Promyelocyte", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Elevated-Promyelocyte-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19499", EnglishHumanReadableExpression: "Elevated Promyelocyte count", Short1: "FACT-Elevated-Promyelocyte-count-over-WBC-count, Elevated Promyelocyte", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19499", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Elevated-Myelocyte-count-over-WBC-count", EnglishHumanReadableExpression: "Elevated Myelocyte count", Short1: "Elevated Myelocyte", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Elevated-Myelocyte-count-over-WBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19500", EnglishHumanReadableExpression: "Elevated Myelocyte count", Short1: "FACT-Elevated-Myelocyte-count-over-WBC-count, Elevated Myelocyte", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19500", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "FACT-Elevated-Teardrop-RBC-count-over-RBC-count", EnglishHumanReadableExpression: "Elevated Teardrop count", Short1: "Elevated Teardrop RBC", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("FACT-Elevated-Teardrop-RBC-count-over-RBC-count", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19501", EnglishHumanReadableExpression: "Elevated Teardrop count", Short1: "FACT-Elevated-Teardrop-RBC-count-over-RBC-count, Elevated Teardrop RBC", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19501", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19234", EnglishHumanReadableExpression: "MAHA", Short1: "DDX-MAHA", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19234", UNIT_POSITIVE_NEGATIVE_MISSING.ID)

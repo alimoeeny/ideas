@@ -9,7 +9,7 @@ var tempConcept4 = Concept{ID: "42010771", EnglishHumanReadableExpression: "No c
 var tempConcept5 = Concept{ID: "42010772", EnglishHumanReadableExpression: "Marked thrombocytopenia}"}
 
 var CONCEPT_PERIPHERAL_BLOOD_FILM_FINDINGS = ConceptSet{
-	ID:                             "131314",
+	ID:                             "131312",
 	EnglishHumanReadableExpression: "Blood Film Findings",
 	EnglishDescription:             "Peripheral Blood Film Description",
 	Concepts: []Concept{
@@ -152,20 +152,20 @@ var CONCEPT_EOSINOPHILOPENIA_ABSOLUTE = Concept{ID: "13229", EnglishHumanReadabl
 var CONCEPT_BASOPHILIA_ABSOLUTE = Concept{ID: "13230", EnglishHumanReadableExpression: "Absolute Basophilia", EnglishDescription: "Increased Basophil Count"}
 var CONCEPT_BASOPHILOPENIA_ABSOLUTE = Concept{ID: "13231", EnglishHumanReadableExpression: "Absolute Basophilopenia", EnglishDescription: "Decreased Basophil Count"}
 
-var CONCEPT_NEUTROPHILIA_RELATIVE = Concept{ID: "13222", EnglishHumanReadableExpression: "Relative Neutrophilia", EnglishDescription: "Increased Neutrophiol Count"}
-var CONCEPT_NEUTROPENIA_RELATIVE = Concept{ID: "13223", EnglishHumanReadableExpression: "Relative Neutropenia", EnglishDescription: "Decreased Neutrophiol Count"}
-var CONCEPT_LYMPHOCYTOSIS_RELATIVE = Concept{ID: "13224", EnglishHumanReadableExpression: "Relative Lymphocytosis", EnglishDescription: "Increased Lymphocyte Count"}
-var CONCEPT_LYMPHOPENIA_RELATIVE = Concept{ID: "13225", EnglishHumanReadableExpression: "Relative Lymphopenia", EnglishDescription: "Decreased Lymphocyte Count"}
-var CONCEPT_MONOCYTOSIS_RELATIVE = Concept{ID: "13226", EnglishHumanReadableExpression: "Relative Monocytosis", EnglishDescription: "Increased Monocyte Count"}
-var CONCEPT_MONOCYTOPENIA_RELATIVE = Concept{ID: "13227", EnglishHumanReadableExpression: "Relative Monocytopenia", EnglishDescription: "Decreased Monocyte Count"}
-var CONCEPT_EOSINOPHILIA_RELATIVE = Concept{ID: "13228", EnglishHumanReadableExpression: "Relative Eosinophilia", EnglishDescription: "Increased Eosinophil Count"}
-var CONCEPT_EOSINOPHILOPENIA_RELATIVE = Concept{ID: "13229", EnglishHumanReadableExpression: "Relative Eosinopenia", EnglishDescription: "Decreased Eosinophil Count"}
-var CONCEPT_BASOPHILIA_RELATIVE = Concept{ID: "13230", EnglishHumanReadableExpression: "Relative Basophilia", EnglishDescription: "Increased Basophil Count"}
-var CONCEPT_BASOPHILOPENIA_RELATIVE = Concept{ID: "13231", EnglishHumanReadableExpression: "Relative Basophilopenia", EnglishDescription: "Decreased Basophil Count"}
+var CONCEPT_NEUTROPHILIA_RELATIVE = Concept{ID: "13252", EnglishHumanReadableExpression: "Relative Neutrophilia", EnglishDescription: "Increased Neutrophiol Count"}
+var CONCEPT_NEUTROPENIA_RELATIVE = Concept{ID: "13253", EnglishHumanReadableExpression: "Relative Neutropenia", EnglishDescription: "Decreased Neutrophiol Count"}
+var CONCEPT_LYMPHOCYTOSIS_RELATIVE = Concept{ID: "13254", EnglishHumanReadableExpression: "Relative Lymphocytosis", EnglishDescription: "Increased Lymphocyte Count"}
+var CONCEPT_LYMPHOPENIA_RELATIVE = Concept{ID: "13255", EnglishHumanReadableExpression: "Relative Lymphopenia", EnglishDescription: "Decreased Lymphocyte Count"}
+var CONCEPT_MONOCYTOSIS_RELATIVE = Concept{ID: "13256", EnglishHumanReadableExpression: "Relative Monocytosis", EnglishDescription: "Increased Monocyte Count"}
+var CONCEPT_MONOCYTOPENIA_RELATIVE = Concept{ID: "13257", EnglishHumanReadableExpression: "Relative Monocytopenia", EnglishDescription: "Decreased Monocyte Count"}
+var CONCEPT_EOSINOPHILIA_RELATIVE = Concept{ID: "13258", EnglishHumanReadableExpression: "Relative Eosinophilia", EnglishDescription: "Increased Eosinophil Count"}
+var CONCEPT_EOSINOPHILOPENIA_RELATIVE = Concept{ID: "13259", EnglishHumanReadableExpression: "Relative Eosinopenia", EnglishDescription: "Decreased Eosinophil Count"}
+var CONCEPT_BASOPHILIA_RELATIVE = Concept{ID: "13260", EnglishHumanReadableExpression: "Relative Basophilia", EnglishDescription: "Increased Basophil Count"}
+var CONCEPT_BASOPHILOPENIA_RELATIVE = Concept{ID: "13261", EnglishHumanReadableExpression: "Relative Basophilopenia", EnglishDescription: "Decreased Basophil Count"}
 
-var CONCEPT_RETICULOCYTOSIS = Concept{ID: "13235", EnglishHumanReadableExpression: "Reticulocytosis", EnglishDescription: "Increased Reticulocyte Count"}
+var CONCEPT_RETICULOCYTOSIS = Concept{ID: "13262", EnglishHumanReadableExpression: "Reticulocytosis", EnglishDescription: "Increased Reticulocyte Count"}
 
-var CONCEPT_BLAST_CELL_DETECTED = Concept{ID: "131480", EnglishHumanReadableExpression: "Blast Cell Detected", EnglishDescription: ""}
+var CONCEPT_BLAST_CELL_DETECTED = Concept{ID: "13263", EnglishHumanReadableExpression: "Blast Cell Detected", EnglishDescription: ""}
 
 //
 

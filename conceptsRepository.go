@@ -14,8 +14,11 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_DATA_NEEDED)
 	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_APPLICABLE_HERE)
 	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_NOT_APPLICABLE_HERE)
+
+	// Diagnostic Flow
+	DEFAULT_CONCEPT_REPO.SetConcept(DIAGNOSTIC_FLOW_INPUT)
+	DEFAULT_CONCEPT_REPO.SetConcept(DIAGNOSTIC_FLOW_OUTPUT)
 	//----------
-	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_RBC_COUNT)
 	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_WBC_COUNT)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_MVC)
@@ -586,7 +589,6 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Spinal-Disk-Protrusion", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: "", AKA: []string{}})
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Deep-Venous-Thrombosis", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: "", AKA: []string{}})
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Lower-Exterimity-Varicoses", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: "", AKA: []string{}})
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Deep-Venous-Thrombosis", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: "", AKA: []string{}})
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Ruptured-Bakers-Cyst", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: "", AKA: []string{}})
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Cellulitis", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: "", AKA: []string{}})
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "DDX-Abnormal-Lymphatic-Drainage", EnglishHumanReadableExpression: "", Short1: "", EnglishDescription: "", AKA: []string{}})

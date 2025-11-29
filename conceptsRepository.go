@@ -110,19 +110,16 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_BLAST_CELL_DETECTED)
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID(CONCEPT_BLAST_CELL_DETECTED.ID, UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19359", EnglishHumanReadableExpression: "Spherocyte over RBC count", Short1: "SENS-Spherocyte-over-RBC-count, Spherocyte", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19359", EnglishHumanReadableExpression: "Spherocyte over RBC count", Short1: "Spherocyte-over-RBC-count, Spherocyte", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19359", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19360", EnglishHumanReadableExpression: "Acanthocyte-over-RBC-count", Short1: "SENS-Acanthocyte-over-RBC-count, Acanthocyte", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19360", EnglishHumanReadableExpression: "Acanthocyte-over-RBC-count", Short1: "Acanthocyte-over-RBC-count, Acanthocyte", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19359", UNIT_COUNT.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19361", EnglishHumanReadableExpression: "Fragment-over-RBC-count", Short1: "SENS-Fragment-over-RBC-count, Fragment", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19361", EnglishHumanReadableExpression: "Fragment-over-RBC-count", Short1: "Fragment-over-RBC-count, Fragment", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19361", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19362", EnglishHumanReadableExpression: "Platelet-count", Short1: "SENS-Platelet-count, PLT", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19362", UNIT_COUNT.ID)
-
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19363", EnglishHumanReadableExpression: "Reticulocyte-over-RBC-count", Short1: "SENS-Reticulocyte-over-RBC-count, Retic", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19363", EnglishHumanReadableExpression: "Reticulocyte-over-RBC-count", Short1: "Reticulocyte-over-RBC-count, Retic", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19363", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(CONCEPT_HEMOLOBIN_CONCENTRATION)
@@ -137,37 +134,28 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19366", EnglishHumanReadableExpression: "Direct-Antiglobulin-Testing", Short1: "SENS-Direct-Antiglobulin-Testing, DAT", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19366")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19367", EnglishHumanReadableExpression: "Bilirubin serum concentration", Short1: "SENS-Bilirubin-serum-concentration, Bilirubin", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19367", EnglishHumanReadableExpression: "Bilirubin serum concentration", Short1: "Bilirubin-serum-concentration, Bilirubin", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19367")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19368", EnglishHumanReadableExpression: "Mean-Corpuscular-Volume", Short1: "SENS-Mean-Corpuscular-Volume, MCV", EnglishDescription: ""})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19368")
-
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19369", EnglishHumanReadableExpression: "Sickle-Cell-over-RBC-count", Short1: "SENS-Sickle-Cell-over-RBC-count, Sickle cell", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19369", EnglishHumanReadableExpression: "Sickle-Cell-over-RBC-count", Short1: "Sickle-Cell-over-RBC-count, Sickle cell", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19369")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19370", EnglishHumanReadableExpression: "Neutrophil count over WBC count", Short1: "SENS-Neutrophil-count-over-WBC-count, Neutrophil %", EnglishDescription: "Nuetrophil / WBC"})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19370", UNIT_RATIO.ID, UNIT_PERCENTAGE.ID)
-
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19371", EnglishHumanReadableExpression: "Neutrophil count", Short1: "SENS-Neutrophil-count-absolute, Neutrophil count", EnglishDescription: "Nuetrophil Count"})
-	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19371", UNIT_COUNT.ID)
-
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19372", EnglishHumanReadableExpression: "Hypogranular-Neutrophils-over-WBC-count", Short1: "SENS-Hypogranular-Neutrophils-over-WBC-count, Hypogranular Neutrophils", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19372", EnglishHumanReadableExpression: "Hypogranular-Neutrophils-over-WBC-count", Short1: "Hypogranular-Neutrophils-over-WBC-count, Hypogranular Neutrophils", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19372")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19373", EnglishHumanReadableExpression: "Hypersegmented-Neurophil-over-WBC-count", Short1: "SENS-Hypersegmented-Neurophil-over-WBC-count, Hypersegmented Neurophil", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19373", EnglishHumanReadableExpression: "Hypersegmented-Neurophil-over-WBC-count", Short1: "Hypersegmented-Neurophil-over-WBC-count, Hypersegmented Neurophil", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19373")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19374", EnglishHumanReadableExpression: "Hypogranular-Platelet-over-RBC-count", Short1: "SENS-Hypogranular-Platelet-over-RBC-count, Hypogranular Platelet", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19374", EnglishHumanReadableExpression: "Hypogranular-Platelet-over-RBC-count", Short1: "Hypogranular-Platelet-over-RBC-count, Hypogranular Platelet", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19374")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19375", EnglishHumanReadableExpression: "Most-Recent-date-time-of-diagnosis-MDS", Short1: "SENS-Most-Recent-date-time-of-diagnosis-MDS, History of MDS", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19375", EnglishHumanReadableExpression: "Most-Recent-date-time-of-diagnosis-MDS", Short1: "Most-Recent-date-time-of-diagnosis-MDS, History of MDS", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19375", UNIT_TIMESTAMP.ID, UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19376", EnglishHumanReadableExpression: "NRBC-count-over-RBC-count", Short1: "SENS-NRBC-count-over-RBC-count, NRBC", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19376", EnglishHumanReadableExpression: "NRBC-count-over-RBC-count", Short1: "NRBC-count-over-RBC-count, NRBC", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19376")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19377", EnglishHumanReadableExpression: "Rouleaux-Formation-count-over-RBC-count", Short1: "SENS-Rouleaux-Formation-count-over-RBC-count, Rouleaux", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19377", EnglishHumanReadableExpression: "Rouleaux-Formation-count-over-RBC-count", Short1: "Rouleaux-Formation-count-over-RBC-count, Rouleaux", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19377", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19378", EnglishHumanReadableExpression: "Metamyelocyte-over-WBC-count", Short1: "SENS-Metamyelocyte-over-WBC-count, Metamyelocyte", EnglishDescription: ""})
@@ -410,31 +398,31 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19482", EnglishHumanReadableExpression: "Circulating Plasma Cells over 20 percent", Short1: "FACT-Circulating-Plasma-Cells-Over20p, Circulating Plasma Cells Over 20 percent", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19482")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19483", EnglishHumanReadableExpression: "Positive History of Acute Leukemia", Short1: "FACT-Positive-History-of-Acute-Leukemia, History of Acute Leukemia +", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19483", EnglishHumanReadableExpression: "Positive History of Acute Leukemia", Short1: "Positive-History-of-Acute-Leukemia, History of Acute Leukemia +", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19483")
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19484", EnglishHumanReadableExpression: "Promyelocyte Detected", Short1: "FACT-Promyelocyte-Detected, Promyelocyte Detected", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19484")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19485", EnglishHumanReadableExpression: "Positive history of recent chemotherapy", Short1: "FACT-Positive-History-of-recent-chemotherapy, Recent Chemotherapy  +", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19485", EnglishHumanReadableExpression: "Positive history of recent chemotherapy", Short1: "Positive-History-of-recent-chemotherapy, Recent Chemotherapy  +", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19485")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19486", EnglishHumanReadableExpression: "Positive history of recent GCSF", Short1: "FACT-Positive-History-of-recent-GCSF, Recent GCSF  +", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19486", EnglishHumanReadableExpression: "Positive history of recent GCSF", Short1: "Positive-History-of-recent-GCSF, Recent GCSF  +", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19486")
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19487", EnglishHumanReadableExpression: "Toxic Changes in Neutrophils Detected", Short1: "FACT-Toxic-Changes-in-Neutrophils-Detected, Toxic changes +", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19487", EnglishHumanReadableExpression: "Toxic Changes in Neutrophils Detected", Short1: "Toxic-Changes-in-Neutrophils-Detected, Toxic changes +", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19487", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19488", EnglishHumanReadableExpression: "High Serum concentration of Lactate DeHydrogenase", Short1: "FACT-High-Serum-concentration-of-Lactate-DeHydrogenase, High Serum LDH", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19488", EnglishHumanReadableExpression: "High Serum concentration of Lactate DeHydrogenase", Short1: "High-Serum-concentration-of-Lactate-DeHydrogenase, High Serum LDH", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19488", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19489", EnglishHumanReadableExpression: "High Serum concentration of Creatinine", Short1: "FACT-High-Serum-concentration-of-Creatinine, High Serum Creatinine", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19489", EnglishHumanReadableExpression: "High Serum concentration of Creatinine", Short1: "High-Serum-concentration-of-Creatinine, High Serum Creatinine", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19489", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19490", EnglishHumanReadableExpression: "High Serum concentration of Urea", Short1: "FACT-High-Serum-concentration-of-Urea, High Serum Urea", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19490", EnglishHumanReadableExpression: "High Serum concentration of Urea", Short1: "High-Serum-concentration-of-Urea, High Serum Urea", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19490", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19491", EnglishHumanReadableExpression: "High Serum concentration of Potassium", Short1: "FACT-High-Serum-concentration-of-Potassium, High Serum K", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19491", EnglishHumanReadableExpression: "High Serum concentration of Potassium", Short1: "High-Serum-concentration-of-Potassium, High Serum K", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19491", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19492", EnglishHumanReadableExpression: "Hypogranular Neutrophils detected", Short1: "FACT-Hypogranular-Neutrophils-detected, Hypogranular Neutrophils +", EnglishDescription: ""})
@@ -477,52 +465,52 @@ func init() {
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19236", EnglishHumanReadableExpression: "HS", Short1: "DDX-HS", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19236", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19237", EnglishHumanReadableExpression: "Acute Myeloid Leukemia", Short1: "DDX-AML, AML", EnglishDescription: "Acute Myeloid Leukemia"})
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19238", EnglishHumanReadableExpression: "Acute Lymphocytic Leukemia", Short1: "DDX-ALL, ALL", EnglishDescription: "Acute Lymphocytic Leukemia"})
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19239", EnglishHumanReadableExpression: "Chronic Myeloid Leukemia", Short1: "DDX-CML, CML", EnglishDescription: "Chronic Myeloid Leukemia"})
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19240", EnglishHumanReadableExpression: "Juvenile Myelomonocytic Leukemia", Short1: "DDX-JMML, JMML", EnglishDescription: "Juvenile Myelomonocytic Leukemia"})
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19241", EnglishHumanReadableExpression: "Chronic Lymphocytic Leukemia (CLL)", Short1: "DDX-CLL, CLL", EnglishDescription: "Chronic Lymphocytic Leukemia (CLL)"})
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19242", EnglishHumanReadableExpression: "Chronic Basophilic Leukemia (CBL)", Short1: "DDX-CBL, CBL", EnglishDescription: "Chronic Basophilic Leukemia (CBL)"})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19237", EnglishHumanReadableExpression: "Acute Myeloid Leukemia", Short1: "AML, AML", EnglishDescription: "Acute Myeloid Leukemia", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19238", EnglishHumanReadableExpression: "Acute Lymphocytic Leukemia", Short1: "ALL, ALL", EnglishDescription: "Acute Lymphocytic Leukemia", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19239", EnglishHumanReadableExpression: "Chronic Myeloid Leukemia", Short1: "CML, CML", EnglishDescription: "Chronic Myeloid Leukemia", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19240", EnglishHumanReadableExpression: "Juvenile Myelomonocytic Leukemia", Short1: "JMML, JMML", EnglishDescription: "Juvenile Myelomonocytic Leukemia", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19241", EnglishHumanReadableExpression: "Chronic Lymphocytic Leukemia (CLL)", Short1: "CLL, CLL", EnglishDescription: "Chronic Lymphocytic Leukemia (CLL)", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19242", EnglishHumanReadableExpression: "Chronic Basophilic Leukemia (CBL)", Short1: "CBL, CBL", EnglishDescription: "Chronic Basophilic Leukemia (CBL)", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19243", EnglishHumanReadableExpression: "Hypochromic Anemia", Short1: "DDX-Hypochromic-Anemia, Hypochromic Anemia", EnglishDescription: "Hypochromic Anemia"})
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19244", EnglishHumanReadableExpression: "Thrombocytopenia", Short1: "DDX-Thrombocytopenia, Thrombocytopenia", EnglishDescription: "Thrombocytopenia"})
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19245", EnglishHumanReadableExpression: "Neutropenia", Short1: "DDX-Neutropenia, Neutropenia", EnglishDescription: "Neutropenia"})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19243", EnglishHumanReadableExpression: "Hypochromic Anemia", Short1: "Hypochromic-Anemia, Hypochromic Anemia", EnglishDescription: "Hypochromic Anemia", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19244", EnglishHumanReadableExpression: "Thrombocytopenia", Short1: "Thrombocytopenia, Thrombocytopenia", EnglishDescription: "Thrombocytopenia", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19245", EnglishHumanReadableExpression: "Neutropenia", Short1: "Neutropenia, Neutropenia", EnglishDescription: "Neutropenia", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19246", EnglishHumanReadableExpression: "Plasma Cell Leukemia", Short1: "DDX-Plasma-Cell-Leukemia, Plasma Cell Leukemia", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19246", EnglishHumanReadableExpression: "Plasma Cell Leukemia", Short1: "Plasma-Cell-Leukemia, Plasma Cell Leukemia", EnglishDescription: "Plasma Cell Leukemia", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19246", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19247", EnglishHumanReadableExpression: "Multiple Myeloma", Short1: "DDX-Multiple-Myeloma, Multiple Myeloma", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19247", EnglishHumanReadableExpression: "Multiple Myeloma", Short1: "Multiple-Myeloma, Multiple Myeloma", EnglishDescription: "Multiple Myeloma", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19247", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19248", EnglishHumanReadableExpression: "Acute Leukemia", Short1: "DDX-Acute-Leukemia, Acute Leukemia", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19248", EnglishHumanReadableExpression: "Acute Leukemia", Short1: "Acute-Leukemia, Acute Leukemia", EnglishDescription: "Acute Leukemia", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19248", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19249", EnglishHumanReadableExpression: "Acute Promyelocytic Leukemia", Short1: "DDX-Acute-Promyelocytic-Leukemia, Acute Promyelocytic Leukemia", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19249", EnglishHumanReadableExpression: "Acute Promyelocytic Leukemia", Short1: "Acute-Promyelocytic-Leukemia, Acute Promyelocytic Leukemia", EnglishDescription: "Acute Promyelocytic Leukemia", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19249", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19250", EnglishHumanReadableExpression: "Myeloproliferative neoplasms", Short1: "DDX-Myeloproliferative-Neoplasms, MPN", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19250", EnglishHumanReadableExpression: "Myeloproliferative neoplasms", Short1: "Myeloproliferative-Neoplasms, MPN", EnglishDescription: "Myeloproliferative neoplasms", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19250", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19251", EnglishHumanReadableExpression: "Myelodysplastic syndromes", Short1: "DDX-Myelodysplastic-syndromes, MDS", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19251", EnglishHumanReadableExpression: "Myelodysplastic syndromes", Short1: "Myelodysplastic-syndromes, MDS", EnglishDescription: "Myelodysplastic syndromes", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19251", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19252", EnglishHumanReadableExpression: "MDS/MPN (CMML) Overlap syndroms", Short1: "DDX-Myelodysplastic-syndrome-myeloproliferative-neoplasm-overlap-syndromes, MDS/MPN (CMML)", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19252", EnglishHumanReadableExpression: "MDS/MPN (CMML) Overlap syndroms", Short1: "Myelodysplastic-syndrome-myeloproliferative-neoplasm-overlap-syndromes, MDS/MPN (CMML)", EnglishDescription: "MDS/MPN (CMML) Overlap syndroms", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19252", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19253", EnglishHumanReadableExpression: "History of recent chemotherapy", Short1: "DDX-History-of-recent-chemotherapy, Recent Chemotherapy", EnglishDescription: ""})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19253", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19254", EnglishHumanReadableExpression: "History of recent GCSF", Short1: "DDX-History-of-recent-GCSF, Recent GCSF", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19254", EnglishHumanReadableExpression: "History of recent GCSF", Short1: "History-of-recent-GCSF, Recent GCSF", EnglishDescription: "History of recent GCSF", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetAvailableUnitsForConceptWithID("19254", UNIT_POSITIVE_NEGATIVE_MISSING.ID)
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19255", EnglishHumanReadableExpression: "Iron Deficiency Anemia", Short1: "DDX-Iron-Deficiency-Anemia, Iron Deficiency Anemia", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19255", EnglishHumanReadableExpression: "Iron Deficiency Anemia", Short1: "Iron-Deficiency-Anemia, Iron Deficiency Anemia", EnglishDescription: "Iron Deficiency Anemia", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19256", EnglishHumanReadableExpression: "", Short1: "DDX-Monoclonal-B-Lymphocytosis", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19256", EnglishHumanReadableExpression: "Monoclonal B-Lymphocytosis", Short1: "Monoclonal-B-Lymphocytosis", EnglishDescription: "Monoclonal B-Lymphocytosis", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19257", EnglishHumanReadableExpression: "Sideroblastic anemia", Short1: "DDX-Sideroblastic-Anemia", EnglishDescription: ""})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19257", EnglishHumanReadableExpression: "Sideroblastic anemia", Short1: "Sideroblastic-Anemia", EnglishDescription: "Sideroblastic anemia", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
 
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19258", EnglishHumanReadableExpression: "Angina", Short1: "DDX-Angina, Angina", EnglishDescription: "", AKA: []string{}})
-	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19259", EnglishHumanReadableExpression: "ST Elevated Myocardial Infarction", Short1: "DDX-STEMI, STEMI", EnglishDescription: "", AKA: []string{}})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19258", EnglishHumanReadableExpression: "Angina", Short1: "Angina", EnglishDescription: "Angina", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
+	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19259", EnglishHumanReadableExpression: "ST Elevated Myocardial Infarction", Short1: "STEMI, STEMI", EnglishDescription: "ST Elevated Myocardial Infarction", Categories: []Concept{DIAGNOSTIC_FLOW_OUTPUT, DIAGNOSTIC_FLOW_INPUT}})
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19260", EnglishHumanReadableExpression: "Non-ST Elevation Myocardial Infaction", Short1: "DDX-NSTEMI, NSTEMI", EnglishDescription: "", AKA: []string{}})
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19261", EnglishHumanReadableExpression: "", Short1: "DDX-Esophagitis", EnglishDescription: "", AKA: []string{}})
 	DEFAULT_CONCEPT_REPO.SetConcept(Concept{ID: "19262", EnglishHumanReadableExpression: "", Short1: "DDX-Esophagial-Spasm", EnglishDescription: "", AKA: []string{}})

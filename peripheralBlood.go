@@ -137,6 +137,10 @@ var CONCEPT_MALARIA_PARASITE_CLASSIFICATION = Concept{ID: "131428", EnglishHuman
 // ---------------------------
 // ---------------------------
 
+var CONCEPT_NORMAL_RBC_FINDINGS = Concept{ID: "13211", EnglishHumanReadableExpression: "RBCs Are Normal", EnglishDescription: ""}
+var CONCEPT_NORMAL_WBC_FINDINGS = Concept{ID: "13212", EnglishHumanReadableExpression: "WBCs Are Normal", EnglishDescription: ""}
+var CONCEPT_NORMAL_PLATELET_FINDINGS = Concept{ID: "13213", EnglishHumanReadableExpression: "Platelets Are Normal", EnglishDescription: ""}
+
 var CONCEPT_NEUTROPHILIA_ABSOLUTE = Concept{ID: "13222", EnglishHumanReadableExpression: "Absolute Neutrophilia", EnglishDescription: "Increased Neutrophiol Count"}
 var CONCEPT_NEUTROPENIA_ABSOLUTE = Concept{ID: "13223", EnglishHumanReadableExpression: "Absolute Neutropenia", EnglishDescription: "Decreased Neutrophiol Count"}
 var CONCEPT_LYMPHOCYTOSIS_ABSOLUTE = Concept{ID: "13224", EnglishHumanReadableExpression: "Absolute Lymphocytosis", EnglishDescription: "Increased Lymphocyte Count"}

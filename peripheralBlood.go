@@ -57,7 +57,7 @@ var CONCEPT_HIGH_WBC_COUNT = Concept{ID: "42000874", EnglishHumanReadableExpress
 var CONCEPT_LOW_WBC_COUNT = Concept{ID: "42000875", EnglishHumanReadableExpression: "Low WBC count"}
 
 // /----------------------------
-var CONCEPT_HEMOLOBIN_CONCENTRATION = Concept{ID: "SENS-Hemoglobin-concentration", EnglishHumanReadableExpression: "Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood", Short1: "Hb"}
+var CONCEPT_HEMOLOBIN_CONCENTRATION = Concept{ID: "131316", EnglishHumanReadableExpression: "Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood", Short1: "Hb"}
 var CONCEPT_NORMAL_HEMOLOBIN_CONCENTRATION = Concept{ID: "131317", EnglishHumanReadableExpression: "Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood"}
 var CONCEPT_HIGH_HEMOLOBIN_CONCENTRATION = Concept{ID: "131318", EnglishHumanReadableExpression: "Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood"}
 var CONCEPT_LOW_HEMOLOBIN_CONCENTRATION = Concept{ID: "131319", EnglishHumanReadableExpression: "Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood"}
@@ -135,8 +135,39 @@ var CONCEPT_MALARIA_KNOWLESI_PARASITE_PRESENT = Concept{ID: "131427", EnglishHum
 var CONCEPT_MALARIA_PARASITE_CLASSIFICATION = Concept{ID: "131428", EnglishHumanReadableExpression: "", EnglishDescription: ""}
 
 // ---------------------------
+// ---------------------------
+
+var CONCEPT_NORMAL_RBC_FINDINGS = Concept{ID: "13211", EnglishHumanReadableExpression: "RBCs Are Normal", EnglishDescription: ""}
+var CONCEPT_NORMAL_WBC_FINDINGS = Concept{ID: "13212", EnglishHumanReadableExpression: "WBCs Are Normal", EnglishDescription: ""}
+var CONCEPT_NORMAL_PLATELET_FINDINGS = Concept{ID: "13213", EnglishHumanReadableExpression: "Platelets Are Normal", EnglishDescription: ""}
+
+var CONCEPT_NEUTROPHILIA_ABSOLUTE = Concept{ID: "13222", EnglishHumanReadableExpression: "Absolute Neutrophilia", EnglishDescription: "Increased Neutrophiol Count"}
+var CONCEPT_NEUTROPENIA_ABSOLUTE = Concept{ID: "13223", EnglishHumanReadableExpression: "Absolute Neutropenia", EnglishDescription: "Decreased Neutrophiol Count"}
+var CONCEPT_LYMPHOCYTOSIS_ABSOLUTE = Concept{ID: "13224", EnglishHumanReadableExpression: "Absolute Lymphocytosis", EnglishDescription: "Increased Lymphocyte Count"}
+var CONCEPT_LYMPHOPENIA_ABSOLUTE = Concept{ID: "13225", EnglishHumanReadableExpression: "Absolute Lymphopenia", EnglishDescription: "Decreased Lymphocyte Count"}
+var CONCEPT_MONOCYTOSIS_ABSOLUTE = Concept{ID: "13226", EnglishHumanReadableExpression: "Absolute Monocytosis", EnglishDescription: "Increased Monocyte Count"}
+var CONCEPT_MONOCYTOPENIA_ABSOLUTE = Concept{ID: "13227", EnglishHumanReadableExpression: "Absolute Monocytopenia", EnglishDescription: "Decreased Monocyte Count"}
+var CONCEPT_EOSINOPHILIA_ABSOLUTE = Concept{ID: "13228", EnglishHumanReadableExpression: "Absolute Eosinophilia", EnglishDescription: "Increased Eosinophil Count"}
+var CONCEPT_EOSINOPHILOPENIA_ABSOLUTE = Concept{ID: "13229", EnglishHumanReadableExpression: "Absolute Eosinopenia", EnglishDescription: "Decreased Eosinophil Count"}
+var CONCEPT_BASOPHILIA_ABSOLUTE = Concept{ID: "13230", EnglishHumanReadableExpression: "Absolute Basophilia", EnglishDescription: "Increased Basophil Count"}
+var CONCEPT_BASOPHILOPENIA_ABSOLUTE = Concept{ID: "13231", EnglishHumanReadableExpression: "Absolute Basophilopenia", EnglishDescription: "Decreased Basophil Count"}
+
+var CONCEPT_NEUTROPHILIA_RELATIVE = Concept{ID: "13222", EnglishHumanReadableExpression: "Relative Neutrophilia", EnglishDescription: "Increased Neutrophiol Count"}
+var CONCEPT_NEUTROPENIA_RELATIVE = Concept{ID: "13223", EnglishHumanReadableExpression: "Relative Neutropenia", EnglishDescription: "Decreased Neutrophiol Count"}
+var CONCEPT_LYMPHOCYTOSIS_RELATIVE = Concept{ID: "13224", EnglishHumanReadableExpression: "Relative Lymphocytosis", EnglishDescription: "Increased Lymphocyte Count"}
+var CONCEPT_LYMPHOPENIA_RELATIVE = Concept{ID: "13225", EnglishHumanReadableExpression: "Relative Lymphopenia", EnglishDescription: "Decreased Lymphocyte Count"}
+var CONCEPT_MONOCYTOSIS_RELATIVE = Concept{ID: "13226", EnglishHumanReadableExpression: "Relative Monocytosis", EnglishDescription: "Increased Monocyte Count"}
+var CONCEPT_MONOCYTOPENIA_RELATIVE = Concept{ID: "13227", EnglishHumanReadableExpression: "Relative Monocytopenia", EnglishDescription: "Decreased Monocyte Count"}
+var CONCEPT_EOSINOPHILIA_RELATIVE = Concept{ID: "13228", EnglishHumanReadableExpression: "Relative Eosinophilia", EnglishDescription: "Increased Eosinophil Count"}
+var CONCEPT_EOSINOPHILOPENIA_RELATIVE = Concept{ID: "13229", EnglishHumanReadableExpression: "Relative Eosinopenia", EnglishDescription: "Decreased Eosinophil Count"}
+var CONCEPT_BASOPHILIA_RELATIVE = Concept{ID: "13230", EnglishHumanReadableExpression: "Relative Basophilia", EnglishDescription: "Increased Basophil Count"}
+var CONCEPT_BASOPHILOPENIA_RELATIVE = Concept{ID: "13231", EnglishHumanReadableExpression: "Relative Basophilopenia", EnglishDescription: "Decreased Basophil Count"}
+
+var CONCEPT_RETICULOCYTOSIS = Concept{ID: "13235", EnglishHumanReadableExpression: "Reticulocytosis", EnglishDescription: "Increased Reticulocyte Count"}
 
 var CONCEPT_BLAST_CELL_DETECTED = Concept{ID: "131480", EnglishHumanReadableExpression: "Blast Cell Detected", EnglishDescription: ""}
+
+//
 
 type PeripheralBloodFilmFindings struct {
 	IdeaSet           `json:"idea_set,omitempty"`
@@ -168,27 +199,3 @@ var CBCIdeaSet = NewIdeaSet(
 			CONCEPT_RETICULOCYTE_COUNT.ID:      nil,
 		},
 	)})
-
-var alisCBC = CBC{
-	PatientIdentifier: newIdentifier(),
-	IdeaSet: NewIdeaSet(
-		"1645524588060025000",
-		[]*Idea{NewIdea(
-			"sqwvmbncwu",
-			"RBC Count",
-			map[string]*Measurement{
-				CONCEPT_RBC_COUNT.ID: {
-					ID:        "fvvzwarsyx",
-					Timestamp: 1645525355974859000,
-					Value:     5,
-					Unit:      UNIT_COUNT_PER_UL,
-				},
-				CONCEPT_WBC_COUNT.ID: {
-					ID:        "zrblcflizl",
-					Timestamp: 1645538338859452000,
-					Value:     8569,
-					Unit:      UNIT_COUNT_PER_UL,
-				},
-			},
-		)}),
-}

@@ -23,7 +23,12 @@ var UNIT_COUNTS_PER_MILLILITER = &Unit{ID: "12600", Name: "counts per milliliter
 var UNIT_COUNTS_PER_MICROLITER = &Unit{ID: "12700", Name: "counts per microliter", Short1: "/µl"}
 
 var UNIT_COUNT_PER_UL = &Unit{ID: "125", Name: "count per microliter", Short1: "/µl"}
-var UNIT_COUNT_MILLION_PER_UL = &Unit{ID: "125", Name: "count per microliter", Short1: "/µl"}
+var UNIT_COUNT_MILLION_PER_UL = &Unit{ID: "12503", Name: "count million per microliter", Short1: "/µl"}
+
+var UNIT_THOUSAND_PER_UL = &Unit{ID: "12504", Name: "thousand per microliter", Short1: "K/µl"}
+var UNIT_MILLION_PER_UL = &Unit{ID: "12505", Name: "million per microliter", Short1: "M/µl"}
+var UNIT_BILLION_PER_UL = &Unit{ID: "12506", Name: "billion per microliter", Short1: "B/µl"}
+var UNIT_TRILLION_PER_UL = &Unit{ID: "12507", Name: "trillion per microliter", Short1: "T/µl"}
 
 var UNIT_METER = &Unit{ID: "1010", Name: "meter", Short1: "m"}
 var UNIT_CENTIMETER = &Unit{ID: "1011", Name: "centimeter", Short1: "cm"}

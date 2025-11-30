@@ -35,6 +35,10 @@ func init() {
 
 	DEFAULT_UNIT_REPO.SetUnit(*UNIT_COUNT_PER_UL)
 	DEFAULT_UNIT_REPO.SetUnit(*UNIT_COUNT_MILLION_PER_UL)
+	DEFAULT_UNIT_REPO.SetUnit(*UNIT_THOUSAND_PER_UL)
+	DEFAULT_UNIT_REPO.SetUnit(*UNIT_MILLION_PER_UL)
+	DEFAULT_UNIT_REPO.SetUnit(*UNIT_BILLION_PER_UL)
+	DEFAULT_UNIT_REPO.SetUnit(*UNIT_TRILLION_PER_UL)
 
 	// Length
 	DEFAULT_UNIT_REPO.SetUnit(*UNIT_METER)
@@ -95,7 +99,7 @@ func (repo *UnitsRepository) SetUnit(c Unit) error {
 		return fmt.Errorf("unit needs to have an non-enpty id")
 	}
 	if (*repo).dict[c.ID] != nil {
-		return fmt.Errorf("another unit with the same ID already exists")
+		panic(fmt.Errorf("cannot add unit %v, another unit with the same ID '%s' already exists", c, c.ID))
 	}
 	// let it crash if they pass in a nil repo, it is danguarous to do anything else
 	(*repo).dict[c.ID] = &c

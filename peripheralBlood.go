@@ -87,40 +87,52 @@ var CONCEPT_HIGH_PLATELET_COUNT = Concept{ID: "131352", EnglishHumanReadableExpr
 var CONCEPT_LOW_PLATELET_COUNT = Concept{ID: "131353", EnglishHumanReadableExpression: "Low platelet count", Short1: "Low PLT", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 
 // ---------------------------
+var CONCEPT_MEAN_PLATELET_VOLUME = Concept{ID: "13264", EnglishHumanReadableExpression: "Mean Platelet Volume", Short1: "MPV", EnglishDescription: "Mean Platelet Volume", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
+var CONCEPT_NORMAL_MEAN_PLATELET_VOLUME = Concept{ID: "13265", EnglishHumanReadableExpression: "Normal mean platelet volume", Short1: "Normal MPV", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+var CONCEPT_HIGH_MEAN_PLATELET_VOLUME = Concept{ID: "13266", EnglishHumanReadableExpression: "High mean platelet volume", Short1: "High MPV", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+var CONCEPT_LOW_MEAN_PLATELET_VOLUME = Concept{ID: "13267", EnglishHumanReadableExpression: "Low mean platelet volume", Short1: "Low MPV", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+
+// ---------------------------
 var CONCEPT_NEUTROPHIL_COUNT = Concept{ID: "131360", EnglishHumanReadableExpression: "Neutrophil Count", Short1: "NEU", EnglishDescription: "Neutrophil Count", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
 var CONCEPT_NORMAL_NEUTROPHIL_COUNT = Concept{ID: "131361", EnglishHumanReadableExpression: "Normal neutrophil count", Short1: "Normal NEU", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 var CONCEPT_HIGH_NEUTROPHIL_COUNT = Concept{ID: "131362", EnglishHumanReadableExpression: "High neutrophil count", Short1: "High NEU", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 var CONCEPT_LOW_NEUTROPHIL_COUNT = Concept{ID: "131363", EnglishHumanReadableExpression: "Low neutrophil count", Short1: "Low NEU", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+var CONCEPT_NEUTROPHIL_PERCENTAGE = Concept{ID: "13268", EnglishHumanReadableExpression: "Neutrophil Percentage", Short1: "NEU%", EnglishDescription: "Neutrophil Percentage", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
 
 // ---------------------------
 var CONCEPT_LYMPHOCYTE_COUNT = Concept{ID: "131370", EnglishHumanReadableExpression: "Lymphocyte Count", Short1: "LYM", EnglishDescription: "Lymphocyte Count", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
 var CONCEPT_NORMAL_LYMPHOCYTE_COUNT = Concept{ID: "131371", EnglishHumanReadableExpression: "Normal lymphocyte count", Short1: "Normal LYM", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 var CONCEPT_HIGH_LYMPHOCYTE_COUNT = Concept{ID: "131372", EnglishHumanReadableExpression: "High lymphocyte count", Short1: "High LYM", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 var CONCEPT_LOW_LYMPHOCYTE_COUNT = Concept{ID: "131373", EnglishHumanReadableExpression: "Low lymphocyte count", Short1: "Low LYM", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+var CONCEPT_LYMPHOCYTE_PERCENTAGE = Concept{ID: "13269", EnglishHumanReadableExpression: "Lymphocyte Percentage", Short1: "LYM%", EnglishDescription: "Lymphocyte Percentage", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
 
 // ---------------------------
 var CONCEPT_MONOCYTE_COUNT = Concept{ID: "131380", EnglishHumanReadableExpression: "Monocyte Count", Short1: "MON", EnglishDescription: "Monocyte Count", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
 var CONCEPT_NORMAL_MONOCYTE_COUNT = Concept{ID: "131381", EnglishHumanReadableExpression: "Normal monocyte count", Short1: "Normal MON", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 var CONCEPT_HIGH_MONOCYTE_COUNT = Concept{ID: "131382", EnglishHumanReadableExpression: "High monocyte count", Short1: "High MON", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 var CONCEPT_LOW_MONOCYTE_COUNT = Concept{ID: "131383", EnglishHumanReadableExpression: "Low monocyte count", Short1: "Low MON", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+var CONCEPT_MONOCYTE_PERCENTAGE = Concept{ID: "13270", EnglishHumanReadableExpression: "Monocyte Percentage", Short1: "MON%", EnglishDescription: "Monocyte Percentage", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
 
 // ---------------------------
 var CONCEPT_EOSINOPHIL_COUNT = Concept{ID: "131390", EnglishHumanReadableExpression: "Eosinophil Count", Short1: "EOS", EnglishDescription: "Eosinophil Count", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
 var CONCEPT_NORMAL_EOSINOPHIL_COUNT = Concept{ID: "131391", EnglishHumanReadableExpression: "Normal eosinophil count", Short1: "Normal EOS", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 var CONCEPT_HIGH_EOSINOPHIL_COUNT = Concept{ID: "131392", EnglishHumanReadableExpression: "High eosinophil count", Short1: "High EOS", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 var CONCEPT_LOW_EOSINOPHIL_COUNT = Concept{ID: "131393", EnglishHumanReadableExpression: "Low eosinophil count", Short1: "Low EOS", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+var CONCEPT_EOSINOPHIL_PERCENTAGE = Concept{ID: "13271", EnglishHumanReadableExpression: "Eosinophil Percentage", Short1: "EOS%", EnglishDescription: "Eosinophil Percentage", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
 
 // ---------------------------
 var CONCEPT_BASOPHIL_COUNT = Concept{ID: "131400", EnglishHumanReadableExpression: "Basophil Count", Short1: "BAS", EnglishDescription: "Basophil Count", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
 var CONCEPT_NORMAL_BASOPHIL_COUNT = Concept{ID: "131401", EnglishHumanReadableExpression: "Normal basophil count", Short1: "Normal BAS", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 var CONCEPT_HIGH_BASOPHIL_COUNT = Concept{ID: "131402", EnglishHumanReadableExpression: "High basophil count", Short1: "High BAS", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 var CONCEPT_LOW_BASOPHIL_COUNT = Concept{ID: "131403", EnglishHumanReadableExpression: "Low basophil count", Short1: "Low BAS", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+var CONCEPT_BASOPHIL_PERCENTAGE = Concept{ID: "13272", EnglishHumanReadableExpression: "Basophil Percentage", Short1: "BAS%", EnglishDescription: "Basophil Percentage", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
 
 // ---------------------------
 var CONCEPT_RETICULOCYTE_COUNT = Concept{ID: "131410", EnglishHumanReadableExpression: "Reticulocyte Count", Short1: "RET", EnglishDescription: "Reticulocyte Count", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
 var CONCEPT_NORMAL_RETICULOCYTE_COUNT = Concept{ID: "131411", EnglishHumanReadableExpression: "Normal reticulocyte count", Short1: "Normal RET", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 var CONCEPT_HIGH_RETICULOCYTE_COUNT = Concept{ID: "131412", EnglishHumanReadableExpression: "High reticulocyte count", Short1: "High RET", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 var CONCEPT_LOW_RETICULOCYTE_COUNT = Concept{ID: "131413", EnglishHumanReadableExpression: "Low reticulocyte count", Short1: "Low RET", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+var CONCEPT_RETICULOCYTE_PERCENTAGE = Concept{ID: "13273", EnglishHumanReadableExpression: "Reticulocyte Percentage", Short1: "RET%", EnglishDescription: "Reticulocyte Percentage", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
 
 // ---------------------------
 

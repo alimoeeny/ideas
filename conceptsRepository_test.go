@@ -44,7 +44,7 @@ func Test_DefaultConceptsRepository(t *testing.T) {
 	}
 
 	{
-		us := DEFAULT_CONCEPT_REPO.AcceptableUnitsForConceptWithID("SENS-Blast-count-over-WBC-count")
+		us := DEFAULT_CONCEPT_REPO.AcceptableUnitsForConceptWithID("19385")
 		if len(us) < 1 {
 			t.FailNow()
 		}
@@ -54,7 +54,7 @@ func Test_DefaultConceptsRepository(t *testing.T) {
 		if len(cups) < 1 {
 			t.FailNow()
 		}
-		if len(cups["SENS-Blast-count-over-WBC-count"].UnitIDs) < 1 {
+		if len(cups["19385"].UnitIDs) < 1 {
 			t.FailNow()
 		}
 	}

@@ -20,7 +20,7 @@ func (repo *ConceptsRepository) SetConcept(c Concept) error {
 		return fmt.Errorf("concept needs to have an non-empty id")
 	}
 	if (*repo).conceptsDict[c.ID] != nil {
-		return fmt.Errorf("another concept with the same ID already exists")
+		panic(fmt.Errorf("cannot add concept '%v', another concept with the same ID '%s' already exists in the repo", c, c.ID))
 	}
 	// let it crash if they pass in a nil repo, it is danguarous to do anything else
 	(*repo).conceptsDict[c.ID] = &c
@@ -85,13 +85,14 @@ func (repo *ConceptsRepository) NewConcept(id string, expression string, short1 
 // Concept represents a bit of knowledge that can be queried form the user or from the machines
 // an example concept is RBC count, a workflow can ask for RBC count from an algorithm or from the user
 type Concept struct {
-	ID                             string   `json:"id,omitempty"`
-	EnglishHumanReadableExpression string   `json:"english_human_readable_expression,omitempty"`
-	Short1                         string   `json:"short_1,omitempty"`
-	EnglishDescription             string   `json:"english_description,omitempty"`
-	AKA                            []string `json:"aka,omitempty"`
-	Includes                       []string `json:"includes,omitempty"`
-	IsIncludedIn                   []string `json:"is_included_in,omitempty"`
+	ID                             string    `json:"id,omitempty"`
+	EnglishHumanReadableExpression string    `json:"english_human_readable_expression,omitempty"`
+	Short1                         string    `json:"short_1,omitempty"`
+	EnglishDescription             string    `json:"english_description,omitempty"`
+	AKA                            []string  `json:"aka,omitempty"`
+	Includes                       []string  `json:"includes,omitempty"`
+	IsIncludedIn                   []string  `json:"is_included_in,omitempty"`
+	Categories                     []Concept `json:"categories,omitempty"` // these are essentially tags
 }
 
 // a map of CoceptIDs to Concepts

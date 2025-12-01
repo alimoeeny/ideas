@@ -179,7 +179,15 @@ var CONCEPT_RETICULOCYTOSIS = Concept{ID: "13262", EnglishHumanReadableExpressio
 
 var CONCEPT_BLAST_CELL_DETECTED = Concept{ID: "13263", EnglishHumanReadableExpression: "Blast Cell Detected", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 
-//
+// ----------------------------------------
+// ---------------------------------------- Comments
+var CONCEPT_CBC_COMMENT_REACTICE_CHANGES = Concept{
+	ID:                             "135691",
+	EnglishHumanReadableExpression: "The Neutrophilia with reactive changes is suggestive of systemic illness, or infection. Clinical correlation is recommended.",
+	EnglishDescription:             "The Neutrophilia with reactive changes is suggestive of systemic illness, or infection. Clinical correlation is recommended.",
+	Short1:                         "Reactive Changes",
+	Categories:                     []Concept{DIAGNOSTIC_FLOW_OUTPUT},
+}
 
 type PeripheralBloodFilmFindings struct {
 	IdeaSet           `json:"idea_set,omitempty"`

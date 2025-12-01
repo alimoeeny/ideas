@@ -24,7 +24,7 @@ var CONCEPT_CBC = ConceptSet{
 	Concepts: []Concept{
 		CONCEPT_RBC_COUNT,
 		CONCEPT_WBC_COUNT,
-		CONCEPT_HEMOLOBIN_CONCENTRATION,
+		CONCEPT_HEMOGLOBIN_CONCENTRATION,
 		CONCEPT_MVC,
 		CONCEPT_MCH,
 		CONCEPT_MCHC,
@@ -57,15 +57,24 @@ var CONCEPT_HIGH_WBC_COUNT = Concept{ID: "42000874", EnglishHumanReadableExpress
 var CONCEPT_LOW_WBC_COUNT = Concept{ID: "42000875", EnglishHumanReadableExpression: "Low WBC count", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 
 // /----------------------------
-var CONCEPT_HEMOLOBIN_CONCENTRATION = Concept{ID: "131316", EnglishHumanReadableExpression: "Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood", Short1: "Hb", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
-var CONCEPT_NORMAL_HEMOLOBIN_CONCENTRATION = Concept{ID: "131317", EnglishHumanReadableExpression: "Normal Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
-var CONCEPT_HIGH_HEMOLOBIN_CONCENTRATION = Concept{ID: "131318", EnglishHumanReadableExpression: "High Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
-var CONCEPT_LOW_HEMOLOBIN_CONCENTRATION = Concept{ID: "131319", EnglishHumanReadableExpression: "Low Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+var CONCEPT_HEMOGLOBIN_CONCENTRATION = Concept{ID: "131316", EnglishHumanReadableExpression: "Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood", Short1: "Hb", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
+var CONCEPT_NORMAL_HEMOGLOBIN_CONCENTRATION = Concept{ID: "131317", EnglishHumanReadableExpression: "Normal Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+var CONCEPT_HIGH_HEMOGLOBIN_CONCENTRATION = Concept{ID: "131318", EnglishHumanReadableExpression: "High Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+var CONCEPT_LOW_HEMOGLOBIN_CONCENTRATION = Concept{ID: "131319", EnglishHumanReadableExpression: "Low Hemoglobin Concentration", EnglishDescription: "Concentration of Hemoglobin in whole blood", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+
+var CONCEPT_HEMATOCRIT = Concept{ID: "13275", EnglishHumanReadableExpression: "Hematocrit", EnglishDescription: "Concentration of Hemoglobin in whole blood", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
+var CONCEPT_NORMAL_HEMATOCRIT = Concept{ID: "13276", EnglishHumanReadableExpression: "Normal Hematocrit", EnglishDescription: "Concentration of Hemoglobin in whole blood", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+var CONCEPT_HIGH_HEMATOCRIT = Concept{ID: "13277", EnglishHumanReadableExpression: "High Hematocrit", EnglishDescription: "Concentration of Hemoglobin in whole blood", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+var CONCEPT_LOW_HEMATOCRIT = Concept{ID: "13278", EnglishHumanReadableExpression: "Low Hematocrit", EnglishDescription: "Concentration of Hemoglobin in whole blood", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+
+var CONCEPT_RDW = Concept{ID: "13279", EnglishHumanReadableExpression: "Red cell distribution width", EnglishDescription: "Red cell distribution width", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
+var CONCEPT_NORMAL_RDW = Concept{ID: "13280", EnglishHumanReadableExpression: "Normal Red cell distribution width", EnglishDescription: "Red cell distribution width", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+var CONCEPT_HIGH_RDW = Concept{ID: "13281", EnglishHumanReadableExpression: "High Red cell distribution width", EnglishDescription: "Red cell distribution width", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
+var CONCEPT_LOW_RDW = Concept{ID: "13282", EnglishHumanReadableExpression: "Low Red cell distribution width", EnglishDescription: "Red cell distribution width", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 
 // /----------------------------
 var CONCEPT_MVC = Concept{ID: "131320", EnglishHumanReadableExpression: "Mean corpuscular volume", Short1: "MCV", EnglishDescription: "Mean corpuscular volume", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT}}
 var CONCEPT_NORMAL_MVC = Concept{ID: "131321", EnglishHumanReadableExpression: "Normal mean corpuscular volume", Short1: "Normal MCV", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
-var CONCEPT_HIGH_MVC = Concept{ID: "131322", EnglishHumanReadableExpression: "High mean corpuscular volume", Short1: "High MCV", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 var CONCEPT_LOW_MVC = Concept{ID: "131323", EnglishHumanReadableExpression: "Low mean corpuscular volume", Short1: "Low MCV", EnglishDescription: "", Categories: []Concept{DIAGNOSTIC_FLOW_INPUT, DIAGNOSTIC_FLOW_OUTPUT}}
 
 // ---------------------------
@@ -205,17 +214,17 @@ var CBCIdeaSet = NewIdeaSet(
 		"sqwvmbncwu",
 		"RBC Count",
 		map[string]*Measurement{
-			CONCEPT_RBC_COUNT.ID:               nil,
-			CONCEPT_WBC_COUNT.ID:               nil,
-			CONCEPT_HEMOLOBIN_CONCENTRATION.ID: nil,
-			CONCEPT_MVC.ID:                     nil,
-			CONCEPT_MCH.ID:                     nil,
-			CONCEPT_MCHC.ID:                    nil,
-			CONCEPT_NEUTROPHIL_COUNT.ID:        nil,
-			CONCEPT_LYMPHOCYTE_COUNT.ID:        nil,
-			CONCEPT_MONOCYTE_COUNT.ID:          nil,
-			CONCEPT_EOSINOPHIL_COUNT.ID:        nil,
-			CONCEPT_EOSINOPHIL_COUNT.ID:        nil,
-			CONCEPT_RETICULOCYTE_COUNT.ID:      nil,
+			CONCEPT_RBC_COUNT.ID:                nil,
+			CONCEPT_WBC_COUNT.ID:                nil,
+			CONCEPT_HEMOGLOBIN_CONCENTRATION.ID: nil,
+			CONCEPT_MVC.ID:                      nil,
+			CONCEPT_MCH.ID:                      nil,
+			CONCEPT_MCHC.ID:                     nil,
+			CONCEPT_NEUTROPHIL_COUNT.ID:         nil,
+			CONCEPT_LYMPHOCYTE_COUNT.ID:         nil,
+			CONCEPT_MONOCYTE_COUNT.ID:           nil,
+			CONCEPT_EOSINOPHIL_COUNT.ID:         nil,
+			CONCEPT_EOSINOPHIL_COUNT.ID:         nil,
+			CONCEPT_RETICULOCYTE_COUNT.ID:       nil,
 		},
 	)})
